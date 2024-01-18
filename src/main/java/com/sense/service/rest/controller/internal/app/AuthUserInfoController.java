@@ -18,6 +18,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import javax.annotation.PostConstruct;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
@@ -41,23 +43,23 @@ public class AuthUserInfoController extends BaseRestController {
 
     @ApiOperation(value = "Get All API")
     @RequestMapping(value = RestCustomConst.SERVICE_NAME_AUTH_LOGIN, method = RequestMethod.POST)
-    public LoginRes loginLogoutRequest(@RequestHeader(defaultValue = ApiFilterConst.DEFAULT_VALUE_TOKEN_KEY) String token, @RequestBody LoginReq request) {
+    public ResponseEntity<?> loginLogoutRequest(@RequestHeader(defaultValue = ApiFilterConst.DEFAULT_VALUE_TOKEN_KEY) String token, @RequestBody LoginReq request) {
         boolean isError = false;
         String logMsg = null;
 
         LoginRes response = new LoginRes();
         //validate
         if (request.getData() == null) {
-            response.setErrorcode(1);
-            response.setErrormessage(ErrorMessageUtil.ERROR_0000);
-            return response;
+            return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
         }
+
         service = HBHelper.instance().service(AuthUserInfoService.class);
         try {
             List<AuthUserInfo> result = service.findByUserNameAndPassword(request);
-            
+
             response.setDataList(result);
             response.setTotalCount(result.size());
+
         } catch (Exception e) {
             isError = true;
             logMsg = ExceptionUtil.getLastErrorMessage(e);
@@ -66,7 +68,7 @@ public class AuthUserInfoController extends BaseRestController {
         }
         response.setErrorcode(isError ? 1 : 0);
         response.setErrormessage(logMsg);
-        return response;
+        return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
 }
