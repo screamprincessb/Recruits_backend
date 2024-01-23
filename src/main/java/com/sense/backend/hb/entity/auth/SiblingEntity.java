@@ -1,0 +1,42 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package com.sense.backend.hb.entity.auth;
+
+import java.io.Serializable;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import lombok.Data;
+
+/**
+ *
+ * @author SenseInfoTech
+ */
+@Data
+@Entity
+@Table(name = "SIBLING")
+public class SiblingEntity implements Serializable{
+    
+    @Id
+    @Column(name = "SIBLING_ID")
+    private int siblingId;
+    
+    @Column(name = "SIBLING_YOU_ARE")
+    private int siblingYouAre;
+    
+    @Column(name = "SIBLING_FIRST_NAME")
+    private String siblingFirstName;
+    
+    @Column(name = "SIBLING_AGE")
+    private int siblingAge;
+    
+    @Column(name = "SIBLING_OCCUPATION")
+    private String siblingOccupation;
+    
+    @Column(name = "SIBLING_WORK_LOCATION")
+    private String siblingWorkLocation;
+    
+}
