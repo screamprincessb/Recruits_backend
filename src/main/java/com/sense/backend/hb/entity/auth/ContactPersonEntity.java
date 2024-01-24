@@ -27,5 +27,15 @@ public class ContactPersonEntity implements Serializable{
     @Column(name = "CP_FIRST_NAME")
     private String cpFirstName;
     
-    @Column
+    @Column(name = "CP_LAST_NAME")
+    private String cpLastName;
+    
+    @Column(name = "CP_RELATION")
+    private String cpRelation;
+    
+    @Column(name = "CP_PHONE")
+    private String cpPhone;
+    
+    @Column(name = "CP_ADDRESS")
+    private String cpAddress;
 }
