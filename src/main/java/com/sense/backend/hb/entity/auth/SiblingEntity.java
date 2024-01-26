@@ -24,6 +24,9 @@ public class SiblingEntity implements Serializable{
     @Column(name = "SIBLING_ID")
     private int siblingId;
     
+    @Column(name = "SIBLING_NUMBER")
+    private int siblingNumber;
+    
     @Column(name = "SIBLING_YOU_ARE")
     private int siblingYouAre;
     
