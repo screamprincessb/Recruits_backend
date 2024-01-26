@@ -38,6 +38,9 @@ public class WorkExperienceEntity implements Serializable{
     @Column(name = "WE_BUSINES_TYPE")
     private String weBusinessType;
     
+    @Column(name = "WE_NAME")
+    private String weName;
+    
     @Column(name = "WE_POSITION")
     private String wePosition;
     
