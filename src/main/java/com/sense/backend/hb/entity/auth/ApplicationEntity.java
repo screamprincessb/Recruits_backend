@@ -211,9 +211,6 @@ public class ApplicationEntity implements Serializable{
     @Column(name = "CURRENT_EDU_SEMESTER")
     private String currentEDUSemester;
     
-    @Column(name = "CURRENT_EDU_OTHER")
-    private String currentEDUOther;
-    
     @Column(name = "CURRENT_EXPECTED")
     private String currentExpected;
     
