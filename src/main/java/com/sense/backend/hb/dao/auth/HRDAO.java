@@ -4,10 +4,19 @@
  */
 package com.sense.backend.hb.dao.auth;
 
+import com.sense.backend.hb.dao.BaseDAO;
+import com.sense.backend.hb.entity.auth.HREntity;
+import org.springframework.stereotype.Repository;
+
 /**
  *
  * @author SenseInfoTech
  */
-public class AbillitiesDAO {
+@Repository
+public class HRDAO extends BaseDAO<HREntity, Integer>{
+    
+    public HRDAO(){
+        super(HREntity.class);
+    }
     
 }

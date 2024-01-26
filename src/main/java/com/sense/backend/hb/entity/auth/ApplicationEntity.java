@@ -36,6 +36,16 @@ public class ApplicationEntity implements Serializable{
     @Column(name = "APPLICATION_TRANSCRIPT")
     private String applicationTranscript;
     
+    @Column(name = "APPLICATION_POSITION")
+    private String applicationPosition;
+    
+    @Column(name = "APPLICATION_SALARY_RANGE")
+    private String applicationSalaryRange;
+    
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "APPLICATION_START_DATE")
+    private Date applicationStartDT;
+    
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "APPLICATION_SUBMIT_DATE")
     private Date applicationSubmitDT;
@@ -97,6 +107,10 @@ public class ApplicationEntity implements Serializable{
     
     @Column(name = "CAN_PLACE_OF_ISSUE")
     private String canPlaceOfIssue;
+    
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "CAN_DATE_OF_ISSUE")
+    private Date canDTOfIssue;
     
     @Column(name = "CAN_MARRIEAGE_STATUS")
     private String canMarrieageStatus;
