@@ -31,6 +31,7 @@ C:\Recruits\recruitssyncbackend\src\main\java\com\sense\backend\hb\entity\auth\V
 C:\Recruits\recruitssyncbackend\src\main\java\com\sense\service\rest\controller\internal\app\AuthUserInfoController.java
 C:\Recruits\recruitssyncbackend\src\main\java\com\sense\backend\hb\dao\auth\ReferencePersonDAO.java
 C:\Recruits\recruitssyncbackend\src\main\java\com\sense\service\util\secure\BlackListDataBean.java
+C:\Recruits\recruitssyncbackend\src\main\java\com\sense\service\rest\bean\internal\app\HRReq.java
 C:\Recruits\recruitssyncbackend\src\main\java\com\sense\backend\hb\dao\auth\HRDAO.java
 C:\Recruits\recruitssyncbackend\src\main\java\com\sense\service\AppHelper.java
 C:\Recruits\recruitssyncbackend\src\main\java\com\sense\service\util\RandomUtil.java
@@ -99,6 +100,7 @@ C:\Recruits\recruitssyncbackend\src\main\java\com\sense\backend\common\helper\JD
 C:\Recruits\recruitssyncbackend\src\main\java\com\sense\backend\hb\dao\auth\InterviewDAO.java
 C:\Recruits\recruitssyncbackend\src\main\java\com\sense\service\validate\RestValidateException.java
 C:\Recruits\recruitssyncbackend\src\main\java\com\sense\service\conts\ApiFilterConst.java
+C:\Recruits\recruitssyncbackend\src\main\java\com\sense\service\rest\bean\internal\app\HRRes.java
 C:\Recruits\recruitssyncbackend\src\main\java\com\sense\service\util\Ex002.java
 C:\Recruits\recruitssyncbackend\src\main\java\com\sense\service\conts\AppConts.java
 C:\Recruits\recruitssyncbackend\src\main\java\com\sense\backend\hb\dao\auth\VehicleDAO.java

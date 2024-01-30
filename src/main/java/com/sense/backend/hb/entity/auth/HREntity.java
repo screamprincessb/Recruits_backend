@@ -58,8 +58,8 @@ public class HREntity implements Serializable{
     @Column(name = "HR_CREATE_BY")
     private String hrCreateBy;
     
-    @Temporal(TemporalType.TIMESTAMP)    
     @Column(name = "HR_UPDATE_DATE")
+    @Temporal(TemporalType.TIMESTAMP)    
     private Date hrUpdateDT;
     
     @Column(name = "HR_UPDATE_BY")

@@ -26,4 +26,10 @@ public class HRService {
         return dao.findAll();
     }
     
+    @Transactional
+    public void saveOrUpdate(HREntity entity) {
+        dao.saveOrUpdate(entity);
+    }
+            
+    
 }

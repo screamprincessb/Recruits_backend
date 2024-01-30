@@ -1,6 +1,7 @@
 com\sense\backend\hb\entity\auth\LanguagesEntity.class
 com\sense\service\custom\filter\ApiAttrBean.class
 com\sense\service\util\BuildTime.class
+com\sense\service\rest\bean\internal\app\HRRes.class
 com\sense\service\validate\RestValidateRegExpConst.class
 com\sense\backend\common\helper\JDBCHelper.class
 com\sense\backend\hb\dao\auth\ChildDAO.class
@@ -31,8 +32,10 @@ com\sense\service\util\secure\TestApp.class
 com\sense\backend\common\helper\ConfigHelper.class
 com\sense\service\util\RandomUtil.class
 com\sense\service\conts\ApiFilterConst.class
+com\sense\service\rest\bean\internal\app\HRReq.class
 com\sense\backend\hb\entity\auth\ChildEntity.class
 com\sense\backend\hb\entity\common\CoreConfig.class
+com\sense\service\rest\bean\internal\app\HRReq$HRData.class
 com\sense\service\util\ConnDB.class
 com\sense\backend\common\helper\HBHelper.class
 com\sense\backend\hb\entity\auth\AbillitiesEntity.class
