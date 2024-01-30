@@ -29,7 +29,7 @@ import org.springframework.web.bind.annotation.RestController;
  *
  * @author SenseInfoTech
  */
-@Tag(name = "Recruits HR Service")
+@Tag(name = "HR")
 @CrossOrigin(origins = "*")
 @RequestMapping(value = "/rest/internal/app/Recruits_HR")
 @RestController
@@ -87,6 +87,19 @@ public class HRController extends BaseRestController {
             status = e.getMessage();
         }
         return status;
+    }
+    
+    @Operation(summary = "HR")
+    @RequestMapping(value = "delete", method = RequestMethod.DELETE)
+    public HREntity delete(
+            @ModelAttribute(ApiFilterConst.ATTR_DATA_NAME) ApiAttrBean attrData,
+            @RequestHeader(defaultValue = ApiFilterConst.DEFAULT_VALUE_TOKEN_KEY) String token,
+            @RequestBody HREntity req) {
+
+        HRService service = HBHelper.instance().service(HRService.class);
+        service.delete(req);
+        return req;
+
     }
 
 }

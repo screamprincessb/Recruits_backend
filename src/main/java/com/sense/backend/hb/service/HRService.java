@@ -26,10 +26,24 @@ public class HRService {
         return dao.findAll();
     }
     
+        @Transactional
+    public List<HREntity> findBySQL(String sql) {
+        return dao.findBySQL(sql);
+    }
+
+    @Transactional
+    public HREntity findById(int id) {
+        return dao.findById(id);
+    }
+    
     @Transactional
     public void saveOrUpdate(HREntity entity) {
         dao.saveOrUpdate(entity);
     }
             
+    @Transactional
+    public void delete(HREntity entity) {
+        dao.delete(entity);
+    }
     
 }
