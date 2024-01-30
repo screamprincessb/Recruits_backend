@@ -23,6 +23,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -52,6 +53,18 @@ public class HRController extends BaseRestController {
         List<HREntity> result = hrservice.findAll();
 
         return result;
+    }
+    
+    @Operation(summary = "HR")
+    @RequestMapping(value = "findById", method = RequestMethod.GET)
+    public HREntity findById(
+            @ModelAttribute(ApiFilterConst.ATTR_DATA_NAME) ApiAttrBean attrData,
+            @RequestHeader(defaultValue = ApiFilterConst.DEFAULT_VALUE_TOKEN_KEY) String token,
+            @RequestParam("hrId") Integer hrId) {
+
+        HRService service = HBHelper.instance().service(HRService.class);
+        HREntity en = service.findById(hrId);
+        return en;
     }
 
     @Operation(summary = "HR")
