@@ -5,18 +5,19 @@
 package com.sense.service.rest.controller.internal.app;
 
 import com.sense.backend.common.helper.HBHelper;
-import com.sense.backend.hb.entity.auth.HREntity;
-import com.sense.backend.hb.service.HRService;
+import com.sense.backend.hb.entity.auth.InterviewEntity;
+import com.sense.backend.hb.service.InterviewService;
 import com.sense.service.base.BaseRestController;
 import com.sense.service.conts.ApiFilterConst;
 import com.sense.service.custom.filter.ApiAttrBean;
-import com.sense.service.rest.bean.internal.app.HRReq;
+import com.sense.service.rest.bean.internal.app.InterviewReq;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.annotation.PostConstruct;
 import java.util.Date;
 import java.util.List;
-import jakarta.annotation.PostConstruct;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -30,90 +31,84 @@ import org.springframework.web.bind.annotation.RestController;
  *
  * @author SenseInfoTech
  */
-@Tag(name = "HR")
+@Tag(name = "Interview")
 @CrossOrigin(origins = "*")
-@RequestMapping(value = "/rest/internal/app/Recruits_HR")
+@RequestMapping(value = "/rest/internal/app/Recruits_Interview")
 @RestController
-public class HRController extends BaseRestController {
+public class InterviewController extends BaseRestController {
 
     @PostConstruct
     public void init() {
 
     }
-
-    @Operation(summary = "HR")
+    
+    
+    @Operation(summary = "Interview")
     @RequestMapping(value = "findAll", method = RequestMethod.GET)
 
-    public List<HREntity> findAll(
+    public List<InterviewEntity> findAll(
             @Parameter(hidden = true)
             @ModelAttribute(ApiFilterConst.ATTR_DATA_NAME) ApiAttrBean attrData,
             @RequestHeader(defaultValue = ApiFilterConst.DEFAULT_VALUE_TOKEN_KEY) String token) {
 
-        HRService hrservice = HBHelper.instance().service(HRService.class);
-        List<HREntity> result = hrservice.findAll();
+        InterviewService interviewservice = HBHelper.instance().service(InterviewService.class);
+        List<InterviewEntity> result = interviewservice.findAll();
 
         return result;
     }
-    
-    @Operation(summary = "HR")
+        
+    @Operation(summary = "Interview")
     @RequestMapping(value = "findById", method = RequestMethod.GET)
-    public HREntity findById(
+    public InterviewEntity findById(
             @ModelAttribute(ApiFilterConst.ATTR_DATA_NAME) ApiAttrBean attrData,
             @RequestHeader(defaultValue = ApiFilterConst.DEFAULT_VALUE_TOKEN_KEY) String token,
-            @RequestParam("hrId") Integer hrId) {
+            @RequestParam("interviewId") Integer interviewId) {
 
-        HRService service = HBHelper.instance().service(HRService.class);
-        HREntity en = service.findById(hrId);
+        InterviewService service = HBHelper.instance().service(InterviewService.class);
+        InterviewEntity en = service.findById(interviewId);
         return en;
     }
-
-    @Operation(summary = "HR")
+    
+    @Operation(summary = "Interview")
     @RequestMapping(value = "saveOrUpdate", method = RequestMethod.PUT)
 
     public String saveOrUpdate(
             @Parameter(hidden = true)
             @ModelAttribute(ApiFilterConst.ATTR_DATA_NAME) ApiAttrBean attrData,
             @RequestHeader(defaultValue = ApiFilterConst.DEFAULT_VALUE_TOKEN_KEY) String token,
-            @RequestBody HRReq req) {
+            @RequestBody InterviewReq req) {
         String status = "";
+
         try {
-            HRService service = HBHelper.instance().service(HRService.class);
-            HREntity val = new HREntity();
-            val.setHrId(req.getData().getHrId());
-            val.setHrTitleName(req.getData().getHrTitleName());
-            val.setHrFirstName(req.getData().getHrFirstName());
-            val.setHrLastName(req.getData().getHrLastName());
-            val.setHrPosition(req.getData().getHrPosition());
-            val.setHrPhone(req.getData().getHrPhone());
-            val.setHrEmail(req.getData().getHrEmail());
-            val.setHrUser(req.getData().getHrUser());
-            val.setHrPassword(req.getData().getHrPassword());
-            val.setHrCreateDT(new Date());
-            val.setHrCreateBy(req.getData().getHrCreateBy());
-            val.setHrUpdateDT(new Date());
-            val.setHrUpdateBy(req.getData().getHrUpdateBy());
-            val.setHrDeleteFlag(req.getData().getHrDeleteFlag());
+            InterviewService service = HBHelper.instance().service(InterviewService.class);
+            InterviewEntity val = new InterviewEntity();
+            val.setInterviewId(req.getData().getInterviewId());
+            val.setInterviewResult(req.getData().getInterviewResult());
+            val.setInterviewNote(req.getData().getInterviewNote());
+            val.setInterviewStatus(req.getData().getInterviewStatus());
+            val.setInterviewDT(new Date());
+            val.setInterviewTime(new Date());
             service.saveOrUpdate(val);
 
-            status = "OK";
         } catch (Exception e) {
             status = e.getMessage();
         }
         return status;
+
     }
     
-    @Operation(summary = "HR")
+    @Operation(summary = "Interview")
     @RequestMapping(value = "delete", method = RequestMethod.DELETE)
     public void delete(
             @ModelAttribute(ApiFilterConst.ATTR_DATA_NAME) ApiAttrBean attrData,
             @RequestHeader(defaultValue = ApiFilterConst.DEFAULT_VALUE_TOKEN_KEY) String token,
             Integer id) {
 
-        HRService service = HBHelper.instance().service(HRService.class);
-        HREntity result = new HREntity();
-        result.setHrId(id);
+        InterviewService service = HBHelper.instance().service(InterviewService.class);
+        InterviewEntity result = new InterviewEntity();
+        result.setInterviewId(id);
         service.delete(result);
 
     }
-
+    
 }

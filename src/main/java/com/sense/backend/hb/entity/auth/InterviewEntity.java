@@ -43,7 +43,6 @@ public class InterviewEntity implements Serializable{
     private String interviewNote;
     
     @Column(name = "INTERVIEW_STATUS")
-    private char interviewStatus;
-    
+    private String interviewStatus;
     
 }
