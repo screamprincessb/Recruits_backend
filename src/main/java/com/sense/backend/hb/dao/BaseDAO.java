@@ -2,10 +2,10 @@ package com.sense.backend.hb.dao;
 import java.io.Serializable;
 import java.util.List;
 
-import javax.persistence.NoResultException;
-import javax.persistence.Query;
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.CriteriaQuery;
+import jakarta.persistence.NoResultException;
+import jakarta.persistence.Query;
+import jakarta.persistence.criteria.CriteriaBuilder;
+import jakarta.persistence.criteria.CriteriaQuery;
 
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -146,7 +146,7 @@ public class BaseDAO<T, ID extends Serializable> {
     }
 
     public Serializable save(T entity) {
-        Serializable result = sessionFactory.getCurrentSession().save(entity);
+        Serializable result = (Serializable) sessionFactory.getCurrentSession().save(entity);
         return result;
     }
 

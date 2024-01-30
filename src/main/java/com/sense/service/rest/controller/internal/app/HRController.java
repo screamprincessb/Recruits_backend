@@ -11,12 +11,12 @@ import com.sense.service.base.BaseRestController;
 import com.sense.service.conts.ApiFilterConst;
 import com.sense.service.custom.filter.ApiAttrBean;
 import com.sense.service.rest.bean.internal.app.HRReq;
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import java.util.Date;
 import java.util.List;
-import javax.annotation.PostConstruct;
-import lombok.extern.slf4j.Slf4j;
+import jakarta.annotation.PostConstruct;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -29,8 +29,7 @@ import org.springframework.web.bind.annotation.RestController;
  *
  * @author SenseInfoTech
  */
-@Slf4j
-@Api(tags = {"Recruits HR Service"}, description = " ")
+@Tag(name = "Recruits HR Service")
 @CrossOrigin(origins = "*")
 @RequestMapping(value = "/rest/internal/app/Recruits_HR")
 @RestController
@@ -41,10 +40,11 @@ public class HRController extends BaseRestController {
 
     }
 
-    @ApiOperation(value = "HR")
+    @Operation(summary = "HR")
     @RequestMapping(value = "findAll", method = RequestMethod.GET)
 
     public List<HREntity> findAll(
+            @Parameter(hidden = true)
             @ModelAttribute(ApiFilterConst.ATTR_DATA_NAME) ApiAttrBean attrData,
             @RequestHeader(defaultValue = ApiFilterConst.DEFAULT_VALUE_TOKEN_KEY) String token) {
 
@@ -54,10 +54,11 @@ public class HRController extends BaseRestController {
         return result;
     }
 
-    @ApiOperation(value = "HR")
+    @Operation(summary = "HR")
     @RequestMapping(value = "saveOrUpdate", method = RequestMethod.PUT)
 
     public String saveOrUpdate(
+            @Parameter(hidden = true)
             @ModelAttribute(ApiFilterConst.ATTR_DATA_NAME) ApiAttrBean attrData,
             @RequestHeader(defaultValue = ApiFilterConst.DEFAULT_VALUE_TOKEN_KEY) String token,
             @RequestBody HRReq req) {

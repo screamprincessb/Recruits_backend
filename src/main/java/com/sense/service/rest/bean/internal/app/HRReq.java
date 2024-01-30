@@ -29,9 +29,9 @@ public class HRReq implements Serializable {
         private String hrEmail;
         private String hrUser;
         private String hrPassword;
-        private Date hrCreateDT;
+//        private Date hrCreateDT;
         private String hrCreateBy;
-        private Date hrUpdateDT;
+//        private Date hrUpdateDT;
         private String hrUpdateBy;
         private String hrDeleteFlag;
     }

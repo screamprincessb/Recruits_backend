@@ -8,7 +8,7 @@ import com.sense.backend.hb.entity.common.CoreConfig;
 import com.sense.service.rest.bean.internal.auth.LoginReq;
 import java.util.ArrayList;
 import java.util.List;
-import javax.persistence.Query;
+import jakarta.persistence.Query;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
