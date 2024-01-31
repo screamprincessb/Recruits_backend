@@ -22,7 +22,7 @@ public class VehicleEntity implements Serializable{
     
     @Id
     @Column(name = "VEHICLE_ID")
-    private int vehicleId;
+    private Integer vehicleId;
     
     @Column(name = "VEHICLE_TYPE")
     private char vehicleType;

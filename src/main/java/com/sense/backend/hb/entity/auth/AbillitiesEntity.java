@@ -22,13 +22,13 @@ public class AbillitiesEntity implements Serializable{
     
     @Id
     @Column(name = "ABILLITIES_ID")
-    private int abillitiesId;
+    private Integer abillitiesId;
     
     @Column(name = "ABILLITIES_TOEIC_SCORE")
-    private int abillitiesToeicScore;
+    private Integer abillitiesToeicScore;
     
     @Column(name = "ABiLLITIES_TOFEL_SCORE")
-    private int abillitiesTofelScore;
+    private Integer abillitiesTofelScore;
     
     @Column(name = "ABILLITIES_COMPUTER_SKILL")
     private String abillitiesComputerSkill;

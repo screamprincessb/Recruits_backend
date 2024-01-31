@@ -7,11 +7,13 @@ package com.sense.backend.hb.dao.auth;
 import com.sense.backend.hb.dao.BaseDAO;
 import com.sense.backend.hb.entity.auth.ChildEntity;
 import com.sense.backend.hb.entity.auth.DataOtherEntity;
+import org.springframework.stereotype.Repository;
 
 /**
  *
  * @author SenseInfoTech
  */
+@Repository
 public class DataOtherDAO extends BaseDAO<DataOtherEntity, Integer > {
         
         public DataOtherDAO() {

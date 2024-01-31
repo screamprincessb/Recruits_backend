@@ -15,17 +15,20 @@ import lombok.ToString;
  */
 @ToString
 @Data
-public class InterviewReq implements Serializable {
-     private InterviewData data;
-    
+public class PreTestReq implements Serializable {
+
+    private PreTestData data;
+
     @Data
-    public class InterviewData {
-        private Integer interviewId;
-//        private Date interviewDT;
-//        private Date interviewTime;
-        private String interviewResult;
-        private String interviewNote;
-        private String interviewStatus;
+    public class PreTestData {
+
+        private Integer preTestId;
+        private String preTestQuestion;
+        private String preTestChoice;
+        private char preTestCorrect;
+//    private Date preTestCreateDT;
+        private String preTestCreateBy;
+//    private Date preTestUpdateDT;
+        private String preTestupdateBy;
     }
-    
 }

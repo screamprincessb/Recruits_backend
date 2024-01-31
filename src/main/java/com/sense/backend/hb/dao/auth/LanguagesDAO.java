@@ -6,11 +6,13 @@ package com.sense.backend.hb.dao.auth;
 
 import com.sense.backend.hb.dao.BaseDAO;
 import com.sense.backend.hb.entity.auth.LanguagesEntity;
+import org.springframework.stereotype.Repository;
 
 /**
  *
  * @author SenseInfoTech
  */
+@Repository
 public class LanguagesDAO extends BaseDAO <LanguagesEntity, Integer> {
     
     public LanguagesDAO() {

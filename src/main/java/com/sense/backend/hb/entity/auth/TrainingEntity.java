@@ -25,7 +25,7 @@ public class TrainingEntity implements Serializable{
     
     @Id
     @Column(name = "TRAINING_ID")
-    private int trainingId;
+    private Integer trainingId;
     
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "TRAINING_DATE")

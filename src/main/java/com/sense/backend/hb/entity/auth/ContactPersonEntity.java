@@ -22,7 +22,7 @@ public class ContactPersonEntity implements Serializable{
     
     @Id
     @Column(name = "CONTACT_PERSON_ID")
-    private int contactPersonId;
+    private Integer contactPersonId;
     
     @Column(name = "CP_FIRST_NAME")
     private String cpFirstName;

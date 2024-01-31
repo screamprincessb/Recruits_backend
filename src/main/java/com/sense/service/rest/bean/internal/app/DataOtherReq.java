@@ -4,6 +4,7 @@
  */
 package com.sense.service.rest.bean.internal.app;
 
+import jakarta.persistence.Column;
 import java.io.Serializable;
 import lombok.Data;
 import lombok.ToString;
@@ -14,12 +15,16 @@ import lombok.ToString;
  */
 @ToString
 @Data
-public class InterviewerReq implements Serializable {
-    private InterviewerData data;
-    
+public class DataOtherReq implements Serializable {
+
+    private DataOtherData data;
+
     @Data
-    public class InterviewerData {
-        private Integer interviewerId;
-        private String interviewerStatus;
+    public class DataOtherData {
+
+        private Integer doId;
+        private String doQuestion;
+        private char doANS;
+        private String doOtherANS;
     }
 }

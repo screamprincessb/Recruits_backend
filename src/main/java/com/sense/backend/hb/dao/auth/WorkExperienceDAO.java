@@ -7,11 +7,13 @@ package com.sense.backend.hb.dao.auth;
 import com.sense.backend.hb.dao.BaseDAO;
 import com.sense.backend.hb.entity.auth.EducationEntity;
 import com.sense.backend.hb.entity.auth.WorkExperienceEntity;
+import org.springframework.stereotype.Repository;
 
 /**
  *
  * @author SenseInfoTech
  */
+@Repository
 public class WorkExperienceDAO extends BaseDAO <WorkExperienceEntity, Integer> {
     
     public WorkExperienceDAO() {

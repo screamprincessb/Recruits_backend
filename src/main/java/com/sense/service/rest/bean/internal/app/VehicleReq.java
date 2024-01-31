@@ -14,12 +14,17 @@ import lombok.ToString;
  */
 @ToString
 @Data
-public class InterviewerReq implements Serializable {
-    private InterviewerData data;
-    
+public class VehicleReq implements Serializable {
+
+    private VehicleData data;
+
     @Data
-    public class InterviewerData {
-        private Integer interviewerId;
-        private String interviewerStatus;
+    public class VehicleData {
+
+        private Integer vehicleId;
+        private char vehicleType;
+        private String vehicleDrive;
+        private char vehicleOwn;
+        private String vehicleNo;
     }
 }

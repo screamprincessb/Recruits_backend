@@ -22,19 +22,19 @@ public class SiblingEntity implements Serializable{
     
     @Id
     @Column(name = "SIBLING_ID")
-    private int siblingId;
+    private Integer siblingId;
     
     @Column(name = "SIBLING_NUMBER")
-    private int siblingNumber;
+    private Integer siblingNumber;
     
     @Column(name = "SIBLING_YOU_ARE")
-    private int siblingYouAre;
+    private Integer siblingYouAre;
     
     @Column(name = "SIBLING_FIRST_NAME")
     private String siblingFirstName;
     
     @Column(name = "SIBLING_AGE")
-    private int siblingAge;
+    private Integer siblingAge;
     
     @Column(name = "SIBLING_OCCUPATION")
     private String siblingOccupation;

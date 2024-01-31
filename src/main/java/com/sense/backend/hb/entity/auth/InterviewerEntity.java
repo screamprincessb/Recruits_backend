@@ -23,7 +23,7 @@ public class InterviewerEntity implements Serializable{
     
     @Id
     @Column(name = "INTERVIEWER_ID")
-    private int interviewerId;
+    private Integer interviewerId;
     
     @Column(name = "INTERVIEWER_STATUS")
      private String interviewerStatus;

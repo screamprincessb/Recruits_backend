@@ -25,7 +25,7 @@ public class EducationEntity implements Serializable{
     
     @Id
     @Column(name = "EDUCATION_ID")
-    private int educationId;
+    private Integer educationId;
     
     @Column(name = "EDUCATION_LEVEL")
     private String educationLevel;

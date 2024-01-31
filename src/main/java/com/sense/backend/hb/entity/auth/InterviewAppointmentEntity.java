@@ -25,7 +25,7 @@ public class InterviewAppointmentEntity implements Serializable{
      
     @Id
     @Column(name = "INTER_APP_ID")
-    private int interAppId;
+    private Integer interAppId;
     
     @Temporal(TemporalType.TIMESTAMP)    
     @Column(name = "INTER_APP_DATE")

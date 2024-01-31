@@ -25,7 +25,7 @@ public class PreTestEntity implements Serializable {
     
     @Id
     @Column(name = "PRE_TEST_ID")
-    private int preTestId;
+    private Integer preTestId;
     
     @Column(name = "PRE_TEST_QUESTION")
     private String preTestQuestion;

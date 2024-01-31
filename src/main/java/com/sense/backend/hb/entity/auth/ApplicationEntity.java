@@ -25,7 +25,7 @@ public class ApplicationEntity implements Serializable{
     
     @Id
     @Column(name = "AAPLICATION_ID")
-    private int application_id;
+    private Integer application_id;
     
     @Column(name = "APPLICATION_LINK")
     private String applicationLink;
@@ -94,7 +94,7 @@ public class ApplicationEntity implements Serializable{
     private Date canDtOfBirth;
     
     @Column(name = "CAN_AGE")
-    private int canAge;
+    private Integer canAge;
     
     @Column(name = "CAN_NATIONAL")
     private String canNational;
@@ -122,7 +122,7 @@ public class ApplicationEntity implements Serializable{
     private String famFatherLastName;
     
     @Column(name = "FAM_FATHER_AGE")
-    private int famFatherAge;
+    private Integer famFatherAge;
     
     @Column(name = "FAM_FATHER_OCCUPATION")
     private String famFatherOccupation;
@@ -137,7 +137,7 @@ public class ApplicationEntity implements Serializable{
     private String famMotherLastName;
     
     @Column(name = "FAM_MOTHER_AGE")
-    private int famMotherAge;
+    private Integer famMotherAge;
     
     @Column(name = "FAM_MoTHER_OCCUPATION")
     private String famMotherOccupation;
@@ -146,7 +146,7 @@ public class ApplicationEntity implements Serializable{
     private String famMotherWorkLocation;
     
     @Column(name = "FAM_SIBLING_AMOUNT")
-    private int famSiblingAmount;
+    private Integer famSiblingAmount;
     
     @Column(name = "FAM_SPOUSE_FIRST_NAME")
     private String famSpouseFirstName;
@@ -155,7 +155,7 @@ public class ApplicationEntity implements Serializable{
     private String famSpouseLaastName;
     
     @Column(name = "FAM_SPOUSE_AGE")
-    private int famSpouseAge;
+    private Integer famSpouseAge;
     
     @Column(name = "FAM_SPOUSE_OCCUPATION")
     private String famSpouseOccupation;
@@ -164,7 +164,7 @@ public class ApplicationEntity implements Serializable{
     private String famSpouseWorkLocation;
     
     @Column(name = "FAM_CHILD_AMOUNT")
-    private int famChildAmount;
+    private Integer famChildAmount;
     
     @Column(name = "CONTACT_HOUSE_NUMBER")
     private String contactHouseNubmer;
@@ -230,10 +230,10 @@ public class ApplicationEntity implements Serializable{
     private Date testEndTime;
     
     @Column(name = "TEST_SCORE")
-    private int testScore;
+    private Integer testScore;
     
     @Column(name = "TEST_TOTAL_SCORE")
-    private int testTotalScore;
+    private Integer testTotalScore;
     
     @Temporal(TemporalType.TIMESTAMP)    
     @Column(name = "APPLICATION_CREATE_DATE")

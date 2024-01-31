@@ -22,7 +22,7 @@ public class ReferencePersonEntity implements Serializable{
     
     @Id
     @Column(name = "REF_PERSON_ID")
-    private int refPersonId;
+    private Integer refPersonId;
     
     @Column(name = "REF_FIRST_NAME")
     private String refFirstName;
