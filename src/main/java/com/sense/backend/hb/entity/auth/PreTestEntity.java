@@ -20,7 +20,7 @@ import lombok.Data;
  */
 @Data
 @Entity
-@Table(name = "PRETEST")
+@Table(name = "PRE_TEST")
 public class PreTestEntity implements Serializable {
     
     @Id
@@ -34,7 +34,7 @@ public class PreTestEntity implements Serializable {
     private String preTestChoice;
     
     @Column(name = "PRE_TEST_CORRECT")
-    private char preTestCorrect;
+    private String preTestCorrect;
     
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "PRE_TEST_CREATE_DATE")
@@ -50,6 +50,11 @@ public class PreTestEntity implements Serializable {
     @Column(name = "PRE_TEST_UPDATE_BY")
     private String preTestupdateBy;
     
+    @Column(name = "PRE_TEST_DELETE")
+    private String preTestDelete;
+    
+    @Column (name = "APPLICATION_ID")
+    private Integer applicationId;
     
     
 }

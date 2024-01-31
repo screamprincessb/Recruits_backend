@@ -17,7 +17,7 @@ import lombok.Data;
  */
 @Data
 @Entity
-@Table(name = "APPLICATION")
+@Table(name = "CONTACT_PERSON")
 public class ContactPersonEntity implements Serializable{
     
     @Id
@@ -38,4 +38,7 @@ public class ContactPersonEntity implements Serializable{
     
     @Column(name = "CP_ADDRESS")
     private String cpAddress;
+
+    @Column (name = "APPLICATION_ID")
+    private Integer applicationId;
 }

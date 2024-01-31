@@ -152,7 +152,7 @@ public class ApplicationEntity implements Serializable{
     private String famSpouseFirstName;
     
     @Column(name = "FAM_SPOUSE_LAST_NAME")
-    private String famSpouseLaastName;
+    private String famSpouseLastName; 
     
     @Column(name = "FAM_SPOUSE_AGE")
     private Integer famSpouseAge;
@@ -196,7 +196,7 @@ public class ApplicationEntity implements Serializable{
     @Column(name = "CONTACT_MOBILE_PHONE")
     private String contactMobilePhone;
     
-    @Column(name = "CONATACT_EMAIL")
+    @Column(name = "CONTACT_EMAIL")
     private String contactEmail;
     
     @Column(name = "CURRENT_EDU_LEVEL")
@@ -211,7 +211,7 @@ public class ApplicationEntity implements Serializable{
     @Column(name = "CURRENT_EDU_SEMESTER")
     private String currentEDUSemester;
     
-    @Column(name = "CURRENT_EXPECTED")
+    @Column(name = "CURRENT_EDU_EXPECTED")
     private String currentExpected;
     
     @Column(name = "TEST_NAME")

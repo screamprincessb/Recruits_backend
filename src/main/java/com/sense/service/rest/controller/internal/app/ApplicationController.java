@@ -1,0 +1,187 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package com.sense.service.rest.controller.internal.app;
+
+import com.sense.backend.common.helper.HBHelper;
+import com.sense.backend.hb.entity.auth.ApplicationEntity;
+import com.sense.backend.hb.service.ApplicationService;
+import com.sense.service.base.BaseRestController;
+import com.sense.service.conts.ApiFilterConst;
+import com.sense.service.custom.filter.ApiAttrBean;
+import com.sense.service.rest.bean.internal.app.ApplicationReq;
+import com.sense.service.rest.bean.internal.app.ChildReq;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.annotation.PostConstruct;
+import java.util.Date;
+import java.util.List;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+/**
+ *
+ * @author SenseInfoTech
+ */
+@Tag(name = "Application")
+@CrossOrigin(origins = "*")
+@RequestMapping(value = "/rest/internal/app/Recruits_Application")
+@RestController
+public class ApplicationController extends BaseRestController {
+
+    @PostConstruct
+    public void init() {
+
+    }
+
+    @Operation(summary = "Application")
+    @RequestMapping(value = "findAll", method = RequestMethod.GET)
+
+    public List<ApplicationEntity> findAll(
+            @Parameter(hidden = true)
+            @ModelAttribute(ApiFilterConst.ATTR_DATA_NAME) ApiAttrBean attrData,
+            @RequestHeader(defaultValue = ApiFilterConst.DEFAULT_VALUE_TOKEN_KEY) String token) {
+
+        ApplicationService applicationservice = HBHelper.instance().service(ApplicationService.class);
+        List<ApplicationEntity> result = applicationservice.findAll();
+
+        return result;
+    }
+
+    @Operation(summary = "Application")
+    @RequestMapping(value = "findById", method = RequestMethod.GET)
+    public ApplicationEntity findById(
+            @ModelAttribute(ApiFilterConst.ATTR_DATA_NAME) ApiAttrBean attrData,
+            @RequestHeader(defaultValue = ApiFilterConst.DEFAULT_VALUE_TOKEN_KEY) String token,
+            @RequestParam("applicationId") Integer applicationId) {
+
+        ApplicationService service = HBHelper.instance().service(ApplicationService.class);
+        ApplicationEntity en = service.findById(applicationId);
+        return en;
+    }
+
+    @Operation(summary = "Application")
+    @RequestMapping(value = "saveOrUpdate", method = RequestMethod.PUT)
+
+    public String saveOrUpdate(
+            @Parameter(hidden = true)
+            @ModelAttribute(ApiFilterConst.ATTR_DATA_NAME) ApiAttrBean attrData,
+            @RequestHeader(defaultValue = ApiFilterConst.DEFAULT_VALUE_TOKEN_KEY) String token,
+            @RequestBody ApplicationReq req) {
+        String status = "";
+
+        try {
+            ApplicationService service = HBHelper.instance().service(ApplicationService.class);
+            ApplicationEntity val = new ApplicationEntity();
+            val.setApplicationId(req.getData().getApplicationId());
+            val.setApplicationLink(req.getData().getApplicationLink());
+            val.setApplicationResumeCV(req.getData().getApplicationResumeCV());
+            val.setApplicationTranscript(req.getData().getApplicationTranscript());
+            val.setApplicationPosition(req.getData().getApplicationPosition());
+            val.setApplicationSalaryRange(req.getData().getApplicationSalaryRange());
+            val.setApplicationStartDT(new Date());
+            val.setApplicationSubmitDT(new Date());
+            val.setApplicationStatus(req.getData().getApplicationStatus());
+            val.setCanTitleNameTH(req.getData().getCanTitleNameTH());
+            
+            val.setCanFirstNameTH(req.getData().getCanFirstNameTH());
+            val.setCanLastNameTH(req.getData().getCanLastNameTH());
+            val.setCanNickameTH(req.getData().getCanNickameTH());
+            val.setCanTitleNameENG(req.getData().getCanTitleNameENG());
+            val.setCanFirstNameENG(req.getData().getCanFirstNameENG());
+            val.setCanLastNameENG(req.getData().getCanLastNameENG());
+            val.setCanNickameENG(req.getData().getCanNickameENG());
+            val.setCanPhoto(req.getData().getCanPhoto());
+            val.setCanSight(req.getData().getCanSight());
+            val.setCanWeight(req.getData().getCanWeight());
+            
+            val.setCanHeight(req.getData().getCanHeight());
+            val.setCanDtOfBirth(new Date());
+            val.setCanAge(req.getData().getCanAge());
+            val.setCanNational(req.getData().getCanNational());
+            val.setCanEthincity(req.getData().getCanEthincity());
+            val.setCanCardId(req.getData().getCanCardId());
+            val.setCanPlaceOfIssue(req.getData().getCanPlaceOfIssue());
+            val.setCanDTOfIssue(new Date());
+            val.setCanMarrieageStatus(req.getData().getCanMarrieageStatus());
+            val.setFamFatherFirstName(req.getData().getFamFatherFirstName());
+            
+            val.setFamFatherLastName(req.getData().getFamFatherLastName());
+            val.setFamFatherAge(req.getData().getFamFatherAge());
+            val.setFamFatherOccupation(req.getData().getFamFatherOccupation());
+            val.setFamFatherWorkLocation(req.getData().getFamFatherWorkLocation());
+            val.setFamMotherFirstName(req.getData().getFamMotherFirstName());
+            val.setFamMotherLastName(req.getData().getFamMotherLastName());
+            val.setFamMotherAge(req.getData().getFamMotherAge());
+            val.setFamMotherOccupation(req.getData().getFamMotherOccupation());
+            val.setFamMotherWorkLocation(req.getData().getFamMotherWorkLocation());
+            val.setFamSiblingAmount(req.getData().getFamSiblingAmount());
+            
+            val.setFamSpouseFirstName(req.getData().getFamSpouseFirstName());
+            val.setFamSpouseLastName(req.getData().getFamSpouseLastName());
+            val.setFamSpouseAge(req.getData().getFamSpouseAge());
+            val.setFamSpouseOccupation(req.getData().getFamSpouseOccupation());
+            val.setFamSpouseWorkLocation(req.getData().getFamSpouseWorkLocation());
+            val.setFamChildAmount(req.getData().getFamChildAmount());
+            val.setContactHouseNubmer(req.getData().getContactHouseNubmer());
+            val.setContactVillage(req.getData().getContactVillage());
+            val.setContactAlley(req.getData().getContactAlley());
+            val.setContactRoad(req.getData().getContactRoad());
+            
+            val.setContactSubdistrict(req.getData().getContactSubdistrict());
+            val.setContactDistrict(req.getData().getContactDistrict());
+            val.setContactProvince(req.getData().getContactProvince());
+            val.setContactPostcode(req.getData().getContactPostcode());
+            val.setContactHomePhone(req.getData().getContactHomePhone());
+            val.setContactMobilePhone(req.getData().getContactMobilePhone());
+            val.setContactEmail(req.getData().getContactEmail());
+            val.setCurrentEDULevel(req.getData().getCurrentEDULevel());
+            val.setCurrentEDUName(req.getData().getCurrentEDUName());
+            val.setCurrentEDUMajor(req.getData().getCurrentEDUMajor());
+            
+            val.setCurrentEDUSemester(req.getData().getCurrentEDUSemester());
+            val.setCurrentExpected(req.getData().getCurrentExpected());
+            val.setTestName(req.getData().getTestName());
+            val.setTestDT(new Date());
+            val.setTestStartTime(new Date());
+            val.setTestEndTime(new Date());
+            val.setTestScore(req.getData().getTestScore());
+            val.setTestTotalScore(req.getData().getTestTotalScore());
+            val.setApplicationCreateDT(new Date());
+            val.setApplicationCreateBy(req.getData().getApplicationCreateBy());
+            
+            val.setApplicationUpdateDT(new Date());
+            val.setApplicationUpdateBy(req.getData().getApplicationUpdateBy());
+            val.setApplicationDeleteFlag(req.getData().getApplicationDeleteFlag());
+
+            service.saveOrUpdate(val);
+
+        } catch (Exception e) {
+            status = e.getMessage();
+        }
+        return status;
+
+    }
+
+    @Operation(summary = "Application")
+    @RequestMapping(value = "delete", method = RequestMethod.DELETE)
+    public void delete(
+            @ModelAttribute(ApiFilterConst.ATTR_DATA_NAME) ApiAttrBean attrData,
+            @RequestHeader(defaultValue = ApiFilterConst.DEFAULT_VALUE_TOKEN_KEY) String token,
+            Integer id) {
+
+        ApplicationService service = HBHelper.instance().service(ApplicationService.class);
+        ApplicationEntity result = new ApplicationEntity();
+        result.setApplicationId(id);
+        service.delete(result);
+
+    }
+}

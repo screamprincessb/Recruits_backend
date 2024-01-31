@@ -22,9 +22,9 @@ public class VehicleReq implements Serializable {
     public class VehicleData {
 
         private Integer vehicleId;
-        private char vehicleType;
+        private String vehicleType;
         private String vehicleDrive;
-        private char vehicleOwn;
+        private String vehicleOwn;
         private String vehicleNo;
     }
 }

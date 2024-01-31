@@ -25,13 +25,13 @@ public class VehicleEntity implements Serializable{
     private Integer vehicleId;
     
     @Column(name = "VEHICLE_TYPE")
-    private char vehicleType;
+    private String vehicleType;
     
     @Column(name = "VEHICLE_DRIVE")
     private String vehicleDrive;
     
     @Column(name = "VEHICLE_OWN")
-    private char vehicleOwn;
+    private String vehicleOwn;
     
     @Column(name = "VEHICLE_NO")
     private String vehicleNo;

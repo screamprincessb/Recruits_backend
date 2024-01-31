@@ -35,6 +35,7 @@ public class ApplicationReq implements Serializable {
 //        private Date applicationSubmitDT;
         private String applicationStatus;
         private String canTitleNameTH;
+        
         private String canFirstNameTH;
         private String canLastNameTH;
         private String canNickameTH;
@@ -45,6 +46,7 @@ public class ApplicationReq implements Serializable {
         private String canPhoto;
         private float canSight;
         private float canWeight;
+        
         private float canHeight;
 //        private Date canDtOfBirth;
         private Integer canAge;
@@ -55,6 +57,7 @@ public class ApplicationReq implements Serializable {
 //        private Date canDTOfIssue;
         private String canMarrieageStatus;
         private String famFatherFirstName;
+        
         private String famFatherLastName;
         private Integer famFatherAge;
         private String famFatherOccupation;
@@ -65,8 +68,9 @@ public class ApplicationReq implements Serializable {
         private String famMotherOccupation;
         private String famMotherWorkLocation;
         private Integer famSiblingAmount;
+        
         private String famSpouseFirstName;
-        private String famSpouseLaastName;
+        private String famSpouseLastName;
         private Integer famSpouseAge;
         private String famSpouseOccupation;
         private String famSpouseWorkLocation;
@@ -75,6 +79,7 @@ public class ApplicationReq implements Serializable {
         private String contactVillage;
         private String contactAlley;
         private String contactRoad;
+        
         private String contactSubdistrict;
         private String contactDistrict;
         private String contactProvince;
@@ -86,6 +91,7 @@ public class ApplicationReq implements Serializable {
         private String currentEDUName;
         private String currentEDUMajor;
         private String currentEDUSemester;
+        
         private String currentExpected;
         private String testName;
 //        private Date testDT;
@@ -96,6 +102,7 @@ public class ApplicationReq implements Serializable {
 //        private Date applicationCreateDT;
         private String applicationCreateBy;
 //        private Date applicationUpdateDT;
+        
         private String applicationUpdateBy;
         private String applicationDeleteFlag;
 

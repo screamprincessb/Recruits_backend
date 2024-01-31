@@ -25,10 +25,11 @@ public class PreTestReq implements Serializable {
         private Integer preTestId;
         private String preTestQuestion;
         private String preTestChoice;
-        private char preTestCorrect;
+        private String preTestCorrect;
 //    private Date preTestCreateDT;
         private String preTestCreateBy;
 //    private Date preTestUpdateDT;
         private String preTestupdateBy;
+        private String preTestDelete;
     }
 }
