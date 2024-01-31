@@ -18,25 +18,28 @@ import lombok.Data;
 @Data
 @Entity
 @Table(name = "ABILLITIES")
-public class AbillitiesEntity implements Serializable{
-    
+public class AbillitiesEntity implements Serializable {
+
     @Id
     @Column(name = "ABILLITIES_ID")
     private Integer abillitiesId;
-    
+
     @Column(name = "ABILLITIES_TOEIC_SCORE")
     private Integer abillitiesToeicScore;
-    
+
     @Column(name = "ABiLLITIES_TOFEL_SCORE")
     private Integer abillitiesTofelScore;
-    
+
     @Column(name = "ABILLITIES_COMPUTER_SKILL")
     private String abillitiesComputerSkill;
-    
+
     @Column(name = "ABILLITIES_OTHER")
     private String abillitiesOther;
-    
+
     @Column(name = "ABILLITIES_HOBBY")
     private String abillitiesHobby;
-    
+
+    @Column(name = "APPLICATION_ID")
+    private Integer applicationId;
+
 }

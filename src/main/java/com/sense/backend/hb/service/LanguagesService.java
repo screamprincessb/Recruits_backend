@@ -33,7 +33,7 @@ public class LanguagesService {
     }
 
     @Transactional
-    public LanguagesEntity findById(int id) {
+    public LanguagesEntity findById(String id) {
         return dao.findById(id);
     }
 

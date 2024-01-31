@@ -13,7 +13,7 @@ import org.springframework.stereotype.Repository;
  * @author SenseInfoTech
  */
 @Repository
-public class LanguagesDAO extends BaseDAO <LanguagesEntity, Integer> {
+public class LanguagesDAO extends BaseDAO <LanguagesEntity, String> {
     
     public LanguagesDAO() {
             super(LanguagesEntity.class);

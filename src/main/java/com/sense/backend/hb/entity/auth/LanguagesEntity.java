@@ -28,13 +28,13 @@ public class LanguagesEntity implements Serializable {
     private String languagesName;
     
     @Column(name = "LANGUAGES_SPEAKING")
-    private char languagesSpeaking;
+    private String languagesSpeaking;
     
     @Column(name = "LANGUAGES_READING")
-    private char languagesReading;
+    private String languagesReading;
     
     @Column(name = "LANGUAGES_WRITING")
-    private char languagesWriting;
+    private String languagesWriting;
     
     @Column(name = "LANGUAGES_TYPEWRITER")
     private String languagesTypewriter;

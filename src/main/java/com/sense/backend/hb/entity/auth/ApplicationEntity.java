@@ -24,8 +24,8 @@ import lombok.Data;
 public class ApplicationEntity implements Serializable{
     
     @Id
-    @Column(name = "AAPLICATION_ID")
-    private Integer application_id;
+    @Column(name = "APPLICATION_ID")
+    private Integer applicationId;
     
     @Column(name = "APPLICATION_LINK")
     private String applicationLink;

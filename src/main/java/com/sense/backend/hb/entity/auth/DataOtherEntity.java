@@ -28,7 +28,7 @@ public class DataOtherEntity implements Serializable{
     private String doQuestion;
     
     @Column(name = "DO_ANS")
-    private char doANS;
+    private String doANS;
     
     @Column(name = "DO_OTHER_ANS")
     private String doOtherANS;

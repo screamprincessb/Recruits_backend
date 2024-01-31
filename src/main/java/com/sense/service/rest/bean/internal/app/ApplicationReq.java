@@ -25,14 +25,14 @@ public class ApplicationReq implements Serializable {
     @Data
     public class ApplicationData {
 
-        private Integer application_id;
+        private Integer applicationId;
         private String applicationLink;
         private String applicationResumeCV;
         private String applicationTranscript;
         private String applicationPosition;
         private String applicationSalaryRange;
-        private Date applicationStartDT;
-        private Date applicationSubmitDT;
+//        private Date applicationStartDT;
+//        private Date applicationSubmitDT;
         private String applicationStatus;
         private String canTitleNameTH;
         private String canFirstNameTH;
@@ -46,13 +46,13 @@ public class ApplicationReq implements Serializable {
         private float canSight;
         private float canWeight;
         private float canHeight;
-        private Date canDtOfBirth;
+//        private Date canDtOfBirth;
         private Integer canAge;
         private String canNational;
         private String canEthincity;
         private String canCardId;
         private String canPlaceOfIssue;
-        private Date canDTOfIssue;
+//        private Date canDTOfIssue;
         private String canMarrieageStatus;
         private String famFatherFirstName;
         private String famFatherLastName;
@@ -88,14 +88,14 @@ public class ApplicationReq implements Serializable {
         private String currentEDUSemester;
         private String currentExpected;
         private String testName;
-        private Date testDT;
-        private Date testStartTime;
-        private Date testEndTime;
+//        private Date testDT;
+//        private Date testStartTime;
+//        private Date testEndTime;
         private Integer testScore;
         private Integer testTotalScore;
-        private Date applicationCreateDT;
+//        private Date applicationCreateDT;
         private String applicationCreateBy;
-        private Date applicationUpdateDT;
+//        private Date applicationUpdateDT;
         private String applicationUpdateBy;
         private String applicationDeleteFlag;
 
