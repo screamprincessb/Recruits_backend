@@ -31,6 +31,6 @@ public class InterviewAppointmentReq {
         private String interAppCreateby;
 //        private Date interAppUpdateDT;
         private String interAppUpdateby;
-        private String interAppDeleteFlag;
+        private String interAppDelete;
     }
 }

@@ -59,8 +59,8 @@ public class InterviewAppointmentEntity implements Serializable{
     @Column(name = "INTER_APP_UPDATE_BY")
     private String interAppUpdateby;
     
-    @Column(name = "INTER_APP_DELETE_FLAG")
-    private String interAppDeleteFlag;
+    @Column(name = "INTER_APP_DELETE")
+    private String interAppDelete;
     
     @Column (name = "INTERVIEW_ID")
     private Integer interviewId;
