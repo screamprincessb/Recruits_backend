@@ -83,7 +83,10 @@ public class PreTestController extends BaseRestController {
             PreTestEntity val = new PreTestEntity();
             val.setPreTestId(req.getData().getPreTestId());
             val.setPreTestQuestion(req.getData().getPreTestQuestion());
-            val.setPreTestChoice(req.getData().getPreTestChoice());
+            val.setPreTestChoice1(req.getData().getPreTestChoice1());
+            val.setPreTestChoice2(req.getData().getPreTestChoice2());
+            val.setPreTestChoice3(req.getData().getPreTestChoice3());
+            val.setPreTestChoice4(req.getData().getPreTestChoice4());            
             val.setPreTestCorrect(req.getData().getPreTestCorrect());
             val.setPreTestCreateDT(new Date());
             val.setPreTestCreateBy(req.getData().getPreTestCreateBy());
