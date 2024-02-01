@@ -42,6 +42,8 @@ public class TrainingEntity implements Serializable{
     
     @Column(name = "TRAINING_TIME")
     private String trainingTime;
-    
+
+    @Column(name = "APPLICATION_ID")
+    private Integer applicationId;    
    
 }

@@ -39,4 +39,7 @@ public class LanguagesEntity implements Serializable {
     @Column(name = "LANGUAGES_TYPEWRITER")
     private String languagesTypewriter;
     
+    @Column(name = "ABILLITIES_ID")
+    private Integer abillitiesId;
+    
 }

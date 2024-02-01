@@ -18,19 +18,22 @@ import lombok.Data;
 @Data
 @Entity
 @Table(name = "DATA_OTHER")
-public class DataOtherEntity implements Serializable{
-    
+public class DataOtherEntity implements Serializable {
+
     @Id
     @Column(name = "DO_ID")
     private Integer doId;
-    
+
     @Column(name = "DO_QUESTION")
     private String doQuestion;
-    
+
     @Column(name = "DO_ANS")
     private String doANS;
-    
+
     @Column(name = "DO_OTHER_ANS")
     private String doOtherANS;
-    
+
+    @Column(name = "APPLICATION_ID")
+    private Integer applicationId;
+
 }

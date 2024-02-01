@@ -12,6 +12,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.Data;
+
 /**
  *
  * @author SenseInfoTech
@@ -19,15 +20,18 @@ import lombok.Data;
 @Data
 @Entity
 @Table(name = "INTERVIEWER")
-public class InterviewerEntity implements Serializable{
-    
+public class InterviewerEntity implements Serializable {
+
     @Id
     @Column(name = "INTERVIEWER_ID")
     private Integer interviewerId;
-    
+
     @Column(name = "INTERVIEWER_STATUS")
-     private String interviewerStatus;
-    
+    private String interviewerStatus;
+
+    @Column(name = "HR_ID")
+    private Integer hrId;
+
 //    @ManyToOne
 //    @JoinColumn(name = "HR_ID", referencedColumnName = "HR_ID")
 //    private HREntity hr;

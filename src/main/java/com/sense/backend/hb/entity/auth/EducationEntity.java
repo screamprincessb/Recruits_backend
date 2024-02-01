@@ -21,32 +21,35 @@ import lombok.Data;
 @Data
 @Entity
 @Table(name = "EDUCATION")
-public class EducationEntity implements Serializable{
-    
+public class EducationEntity implements Serializable {
+
     @Id
     @Column(name = "EDUCATION_ID")
     private Integer educationId;
-    
+
     @Column(name = "EDUCATION_LEVEL")
     private String educationLevel;
-    
+
     @Column(name = "EDUCATION_NAME")
     private String educationName;
-    
+
     @Column(name = "EDUCATION_QUALIFICATION")
     private String educationQualification;
-    
+
     @Column(name = "EDUCATION_MAJOR")
     private String educationMajor;
-    
+
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "EDUCATION_START_DATE")
     private Date educationStartDT;
-    
+
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "EDUCATION_END_DATE")
     private Date educationEndDT;
-    
+
     @Column(name = "EDUCATION_GPA")
     private float educationGPA;
+
+    @Column(name = "APPLICATION_ID")
+    private Integer applicationId;
 }

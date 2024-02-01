@@ -35,7 +35,7 @@ public class WorkExperienceEntity implements Serializable{
     @Column(name = "WE_END_DATE")
     private Date weEndDT;
     
-    @Column(name = "WE_BUSINES_TYPE")
+    @Column(name = "WE_BUSINESS_TYPE")
     private String weBusinessType;
     
     @Column(name = "WE_NAME")

@@ -39,5 +39,7 @@ public class ReferencePersonEntity implements Serializable{
     @Column(name = "REF_PHONE")
     private String refPhone;
     
+    @Column(name = "WORK_EXPERIENCE_ID")
+    private Integer workExperienceId;    
     
 }

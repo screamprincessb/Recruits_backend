@@ -21,28 +21,33 @@ import lombok.Data;
 @Data
 @Entity
 @Table(name = "INTERVIEW")
-public class InterviewEntity implements Serializable{
-    
+public class InterviewEntity implements Serializable {
+
     @Id
     @Column(name = "INTERVIEW_ID")
     private Integer interviewId;
-    
-    @Temporal(TemporalType.TIMESTAMP)    
+
+    @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "INTERVIEW_DATE")
     private Date interviewDT;
-    
-    
+
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "INTERVIEW_TIME")
     private Date interviewTime;
-    
+
     @Column(name = "INTERVIEW_RESULT")
     private String interviewResult;
-    
+
     @Column(name = "INTERVIEW_NOTE")
     private String interviewNote;
-    
+
     @Column(name = "INTERVIEW_STATUS")
     private String interviewStatus;
-    
+
+    @Column(name = "APPLICATION_ID")
+    private Integer applicationId;
+
+    @Column(name = "INTERVIEWER_ID")
+    private Integer interviewerId;
+
 }

@@ -18,31 +18,34 @@ import lombok.Data;
 @Data
 @Entity
 @Table(name = "SIBLING")
-public class SiblingEntity implements Serializable{
-    
+public class SiblingEntity implements Serializable {
+
     @Id
     @Column(name = "SIBLING_ID")
     private Integer siblingId;
-    
+
     @Column(name = "SIBLING_NUMBER")
     private Integer siblingNumber;
-    
+
     @Column(name = "SIBLING_YOU_ARE")
     private Integer siblingYouAre;
-    
+
     @Column(name = "SIBLING_FIRST_NAME")
     private String siblingFirstName;
-    
+
     @Column(name = "SIBLING_LAST_NAME")
-    private String siblingLastName;    
-    
+    private String siblingLastName;
+
     @Column(name = "SIBLING_AGE")
     private Integer siblingAge;
-    
+
     @Column(name = "SIBLING_OCCUPATION")
     private String siblingOccupation;
-    
+
     @Column(name = "SIBLING_WORK_LOCATION")
     private String siblingWorkLocation;
     
+    @Column(name = "APPLICATION_ID")
+    private Integer applicationId;
+
 }

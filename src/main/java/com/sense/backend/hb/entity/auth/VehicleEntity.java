@@ -18,25 +18,25 @@ import lombok.Data;
 @Data
 @Entity
 @Table(name = "VEHICLE")
-public class VehicleEntity implements Serializable{
-    
+public class VehicleEntity implements Serializable {
+
     @Id
     @Column(name = "VEHICLE_ID")
     private Integer vehicleId;
-    
+
     @Column(name = "VEHICLE_TYPE")
     private String vehicleType;
-    
+
     @Column(name = "VEHICLE_DRIVE")
     private String vehicleDrive;
-    
+
     @Column(name = "VEHICLE_OWN")
     private String vehicleOwn;
-    
+
     @Column(name = "VEHICLE_NO")
     private String vehicleNo;
-    
-    
-    
-    
+
+    @Column(name = "ABILLITIES_ID")
+    private Integer abillitiesId;
+
 }
