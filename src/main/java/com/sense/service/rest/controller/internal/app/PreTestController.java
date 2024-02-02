@@ -82,6 +82,7 @@ public class PreTestController extends BaseRestController {
             PreTestService service = HBHelper.instance().service(PreTestService.class);
             PreTestEntity val = new PreTestEntity();
             val.setPreTestId(req.getData().getPreTestId());
+            val.setPreTestNumber(req.getData().getPreTestNumber());
             val.setPreTestQuestion(req.getData().getPreTestQuestion());
             val.setPreTestChoice1(req.getData().getPreTestChoice1());
             val.setPreTestChoice2(req.getData().getPreTestChoice2());

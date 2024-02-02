@@ -23,6 +23,7 @@ public class PreTestReq implements Serializable {
     public class PreTestData {
 
         private Integer preTestId;
+        private Integer preTestNumber;
         private String preTestQuestion;
         private String preTestChoice1;
         private String preTestChoice2;
