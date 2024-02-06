@@ -46,7 +46,7 @@ public class ApplicationEntity implements Serializable{
     @Column(name = "APPLICATION_START_DATE")
     private Date applicationStartDT;
     
-    @Temporal(TemporalType.TIMESTAMP)
+    @Temporal(TemporalType.DATE)
     @Column(name = "APPLICATION_SUBMIT_DATE")
     private Date applicationSubmitDT;
     
