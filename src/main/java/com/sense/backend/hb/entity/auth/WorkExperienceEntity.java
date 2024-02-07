@@ -44,8 +44,8 @@ public class WorkExperienceEntity implements Serializable{
     @Column(name = "WE_POSITION")
     private String wePosition;
     
-    @Column(name = "WE_MAJOR")
-    private String weMajor;
+    @Column(name = "WE_OTHER_BENEFIT")
+    private String weOtherBenefit;
     
     @Column(name = "WE_SALARY")
     private float weSalary;

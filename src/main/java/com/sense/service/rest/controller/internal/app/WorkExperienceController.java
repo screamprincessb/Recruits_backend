@@ -86,7 +86,7 @@ public class WorkExperienceController extends BaseRestController {
             val.setWeBusinessType(req.getData().getWeBusinessType());
             val.setWeName(req.getData().getWeName());
             val.setWePosition(req.getData().getWePosition());
-            val.setWeMajor(req.getData().getWeMajor());
+            val.setWeOtherBenefit(req.getData().getWeOtherBenefit());
             val.setWeSalary(req.getData().getWeSalary());
             val.setWeAddressPhone(req.getData().getWeAddressPhone());
             val.setWeDescription(req.getData().getWeDescription());

@@ -28,7 +28,7 @@ public class WorkExperienceReq implements Serializable {
         private String weBusinessType;
         private String weName;
         private String wePosition;
-        private String weMajor;
+        private String weOtherBenefit;
         private float weSalary;
         private String weAddressPhone;
         private String weDescription;
