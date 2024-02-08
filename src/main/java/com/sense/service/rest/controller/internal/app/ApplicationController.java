@@ -82,10 +82,8 @@ public class ApplicationController extends BaseRestController {
             ApplicationService service = HBHelper.instance().service(ApplicationService.class);
             ApplicationEntity val = new ApplicationEntity();
             val.setApplicationId(req.getData().getApplicationId());
-            val.setApplicationLink(req.getData().getApplicationLink());
             val.setApplicationResumeCV(req.getData().getApplicationResumeCV());
             val.setApplicationTranscript(req.getData().getApplicationTranscript());
-            val.setApplicationPosition(req.getData().getApplicationPosition());
             val.setApplicationSalaryRange(req.getData().getApplicationSalaryRange());
             val.setApplicationStartDT(new Date());
             val.setApplicationSubmitDT(new Date());

@@ -27,17 +27,11 @@ public class ApplicationEntity implements Serializable{
     @Column(name = "APPLICATION_ID")
     private Integer applicationId;
     
-    @Column(name = "APPLICATION_LINK")
-    private String applicationLink;
-    
     @Column(name = "APPLICATION_RESUME_CV")
     private String applicationResumeCV;
     
     @Column(name = "APPLICATION_TRANSCRIPT")
     private String applicationTranscript;
-    
-    @Column(name = "APPLICATION_POSITION")
-    private String applicationPosition;
     
     @Column(name = "APPLICATION_SALARY_RANGE")
     private String applicationSalaryRange;
