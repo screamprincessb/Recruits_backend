@@ -27,7 +27,7 @@ public class InterviewAppointmentEntity implements Serializable{
     @Column(name = "INTER_APP_ID")
     private Integer interAppId;
     
-    @Temporal(TemporalType.TIMESTAMP)    
+    @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "INTER_APP_DATE")
     private Date inteAppDT;
     
@@ -44,9 +44,6 @@ public class InterviewAppointmentEntity implements Serializable{
     
     @Column(name = "INTER_APP_STATUS")
     private String interAppStatus;
-    
-    @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "INTER_APP_CREATE_DATE")
     private Date interAppCreateDT;
     
     @Column(name = "INTER_APP_CREATE_BY")
