@@ -4,8 +4,8 @@
  */
 package com.sense.backend.hb.service;
 
-import com.sense.backend.hb.dao.auth.PositionDAO;
-import com.sense.backend.hb.entity.auth.PositionEntity;
+import com.sense.backend.hb.dao.auth.PositionLinkFormDAO;
+import com.sense.backend.hb.entity.auth.PositionLinkFormEntity;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,32 +16,32 @@ import org.springframework.transaction.annotation.Transactional;
  * @author SenseInfoTech
  */
 @Service
-public class PositionService {
+public class PositionLinkFormService {
         @Autowired
-    private PositionDAO dao;
+    private PositionLinkFormDAO dao;
     
     @Transactional
-    public List<PositionEntity> findAll() {
+    public List<PositionLinkFormEntity> findAll() {
         return dao.findAll();
     }
     
         @Transactional
-    public List<PositionEntity> findBySQL(String sql) {
+    public List<PositionLinkFormEntity> findBySQL(String sql) {
         return dao.findBySQL(sql);
     }
 
     @Transactional
-    public PositionEntity findById(int id) {
+    public PositionLinkFormEntity findById(int id) {
         return dao.findById(id);
     }
     
     @Transactional
-    public void saveOrUpdate(PositionEntity entity) {
+    public void saveOrUpdate(PositionLinkFormEntity entity) {
         dao.saveOrUpdate(entity);
     }
             
     @Transactional
-    public void delete(PositionEntity entity) {
+    public void delete(PositionLinkFormEntity entity) {
         dao.delete(entity);
     }
 }

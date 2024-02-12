@@ -4,7 +4,7 @@
  */
 package com.sense.service.rest.bean.internal.app;
 
-import com.sense.backend.hb.entity.auth.PositionEntity;
+import com.sense.backend.hb.entity.auth.PositionLinkFormEntity;
 import com.sense.service.base.BaseResp;
 import java.io.Serializable;
 import java.util.List;
@@ -17,11 +17,11 @@ import lombok.ToString;
  */
 @ToString
 @Data
-public class PositionReq implements Serializable {
-    private PositionData data;
+public class PositionLinkFormReq implements Serializable {
+    private PositionLinkFormData data;
     
     @Data
-    public class PositionData {
+    public class PositionLinkFormData {
         private Integer positionId;
         private String positionName;
         private String positionLink;

@@ -17,8 +17,8 @@ import lombok.Data;
  */
 @Data
 @Entity
-@Table(name = "POSITION")
-public class PositionEntity implements Serializable {
+@Table(name = "POSITION_LINK_FORM")
+public class PositionLinkFormEntity implements Serializable {
     
     @Id
     @Column(name = "POSITION_ID")

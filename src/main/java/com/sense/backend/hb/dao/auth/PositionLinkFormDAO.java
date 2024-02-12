@@ -6,7 +6,7 @@ package com.sense.backend.hb.dao.auth;
 
 import com.sense.backend.hb.dao.BaseDAO;
 import com.sense.backend.hb.entity.auth.HREntity;
-import com.sense.backend.hb.entity.auth.PositionEntity;
+import com.sense.backend.hb.entity.auth.PositionLinkFormEntity;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -14,9 +14,9 @@ import org.springframework.stereotype.Repository;
  * @author SenseInfoTech
  */
 @Repository
-public class PositionDAO extends BaseDAO<PositionEntity, Integer> {
+public class PositionLinkFormDAO extends BaseDAO<PositionLinkFormEntity, Integer> {
     
-        public PositionDAO(){
-        super(PositionEntity.class);
+        public PositionLinkFormDAO(){
+        super(PositionLinkFormEntity.class);
     }
 }

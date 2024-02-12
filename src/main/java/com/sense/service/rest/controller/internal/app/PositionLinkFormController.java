@@ -5,13 +5,13 @@
 package com.sense.service.rest.controller.internal.app;
 
 import com.sense.backend.common.helper.HBHelper;
-import com.sense.backend.hb.entity.auth.PositionEntity;
-import com.sense.backend.hb.service.PositionService;
+import com.sense.backend.hb.entity.auth.PositionLinkFormEntity;
+import com.sense.backend.hb.service.PositionLinkFormService;
 import com.sense.service.base.BaseRestController;
 import com.sense.service.conts.ApiFilterConst;
 import com.sense.service.custom.filter.ApiAttrBean;
 import com.sense.service.rest.bean.internal.app.HRReq;
-import com.sense.service.rest.bean.internal.app.PositionReq;
+import com.sense.service.rest.bean.internal.app.PositionLinkFormReq;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -31,55 +31,55 @@ import org.springframework.web.bind.annotation.RestController;
  *
  * @author SenseInfoTech
  */
-@Tag(name = "Position")
+@Tag(name = "PositionLinkForm")
 @CrossOrigin(origins = "*")
-@RequestMapping(value = "/rest/internal/app/Recruits_POSITION")
+@RequestMapping(value = "/rest/internal/app/Recruits_Position_Link_Form")
 @RestController
-public class PositionController extends BaseRestController {
+public class PositionLinkFormController extends BaseRestController {
 
     @PostConstruct
     public void init() {
 
     }
 
-    @Operation(summary = "Position")
+    @Operation(summary = "PositionLinkForm")
     @RequestMapping(value = "findAll", method = RequestMethod.GET)
 
-    public List<PositionEntity> findAll(
+    public List<PositionLinkFormEntity> findAll(
             @Parameter(hidden = true)
             @ModelAttribute(ApiFilterConst.ATTR_DATA_NAME) ApiAttrBean attrData,
             @RequestHeader(defaultValue = ApiFilterConst.DEFAULT_VALUE_TOKEN_KEY) String token) {
 
-        PositionService positionservice = HBHelper.instance().service(PositionService.class);
-        List<PositionEntity> result = positionservice.findAll();
+        PositionLinkFormService positionservice = HBHelper.instance().service(PositionLinkFormService.class);
+        List<PositionLinkFormEntity> result = positionservice.findAll();
 
         return result;
     }
 
-    @Operation(summary = "Position")
+    @Operation(summary = "PositionLinkForm")
     @RequestMapping(value = "findById", method = RequestMethod.GET)
-    public PositionEntity findById(
+    public PositionLinkFormEntity findById(
             @ModelAttribute(ApiFilterConst.ATTR_DATA_NAME) ApiAttrBean attrData,
             @RequestHeader(defaultValue = ApiFilterConst.DEFAULT_VALUE_TOKEN_KEY) String token,
             @RequestParam("positionId") Integer positionId) {
 
-        PositionService service = HBHelper.instance().service(PositionService.class);
-        PositionEntity en = service.findById(positionId);
+        PositionLinkFormService service = HBHelper.instance().service(PositionLinkFormService.class);
+        PositionLinkFormEntity en = service.findById(positionId);
         return en;
     }
 
-    @Operation(summary = "Position")
+    @Operation(summary = "PositionLinkForm")
     @RequestMapping(value = "saveOrUpdate", method = RequestMethod.PUT)
 
     public String saveOrUpdate(
             @Parameter(hidden = true)
             @ModelAttribute(ApiFilterConst.ATTR_DATA_NAME) ApiAttrBean attrData,
             @RequestHeader(defaultValue = ApiFilterConst.DEFAULT_VALUE_TOKEN_KEY) String token,
-            @RequestBody PositionReq req) {
+            @RequestBody PositionLinkFormReq req) {
         String status = "";
         try {
-            PositionService service = HBHelper.instance().service(PositionService.class);
-            PositionEntity val = new PositionEntity();
+            PositionLinkFormService service = HBHelper.instance().service(PositionLinkFormService.class);
+            PositionLinkFormEntity val = new PositionLinkFormEntity();
             val.setPositionId(req.getData().getPositionId());
             val.setPositionName(req.getData().getPositionName());
             val.setPositionLink(req.getData().getPositionLink());
@@ -92,15 +92,15 @@ public class PositionController extends BaseRestController {
         return status;
     }
 
-    @Operation(summary = "Position")
+    @Operation(summary = "PositionLinkForm")
     @RequestMapping(value = "delete", method = RequestMethod.DELETE)
     public void delete(
             @ModelAttribute(ApiFilterConst.ATTR_DATA_NAME) ApiAttrBean attrData,
             @RequestHeader(defaultValue = ApiFilterConst.DEFAULT_VALUE_TOKEN_KEY) String token,
             Integer id) {
 
-        PositionService service = HBHelper.instance().service(PositionService.class);
-        PositionEntity result = new PositionEntity();
+        PositionLinkFormService service = HBHelper.instance().service(PositionLinkFormService.class);
+        PositionLinkFormEntity result = new PositionLinkFormEntity();
         result.setPositionId(id);
         service.delete(result);
 
