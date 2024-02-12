@@ -245,4 +245,7 @@ public class ApplicationEntity implements Serializable{
     
     @Column(name = "APPLICATION_DELETE_FLAG")
     private String applicationDeleteFlag;
+    
+    @Column (name = "POSITION_ID")
+    private Integer positionId;
 }
