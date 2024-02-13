@@ -32,7 +32,7 @@ public class ApplicationDAO extends BaseDAO<ApplicationEntity, Integer>{
     public List<qApplicationEntity> findAllName(){
         List<qApplicationEntity> result = new ArrayList<>();
         StringBuilder sql = new StringBuilder();
-        sql.append("select application.application_id ,application.application_submit_date ,application.can_first_name_th ,application.can_last_name_th , position_link_form.position_name ,application.application_status ");
+        sql.append("select application.application_id ,position_link_form.position_id ,application.application_submit_date ,application.can_first_name_th ,application.can_last_name_th , position_link_form.position_name ,application.application_status ");
         sql.append("from application ");
         sql.append("inner join position_link_form on position_link_form.position_id = application.position_id ");
         

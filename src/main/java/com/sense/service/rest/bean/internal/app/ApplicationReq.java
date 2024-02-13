@@ -105,6 +105,8 @@ public class ApplicationReq implements Serializable {
         
         private String applicationUpdateBy;
         private String applicationDeleteFlag;
+        
+        private Integer positionId;
 
     }
 }

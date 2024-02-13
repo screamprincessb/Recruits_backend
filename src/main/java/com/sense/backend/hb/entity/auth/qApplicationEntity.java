@@ -25,6 +25,9 @@ public class qApplicationEntity {
     @Column(name = "APPLICATION_ID")
     private Integer applicationId;
     
+    @Column(name = "POSITION_ID")
+    private Integer positionId;
+    
     @Temporal(TemporalType.DATE)
     @Column(name = "APPLICATION_SUBMIT_DATE")
     private Date applicationSubmitDT;
