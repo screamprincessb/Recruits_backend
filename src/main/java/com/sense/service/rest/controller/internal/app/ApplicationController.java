@@ -6,6 +6,7 @@ package com.sense.service.rest.controller.internal.app;
 
 import com.sense.backend.common.helper.HBHelper;
 import com.sense.backend.hb.entity.auth.ApplicationEntity;
+import com.sense.backend.hb.entity.auth.qApplicationEntity;
 import com.sense.backend.hb.service.ApplicationService;
 import com.sense.service.base.BaseRestController;
 import com.sense.service.conts.ApiFilterConst;
@@ -19,6 +20,7 @@ import jakarta.annotation.PostConstruct;
 import java.util.Date;
 import java.util.List;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
@@ -181,5 +183,25 @@ public class ApplicationController extends BaseRestController {
         result.setApplicationId(id);
         service.delete(result);
 
+    }
+    
+    @Operation(summary = "Application")
+    @GetMapping("/allnames")
+    //@RequestMapping(value = "findAllName", method = RequestMethod.GET)
+
+    public List<qApplicationEntity> findAllName(
+            @Parameter(hidden = true)
+            @ModelAttribute(ApiFilterConst.ATTR_DATA_NAME) ApiAttrBean attrData,
+            @RequestHeader(defaultValue = ApiFilterConst.DEFAULT_VALUE_TOKEN_KEY) String token) {
+        ApplicationService applicationservice = HBHelper.instance().service(ApplicationService.class);
+        try{
+            List<qApplicationEntity> result = applicationservice.findAllName();
+            return result;
+        } catch (Exception e){
+            System.out.println(e);
+        }
+        
+
+        return null;
     }
 }
