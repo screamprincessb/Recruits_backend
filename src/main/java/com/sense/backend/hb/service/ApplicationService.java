@@ -9,6 +9,7 @@ import com.sense.backend.hb.dao.auth.DataOtherDAO;
 import com.sense.backend.hb.entity.auth.ApplicationEntity;
 import com.sense.backend.hb.entity.auth.DataOtherEntity;
 import com.sense.backend.hb.entity.auth.qApplicationEntity;
+import com.sense.backend.hb.entity.auth.qDataApplicationAllEntity;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -51,5 +52,10 @@ public class ApplicationService {
     @Transactional
     public List<qApplicationEntity> findAllName() {
         return dao.findAllName();
+    }
+    
+    @Transactional
+    public List<qDataApplicationAllEntity> findAllNameById(int id) {
+        return dao.findAllNameById(id);
     }
 }

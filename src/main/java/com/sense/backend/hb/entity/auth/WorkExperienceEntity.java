@@ -59,5 +59,6 @@ public class WorkExperienceEntity implements Serializable{
     @Column(name = "WE_REASON_LEAVING")
     private String weReasonLeaving;
     
-    
+    @Column(name = "APPLICATION_ID")
+    private Integer applicationId;
 }

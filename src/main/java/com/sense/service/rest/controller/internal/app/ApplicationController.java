@@ -7,6 +7,7 @@ package com.sense.service.rest.controller.internal.app;
 import com.sense.backend.common.helper.HBHelper;
 import com.sense.backend.hb.entity.auth.ApplicationEntity;
 import com.sense.backend.hb.entity.auth.qApplicationEntity;
+import com.sense.backend.hb.entity.auth.qDataApplicationAllEntity;
 import com.sense.backend.hb.service.ApplicationService;
 import com.sense.service.base.BaseRestController;
 import com.sense.service.conts.ApiFilterConst;
@@ -205,5 +206,16 @@ public class ApplicationController extends BaseRestController {
         
 
         return null;
+    }
+    
+    @Operation(summary = "Application")
+    @RequestMapping(value = "findAllNameById", method = RequestMethod.GET)
+    public List<qDataApplicationAllEntity> findAllNameById(
+            @ModelAttribute(ApiFilterConst.ATTR_DATA_NAME) ApiAttrBean attrData,
+            @RequestHeader(defaultValue = ApiFilterConst.DEFAULT_VALUE_TOKEN_KEY) String token,
+            @RequestParam("applicationId") Integer applicationId){
+        ApplicationService service = HBHelper.instance().service(ApplicationService.class);
+        List<qDataApplicationAllEntity> result = service.findAllNameById(applicationId);
+        return result;
     }
 }
