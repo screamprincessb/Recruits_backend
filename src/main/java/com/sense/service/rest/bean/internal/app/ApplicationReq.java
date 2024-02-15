@@ -38,11 +38,11 @@ public class ApplicationReq implements Serializable {
         
         private String canFirstNameTH;
         private String canLastNameTH;
-        private String canNickameTH;
+        private String canNicknameTH;
         private String canTitleNameENG;
         private String canFirstNameENG;
         private String canLastNameENG;
-        private String canNickameENG;
+        private String canNicknameENG;
         private String canPhoto;
         private String canSight;
         private float canWeight;
