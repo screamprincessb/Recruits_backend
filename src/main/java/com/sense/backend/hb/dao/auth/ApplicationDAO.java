@@ -9,6 +9,7 @@ import com.sense.backend.hb.entity.auth.ApplicationEntity;
 import com.sense.backend.hb.entity.auth.qApplicationEntity;
 import com.sense.backend.hb.entity.auth.qDataAbillitiesEntityToJoin;
 import com.sense.backend.hb.entity.auth.qInterviewAppointmentEntityToJoin;
+import com.sense.backend.hb.entity.auth.qWorkExperienceEntityToJoin;
 import jakarta.persistence.Query;
 import java.util.ArrayList;
 import java.util.List;
@@ -52,6 +53,19 @@ public class ApplicationDAO extends BaseDAO<ApplicationEntity, Integer>{
         sql.append("inner join languages on abillities.abillities_id  = languages.abillities_id ");
         sql.append("where application_id  = :id");
         Query query = sessionFactory.getCurrentSession().createNativeQuery(sql.toString(), qDataAbillitiesEntityToJoin.class);
+        query.setParameter("id", id);
+        result = query.getResultList();
+        return result;
+    }
+    
+        public List<qWorkExperienceEntityToJoin> findWorkExperienceByid(Integer id){
+        List<qWorkExperienceEntityToJoin> result = new ArrayList<>();
+        StringBuilder sql = new StringBuilder();
+        sql.append("select work_experience.*, reference_person.ref_first_name, reference_person.ref_last_name, reference_person.ref_job_position ,reference_person.ref_work_location ,reference_person.ref_phone ");
+        sql.append("from work_experience ");
+        sql.append("inner join reference_person on work_experience.work_experience_id = reference_person.work_experience_id ");
+        sql.append("where application_id  = :id");
+        Query query = sessionFactory.getCurrentSession().createNativeQuery(sql.toString(), qWorkExperienceEntityToJoin.class);
         query.setParameter("id", id);
         result = query.getResultList();
         return result;

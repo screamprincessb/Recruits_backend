@@ -10,6 +10,7 @@ import com.sense.backend.hb.entity.auth.ApplicationEntity;
 import com.sense.backend.hb.entity.auth.DataOtherEntity;
 import com.sense.backend.hb.entity.auth.qApplicationEntity;
 import com.sense.backend.hb.entity.auth.qDataAbillitiesEntityToJoin;
+import com.sense.backend.hb.entity.auth.qWorkExperienceEntityToJoin;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -58,5 +59,10 @@ public class ApplicationService {
     @Transactional
     public List<qDataAbillitiesEntityToJoin> findAbillitiesById(int id) {
         return dao.findAbillitiesByid(id);
+    }
+
+    @Transactional
+    public List<qWorkExperienceEntityToJoin> findWorkExperienceByid(int id) {
+        return dao.findWorkExperienceByid(id);
     }
 }
