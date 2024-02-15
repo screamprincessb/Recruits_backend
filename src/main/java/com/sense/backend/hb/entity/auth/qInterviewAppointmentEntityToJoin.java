@@ -20,7 +20,7 @@ import lombok.Data;
 @Data
 @Entity
 @Table(name = "Q_INTERVIEW_APPOINTMENT")
-public class qInterviewAppointmentEntity {
+public class qInterviewAppointmentEntityToJoin {
     @Id
     @Column(name = "INTER_APP_ID")
     private Integer interAppId;

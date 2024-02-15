@@ -9,7 +9,7 @@ import com.sense.backend.hb.dao.auth.DataOtherDAO;
 import com.sense.backend.hb.entity.auth.ApplicationEntity;
 import com.sense.backend.hb.entity.auth.DataOtherEntity;
 import com.sense.backend.hb.entity.auth.qApplicationEntity;
-import com.sense.backend.hb.entity.auth.qDataApplicationAllEntity;
+import com.sense.backend.hb.entity.auth.qDataAbillitiesEntityToJoin;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,6 +21,7 @@ import org.springframework.transaction.annotation.Transactional;
  */
 @Service
 public class ApplicationService {
+
     @Autowired
     private ApplicationDAO dao;
 
@@ -48,14 +49,14 @@ public class ApplicationService {
     public void delete(ApplicationEntity entity) {
         dao.delete(entity);
     }
-    
+
     @Transactional
     public List<qApplicationEntity> findAllName() {
         return dao.findAllName();
     }
-    
+
     @Transactional
-    public List<qDataApplicationAllEntity> findAllNameById(int id) {
-        return dao.findAllNameById(id);
+    public List<qDataAbillitiesEntityToJoin> findAbillitiesById(int id) {
+        return dao.findAbillitiesByid(id);
     }
 }

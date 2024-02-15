@@ -44,7 +44,7 @@ public class ApplicationReq implements Serializable {
         private String canLastNameENG;
         private String canNickameENG;
         private String canPhoto;
-        private float canSight;
+        private String canSight;
         private float canWeight;
         
         private float canHeight;

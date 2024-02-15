@@ -75,7 +75,7 @@ public class ApplicationEntity implements Serializable{
     private String canPhoto;
     
     @Column(name = "CAN_SIGHT")
-    private float canSight;
+    private String canSight;
     
     @Column(name = "CAN_WEIGHT")
     private float canWeight;

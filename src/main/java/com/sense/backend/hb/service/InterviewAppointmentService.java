@@ -6,7 +6,7 @@ package com.sense.backend.hb.service;
 
 import com.sense.backend.hb.dao.auth.InterviewAppointmentDAO;
 import com.sense.backend.hb.entity.auth.InterviewAppointmentEntity;
-import com.sense.backend.hb.entity.auth.qInterviewAppointmentEntity;
+import com.sense.backend.hb.entity.auth.qInterviewAppointmentEntityToJoin;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -49,7 +49,7 @@ public class InterviewAppointmentService {
     }
     
     @Transactional
-    public List<qInterviewAppointmentEntity> findAllName(){
+    public List<qInterviewAppointmentEntityToJoin> findAllName(){
         return dao.findAllName();
     }
 }

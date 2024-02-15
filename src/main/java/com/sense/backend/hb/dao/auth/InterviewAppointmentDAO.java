@@ -6,7 +6,7 @@ package com.sense.backend.hb.dao.auth;
 
 import com.sense.backend.hb.dao.BaseDAO;
 import com.sense.backend.hb.entity.auth.InterviewAppointmentEntity;
-import com.sense.backend.hb.entity.auth.qInterviewAppointmentEntity;
+import com.sense.backend.hb.entity.auth.qInterviewAppointmentEntityToJoin;
 import jakarta.persistence.Query;
 import java.util.ArrayList;
 import java.util.List;
@@ -28,8 +28,8 @@ public class InterviewAppointmentDAO extends BaseDAO<InterviewAppointmentEntity,
         super(InterviewAppointmentEntity.class);
     }
     
-    public List<qInterviewAppointmentEntity> findAllName(){
-        List<qInterviewAppointmentEntity> result = new ArrayList<>();
+    public List<qInterviewAppointmentEntityToJoin> findAllName(){
+        List<qInterviewAppointmentEntityToJoin> result = new ArrayList<>();
         StringBuilder sql = new StringBuilder();
         sql.append("select interview_appointment.inter_app_id, application.can_first_name_th, application.can_last_name_th, position_link_form.position_name, hr.hr_first_name , hr.hr_last_name, interview_appointment.inter_app_date, interview_appointment.inter_app_time, interview_appointment.inter_app_time_to, interview_appointment.inter_app_status, interview_appointment.inter_app_location ");
         sql.append("from interview_appointment ");
@@ -39,7 +39,7 @@ public class InterviewAppointmentDAO extends BaseDAO<InterviewAppointmentEntity,
         sql.append("inner join interviewer on interviewer.interviewer_id = interview.interviewer_id ");
         sql.append("inner join hr on hr.hr_id = interviewer.hr_id");
         
-        Query query = sessionFactory.getCurrentSession().createNativeQuery(sql.toString(), qInterviewAppointmentEntity.class);
+        Query query = sessionFactory.getCurrentSession().createNativeQuery(sql.toString(), qInterviewAppointmentEntityToJoin.class);
         result = query.getResultList();
         return result;
     } 
