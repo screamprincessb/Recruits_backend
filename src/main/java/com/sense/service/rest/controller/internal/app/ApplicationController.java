@@ -9,8 +9,12 @@ import com.sense.backend.hb.entity.auth.ApplicationEntity;
 import com.sense.backend.hb.entity.auth.ChildEntity;
 import com.sense.backend.hb.entity.auth.ContactPersonEntity;
 import com.sense.backend.hb.entity.auth.DataOtherEntity;
+import com.sense.backend.hb.entity.auth.EducationEntity;
+import com.sense.backend.hb.entity.auth.SiblingEntity;
+import com.sense.backend.hb.entity.auth.TrainingEntity;
 import com.sense.backend.hb.entity.auth.qApplicationEntity;
 import com.sense.backend.hb.entity.auth.qDataAbillitiesEntityToJoin;
+import com.sense.backend.hb.entity.auth.qPositionNameEntityToJoin;
 import com.sense.backend.hb.entity.auth.qWorkExperienceEntityToJoin;
 import com.sense.backend.hb.service.ApplicationService;
 import com.sense.service.base.BaseRestController;
@@ -288,6 +292,74 @@ public class ApplicationController extends BaseRestController {
         ApplicationService service = HBHelper.instance().service(ApplicationService.class);
         try {
             List<DataOtherEntity> result = service.findDataOtherByid(applicationId);
+            return result;
+        } catch (Exception e) {
+            System.out.print(e);
+        }
+        return null;
+    }
+
+    @Operation(summary = "Application")
+    @RequestMapping(value = "findEducationByIdToApplication", method = RequestMethod.GET)
+    public List<EducationEntity> findEducationById(
+            @Parameter(hidden = true)
+            @ModelAttribute(ApiFilterConst.ATTR_DATA_NAME) ApiAttrBean attrData,
+            @RequestHeader(defaultValue = ApiFilterConst.DEFAULT_VALUE_TOKEN_KEY) String token,
+            @RequestParam("applicationId") Integer applicationId) {
+        ApplicationService service = HBHelper.instance().service(ApplicationService.class);
+        try {
+            List<EducationEntity> result = service.findEducationById(applicationId);
+            return result;
+        } catch (Exception e) {
+            System.out.print(e);
+        }
+        return null;
+    }
+
+    @Operation(summary = "Application")
+    @RequestMapping(value = "findPositionNameByIdToApplication", method = RequestMethod.GET)
+    public List<qPositionNameEntityToJoin> findPositionNameById(
+            @Parameter(hidden = true)
+            @ModelAttribute(ApiFilterConst.ATTR_DATA_NAME) ApiAttrBean attrData,
+            @RequestHeader(defaultValue = ApiFilterConst.DEFAULT_VALUE_TOKEN_KEY) String token,
+            @RequestParam("applicationId") Integer applicationId) {
+        ApplicationService service = HBHelper.instance().service(ApplicationService.class);
+        try {
+            List<qPositionNameEntityToJoin> result = service.findPositionNameById(applicationId);
+            return result;
+        } catch (Exception e) {
+            System.out.print(e);
+        }
+        return null;
+    }
+
+    @Operation(summary = "Application")
+    @RequestMapping(value = "findSiblingByIdToApplication", method = RequestMethod.GET)
+    public List<SiblingEntity> findSiblingById(
+            @Parameter(hidden = true)
+            @ModelAttribute(ApiFilterConst.ATTR_DATA_NAME) ApiAttrBean attrData,
+            @RequestHeader(defaultValue = ApiFilterConst.DEFAULT_VALUE_TOKEN_KEY) String token,
+            @RequestParam("applicationId") Integer applicationId) {
+        ApplicationService service = HBHelper.instance().service(ApplicationService.class);
+        try {
+            List<SiblingEntity> result = service.findSiblingById(applicationId);
+            return result;
+        } catch (Exception e) {
+            System.out.print(e);
+        }
+        return null;
+    }
+
+    @Operation(summary = "Application")
+    @RequestMapping(value = "findTrainingByIdToApplication", method = RequestMethod.GET)
+    public List<TrainingEntity> findTrainingById(
+            @Parameter(hidden = true)
+            @ModelAttribute(ApiFilterConst.ATTR_DATA_NAME) ApiAttrBean attrData,
+            @RequestHeader(defaultValue = ApiFilterConst.DEFAULT_VALUE_TOKEN_KEY) String token,
+            @RequestParam("applicationId") Integer applicationId) {
+        ApplicationService service = HBHelper.instance().service(ApplicationService.class);
+        try {
+            List<TrainingEntity> result = service.findTrainingById(applicationId);
             return result;
         } catch (Exception e) {
             System.out.print(e);

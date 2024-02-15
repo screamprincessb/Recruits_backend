@@ -9,8 +9,12 @@ import com.sense.backend.hb.entity.auth.ApplicationEntity;
 import com.sense.backend.hb.entity.auth.ChildEntity;
 import com.sense.backend.hb.entity.auth.ContactPersonEntity;
 import com.sense.backend.hb.entity.auth.DataOtherEntity;
+import com.sense.backend.hb.entity.auth.EducationEntity;
+import com.sense.backend.hb.entity.auth.SiblingEntity;
+import com.sense.backend.hb.entity.auth.TrainingEntity;
 import com.sense.backend.hb.entity.auth.qApplicationEntity;
 import com.sense.backend.hb.entity.auth.qDataAbillitiesEntityToJoin;
+import com.sense.backend.hb.entity.auth.qPositionNameEntityToJoin;
 import com.sense.backend.hb.entity.auth.qWorkExperienceEntityToJoin;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -80,5 +84,25 @@ public class ApplicationService {
     @Transactional
     public List<DataOtherEntity> findDataOtherByid(int id) {
         return dao.findDataOtherById(id);
+    }
+
+    @Transactional
+    public List<EducationEntity> findEducationById(int id) {
+        return dao.findEducationById(id);
+    }
+
+    @Transactional
+    public List<qPositionNameEntityToJoin> findPositionNameById(int id) {
+        return dao.findPositionNameById(id);
+    }
+
+    @Transactional
+    public List<SiblingEntity> findSiblingById(int id) {
+        return dao.findSiblingById(id);
+    }
+
+    @Transactional
+    public List<TrainingEntity> findTrainingById(int id) {
+        return dao.findTrainingById(id);
     }
 }

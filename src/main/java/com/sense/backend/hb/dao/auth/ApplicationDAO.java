@@ -9,8 +9,12 @@ import com.sense.backend.hb.entity.auth.ApplicationEntity;
 import com.sense.backend.hb.entity.auth.ChildEntity;
 import com.sense.backend.hb.entity.auth.ContactPersonEntity;
 import com.sense.backend.hb.entity.auth.DataOtherEntity;
+import com.sense.backend.hb.entity.auth.EducationEntity;
+import com.sense.backend.hb.entity.auth.SiblingEntity;
+import com.sense.backend.hb.entity.auth.TrainingEntity;
 import com.sense.backend.hb.entity.auth.qApplicationEntity;
 import com.sense.backend.hb.entity.auth.qDataAbillitiesEntityToJoin;
+import com.sense.backend.hb.entity.auth.qPositionNameEntityToJoin;
 import com.sense.backend.hb.entity.auth.qWorkExperienceEntityToJoin;
 import jakarta.persistence.Query;
 import java.util.ArrayList;
@@ -100,6 +104,52 @@ public class ApplicationDAO extends BaseDAO<ApplicationEntity, Integer> {
         sql.append("select * from data_other ");
         sql.append("where application_id  = :id");
         Query query = sessionFactory.getCurrentSession().createNativeQuery(sql.toString(), DataOtherEntity.class);
+        query.setParameter("id", id);
+        result = query.getResultList();
+        return result;
+    }
+
+    public List<EducationEntity> findEducationById(Integer id) {
+        List<EducationEntity> result = new ArrayList<>();
+        StringBuilder sql = new StringBuilder();
+        sql.append("select * from education ");
+        sql.append("where application_id  = :id");
+        Query query = sessionFactory.getCurrentSession().createNativeQuery(sql.toString(), EducationEntity.class);
+        query.setParameter("id", id);
+        result = query.getResultList();
+        return result;
+    }
+
+    public List<qPositionNameEntityToJoin> findPositionNameById(Integer id) {
+        List<qPositionNameEntityToJoin> result = new ArrayList<>();
+        StringBuilder sql = new StringBuilder();
+        sql.append("select application.application_id , position_link_form.position_name ");
+        sql.append("from application ");
+        sql.append("inner join position_link_form on position_link_form.position_id = application.position_id ");
+        sql.append("where application_id  = :id");
+        Query query = sessionFactory.getCurrentSession().createNativeQuery(sql.toString(), qPositionNameEntityToJoin.class);
+        query.setParameter("id", id);
+        result = query.getResultList();
+        return result;
+    }
+
+    public List<SiblingEntity> findSiblingById(Integer id) {
+        List<SiblingEntity> result = new ArrayList<>();
+        StringBuilder sql = new StringBuilder();
+        sql.append("select * from sibling ");
+        sql.append("where application_id  = :id");
+        Query query = sessionFactory.getCurrentSession().createNativeQuery(sql.toString(), SiblingEntity.class);
+        query.setParameter("id", id);
+        result = query.getResultList();
+        return result;
+    }
+
+    public List<TrainingEntity> findTrainingById(Integer id) {
+        List<TrainingEntity> result = new ArrayList<>();
+        StringBuilder sql = new StringBuilder();
+        sql.append("select * from training ");
+        sql.append("where application_id  = :id");
+        Query query = sessionFactory.getCurrentSession().createNativeQuery(sql.toString(), TrainingEntity.class);
         query.setParameter("id", id);
         result = query.getResultList();
         return result;
