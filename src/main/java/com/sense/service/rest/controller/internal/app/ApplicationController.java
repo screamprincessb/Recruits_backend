@@ -102,11 +102,11 @@ public class ApplicationController extends BaseRestController {
 
             val.setCanFirstNameTH(req.getData().getCanFirstNameTH());
             val.setCanLastNameTH(req.getData().getCanLastNameTH());
-            val.setCanNickameTH(req.getData().getCanNickameTH());
+            val.setCanNicknameTH(req.getData().getCanNicknameTH());
             val.setCanTitleNameENG(req.getData().getCanTitleNameENG());
             val.setCanFirstNameENG(req.getData().getCanFirstNameENG());
             val.setCanLastNameENG(req.getData().getCanLastNameENG());
-            val.setCanNickameENG(req.getData().getCanNickameENG());
+            val.setCanNicknameENG(req.getData().getCanNicknameENG());
             val.setCanPhoto(req.getData().getCanPhoto());
             val.setCanSight(req.getData().getCanSight());
             val.setCanWeight(req.getData().getCanWeight());
