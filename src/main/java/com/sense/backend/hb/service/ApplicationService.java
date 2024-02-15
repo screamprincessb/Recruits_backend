@@ -7,6 +7,7 @@ package com.sense.backend.hb.service;
 import com.sense.backend.hb.dao.auth.ApplicationDAO;
 import com.sense.backend.hb.dao.auth.DataOtherDAO;
 import com.sense.backend.hb.entity.auth.ApplicationEntity;
+import com.sense.backend.hb.entity.auth.ChildEntity;
 import com.sense.backend.hb.entity.auth.DataOtherEntity;
 import com.sense.backend.hb.entity.auth.qApplicationEntity;
 import com.sense.backend.hb.entity.auth.qDataAbillitiesEntityToJoin;
@@ -64,5 +65,10 @@ public class ApplicationService {
     @Transactional
     public List<qWorkExperienceEntityToJoin> findWorkExperienceByid(int id) {
         return dao.findWorkExperienceByid(id);
+    }
+
+    @Transactional
+    public List<ChildEntity> findChildByid(int id) {
+        return dao.findChildById(id);
     }
 }

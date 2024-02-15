@@ -6,6 +6,7 @@ package com.sense.service.rest.controller.internal.app;
 
 import com.sense.backend.common.helper.HBHelper;
 import com.sense.backend.hb.entity.auth.ApplicationEntity;
+import com.sense.backend.hb.entity.auth.ChildEntity;
 import com.sense.backend.hb.entity.auth.qApplicationEntity;
 import com.sense.backend.hb.entity.auth.qDataAbillitiesEntityToJoin;
 import com.sense.backend.hb.entity.auth.qWorkExperienceEntityToJoin;
@@ -93,7 +94,7 @@ public class ApplicationController extends BaseRestController {
             val.setApplicationSubmitDT(new Date());
             val.setApplicationStatus(req.getData().getApplicationStatus());
             val.setCanTitleNameTH(req.getData().getCanTitleNameTH());
-            
+
             val.setCanFirstNameTH(req.getData().getCanFirstNameTH());
             val.setCanLastNameTH(req.getData().getCanLastNameTH());
             val.setCanNickameTH(req.getData().getCanNickameTH());
@@ -104,7 +105,7 @@ public class ApplicationController extends BaseRestController {
             val.setCanPhoto(req.getData().getCanPhoto());
             val.setCanSight(req.getData().getCanSight());
             val.setCanWeight(req.getData().getCanWeight());
-            
+
             val.setCanHeight(req.getData().getCanHeight());
             val.setCanDtOfBirth(new Date());
             val.setCanAge(req.getData().getCanAge());
@@ -115,7 +116,7 @@ public class ApplicationController extends BaseRestController {
             val.setCanDTOfIssue(new Date());
             val.setCanMarrieageStatus(req.getData().getCanMarrieageStatus());
             val.setFamFatherFirstName(req.getData().getFamFatherFirstName());
-            
+
             val.setFamFatherLastName(req.getData().getFamFatherLastName());
             val.setFamFatherAge(req.getData().getFamFatherAge());
             val.setFamFatherOccupation(req.getData().getFamFatherOccupation());
@@ -126,7 +127,7 @@ public class ApplicationController extends BaseRestController {
             val.setFamMotherOccupation(req.getData().getFamMotherOccupation());
             val.setFamMotherWorkLocation(req.getData().getFamMotherWorkLocation());
             val.setFamSiblingAmount(req.getData().getFamSiblingAmount());
-            
+
             val.setFamSpouseFirstName(req.getData().getFamSpouseFirstName());
             val.setFamSpouseLastName(req.getData().getFamSpouseLastName());
             val.setFamSpouseAge(req.getData().getFamSpouseAge());
@@ -137,7 +138,7 @@ public class ApplicationController extends BaseRestController {
             val.setContactVillage(req.getData().getContactVillage());
             val.setContactAlley(req.getData().getContactAlley());
             val.setContactRoad(req.getData().getContactRoad());
-            
+
             val.setContactSubdistrict(req.getData().getContactSubdistrict());
             val.setContactDistrict(req.getData().getContactDistrict());
             val.setContactProvince(req.getData().getContactProvince());
@@ -148,7 +149,7 @@ public class ApplicationController extends BaseRestController {
             val.setCurrentEDULevel(req.getData().getCurrentEDULevel());
             val.setCurrentEDUName(req.getData().getCurrentEDUName());
             val.setCurrentEDUMajor(req.getData().getCurrentEDUMajor());
-            
+
             val.setCurrentEDUSemester(req.getData().getCurrentEDUSemester());
             val.setCurrentExpected(req.getData().getCurrentExpected());
             val.setTestName(req.getData().getTestName());
@@ -159,11 +160,11 @@ public class ApplicationController extends BaseRestController {
             val.setTestTotalScore(req.getData().getTestTotalScore());
             val.setApplicationCreateDT(new Date());
             val.setApplicationCreateBy(req.getData().getApplicationCreateBy());
-            
+
             val.setApplicationUpdateDT(new Date());
             val.setApplicationUpdateBy(req.getData().getApplicationUpdateBy());
             val.setApplicationDeleteFlag(req.getData().getApplicationDeleteFlag());
-            
+
             val.setPositionId(req.getData().getPositionId());
 
             service.saveOrUpdate(val);
@@ -188,7 +189,7 @@ public class ApplicationController extends BaseRestController {
         service.delete(result);
 
     }
-    
+
     @Operation(summary = "Application")
     @GetMapping("/allnames")
     //@RequestMapping(value = "findAllName", method = RequestMethod.GET)
@@ -198,46 +199,62 @@ public class ApplicationController extends BaseRestController {
             @ModelAttribute(ApiFilterConst.ATTR_DATA_NAME) ApiAttrBean attrData,
             @RequestHeader(defaultValue = ApiFilterConst.DEFAULT_VALUE_TOKEN_KEY) String token) {
         ApplicationService applicationservice = HBHelper.instance().service(ApplicationService.class);
-        try{
+        try {
             List<qApplicationEntity> result = applicationservice.findAllName();
             return result;
-        } catch (Exception e){
+        } catch (Exception e) {
             System.out.println(e);
         }
-        
 
         return null;
     }
-    
+
     @Operation(summary = "Application")
     @RequestMapping(value = "findAbillitiesByIdToApplication", method = RequestMethod.GET)
     public List<qDataAbillitiesEntityToJoin> findAbillitiesById(
             @Parameter(hidden = true)
             @ModelAttribute(ApiFilterConst.ATTR_DATA_NAME) ApiAttrBean attrData,
             @RequestHeader(defaultValue = ApiFilterConst.DEFAULT_VALUE_TOKEN_KEY) String token,
-            @RequestParam("applicationId") Integer applicationId){
+            @RequestParam("applicationId") Integer applicationId) {
         ApplicationService service = HBHelper.instance().service(ApplicationService.class);
-        try{
+        try {
             List<qDataAbillitiesEntityToJoin> result = service.findAbillitiesById(applicationId);
-        return result;
-        } catch (Exception e){
+            return result;
+        } catch (Exception e) {
             System.out.print(e);
         }
         return null;
     }
-    
-        @Operation(summary = "Application")
+
+    @Operation(summary = "Application")
     @RequestMapping(value = "findWorkExperienceByIdToApplication", method = RequestMethod.GET)
     public List<qWorkExperienceEntityToJoin> findWorkExperienceByid(
             @Parameter(hidden = true)
             @ModelAttribute(ApiFilterConst.ATTR_DATA_NAME) ApiAttrBean attrData,
             @RequestHeader(defaultValue = ApiFilterConst.DEFAULT_VALUE_TOKEN_KEY) String token,
-            @RequestParam("applicationId") Integer applicationId){
+            @RequestParam("applicationId") Integer applicationId) {
         ApplicationService service = HBHelper.instance().service(ApplicationService.class);
-        try{
+        try {
             List<qWorkExperienceEntityToJoin> result = service.findWorkExperienceByid(applicationId);
-        return result;
-        } catch (Exception e){
+            return result;
+        } catch (Exception e) {
+            System.out.print(e);
+        }
+        return null;
+    }
+
+    @Operation(summary = "Application")
+    @RequestMapping(value = "findChildByIdToApplication", method = RequestMethod.GET)
+    public List<ChildEntity> findChildByid(
+            @Parameter(hidden = true)
+            @ModelAttribute(ApiFilterConst.ATTR_DATA_NAME) ApiAttrBean attrData,
+            @RequestHeader(defaultValue = ApiFilterConst.DEFAULT_VALUE_TOKEN_KEY) String token,
+            @RequestParam("applicationId") Integer applicationId) {
+        ApplicationService service = HBHelper.instance().service(ApplicationService.class);
+        try {
+            List<ChildEntity> result = service.findChildByid(applicationId);
+            return result;
+        } catch (Exception e) {
             System.out.print(e);
         }
         return null;
