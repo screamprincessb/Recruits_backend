@@ -5,9 +5,9 @@
 package com.sense.backend.hb.service;
 
 import com.sense.backend.hb.dao.auth.ApplicationDAO;
-import com.sense.backend.hb.dao.auth.DataOtherDAO;
 import com.sense.backend.hb.entity.auth.ApplicationEntity;
 import com.sense.backend.hb.entity.auth.ChildEntity;
+import com.sense.backend.hb.entity.auth.ContactPersonEntity;
 import com.sense.backend.hb.entity.auth.DataOtherEntity;
 import com.sense.backend.hb.entity.auth.qApplicationEntity;
 import com.sense.backend.hb.entity.auth.qDataAbillitiesEntityToJoin;
@@ -70,5 +70,15 @@ public class ApplicationService {
     @Transactional
     public List<ChildEntity> findChildByid(int id) {
         return dao.findChildById(id);
+    }
+
+    @Transactional
+    public List<ContactPersonEntity> findContactPersonByid(int id) {
+        return dao.findContactPersonById(id);
+    }
+
+    @Transactional
+    public List<DataOtherEntity> findDataOtherByid(int id) {
+        return dao.findDataOtherById(id);
     }
 }

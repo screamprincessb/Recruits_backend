@@ -7,9 +7,10 @@ package com.sense.backend.hb.dao.auth;
 import com.sense.backend.hb.dao.BaseDAO;
 import com.sense.backend.hb.entity.auth.ApplicationEntity;
 import com.sense.backend.hb.entity.auth.ChildEntity;
+import com.sense.backend.hb.entity.auth.ContactPersonEntity;
+import com.sense.backend.hb.entity.auth.DataOtherEntity;
 import com.sense.backend.hb.entity.auth.qApplicationEntity;
 import com.sense.backend.hb.entity.auth.qDataAbillitiesEntityToJoin;
-import com.sense.backend.hb.entity.auth.qInterviewAppointmentEntityToJoin;
 import com.sense.backend.hb.entity.auth.qWorkExperienceEntityToJoin;
 import jakarta.persistence.Query;
 import java.util.ArrayList;
@@ -77,6 +78,28 @@ public class ApplicationDAO extends BaseDAO<ApplicationEntity, Integer> {
         sql.append("SELECT * FROM child  ");
         sql.append("where application_id  = :id");
         Query query = sessionFactory.getCurrentSession().createNativeQuery(sql.toString(), ChildEntity.class);
+        query.setParameter("id", id);
+        result = query.getResultList();
+        return result;
+    }
+
+    public List<ContactPersonEntity> findContactPersonById(Integer id) {
+        List<ContactPersonEntity> result = new ArrayList<>();
+        StringBuilder sql = new StringBuilder();
+        sql.append("select * from contact_person ");
+        sql.append("where application_id  = :id");
+        Query query = sessionFactory.getCurrentSession().createNativeQuery(sql.toString(), ContactPersonEntity.class);
+        query.setParameter("id", id);
+        result = query.getResultList();
+        return result;
+    }
+
+    public List<DataOtherEntity> findDataOtherById(Integer id) {
+        List<DataOtherEntity> result = new ArrayList<>();
+        StringBuilder sql = new StringBuilder();
+        sql.append("select * from data_other ");
+        sql.append("where application_id  = :id");
+        Query query = sessionFactory.getCurrentSession().createNativeQuery(sql.toString(), DataOtherEntity.class);
         query.setParameter("id", id);
         result = query.getResultList();
         return result;

@@ -7,6 +7,8 @@ package com.sense.service.rest.controller.internal.app;
 import com.sense.backend.common.helper.HBHelper;
 import com.sense.backend.hb.entity.auth.ApplicationEntity;
 import com.sense.backend.hb.entity.auth.ChildEntity;
+import com.sense.backend.hb.entity.auth.ContactPersonEntity;
+import com.sense.backend.hb.entity.auth.DataOtherEntity;
 import com.sense.backend.hb.entity.auth.qApplicationEntity;
 import com.sense.backend.hb.entity.auth.qDataAbillitiesEntityToJoin;
 import com.sense.backend.hb.entity.auth.qWorkExperienceEntityToJoin;
@@ -15,7 +17,6 @@ import com.sense.service.base.BaseRestController;
 import com.sense.service.conts.ApiFilterConst;
 import com.sense.service.custom.filter.ApiAttrBean;
 import com.sense.service.rest.bean.internal.app.ApplicationReq;
-import com.sense.service.rest.bean.internal.app.ChildReq;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -253,6 +254,40 @@ public class ApplicationController extends BaseRestController {
         ApplicationService service = HBHelper.instance().service(ApplicationService.class);
         try {
             List<ChildEntity> result = service.findChildByid(applicationId);
+            return result;
+        } catch (Exception e) {
+            System.out.print(e);
+        }
+        return null;
+    }
+
+    @Operation(summary = "Application")
+    @RequestMapping(value = "findContactPersonByIdToApplication", method = RequestMethod.GET)
+    public List<ContactPersonEntity> findContactPersonByid(
+            @Parameter(hidden = true)
+            @ModelAttribute(ApiFilterConst.ATTR_DATA_NAME) ApiAttrBean attrData,
+            @RequestHeader(defaultValue = ApiFilterConst.DEFAULT_VALUE_TOKEN_KEY) String token,
+            @RequestParam("applicationId") Integer applicationId) {
+        ApplicationService service = HBHelper.instance().service(ApplicationService.class);
+        try {
+            List<ContactPersonEntity> result = service.findContactPersonByid(applicationId);
+            return result;
+        } catch (Exception e) {
+            System.out.print(e);
+        }
+        return null;
+    }
+
+    @Operation(summary = "Application")
+    @RequestMapping(value = "findDataOtherByIdToApplication", method = RequestMethod.GET)
+    public List<DataOtherEntity> findDataOtherByid(
+            @Parameter(hidden = true)
+            @ModelAttribute(ApiFilterConst.ATTR_DATA_NAME) ApiAttrBean attrData,
+            @RequestHeader(defaultValue = ApiFilterConst.DEFAULT_VALUE_TOKEN_KEY) String token,
+            @RequestParam("applicationId") Integer applicationId) {
+        ApplicationService service = HBHelper.instance().service(ApplicationService.class);
+        try {
+            List<DataOtherEntity> result = service.findDataOtherByid(applicationId);
             return result;
         } catch (Exception e) {
             System.out.print(e);
