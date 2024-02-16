@@ -171,6 +171,7 @@ public class ApplicationController extends BaseRestController {
             val.setApplicationDeleteFlag(req.getData().getApplicationDeleteFlag());
 
             val.setPositionId(req.getData().getPositionId());
+            val.setSiblingYouAre(req.getData().getSiblingYouAre());
 
             service.saveOrUpdate(val);
 

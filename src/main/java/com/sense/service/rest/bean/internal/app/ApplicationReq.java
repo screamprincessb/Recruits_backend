@@ -107,6 +107,7 @@ public class ApplicationReq implements Serializable {
         private String applicationDeleteFlag;
         
         private Integer positionId;
+        private Integer siblingYouAre;
 
     }
 }

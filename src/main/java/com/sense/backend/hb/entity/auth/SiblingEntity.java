@@ -27,9 +27,6 @@ public class SiblingEntity implements Serializable {
     @Column(name = "SIBLING_NUMBER")
     private Integer siblingNumber;
 
-    @Column(name = "SIBLING_YOU_ARE")
-    private Integer siblingYouAre;
-
     @Column(name = "SIBLING_FIRST_NAME")
     private String siblingFirstName;
 

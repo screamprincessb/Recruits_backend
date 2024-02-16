@@ -83,7 +83,6 @@ public class SiblingController extends BaseRestController {
             SiblingEntity val = new SiblingEntity();
             val.setSiblingId(req.getData().getSiblingId());
             val.setSiblingNumber(req.getData().getSiblingNumber());
-            val.setSiblingYouAre(req.getData().getSiblingYouAre());
             val.setSiblingFirstName(req.getData().getSiblingFirstName());
             val.setSiblingLastName(req.getData().getSiblingLastName());
             val.setSiblingAge(req.getData().getSiblingAge());
