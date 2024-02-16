@@ -5,6 +5,7 @@
 package com.sense.backend.hb.service;
 
 import com.sense.backend.hb.dao.auth.ApplicationDAO;
+import com.sense.backend.hb.entity.auth.AbillitiesEntity;
 import com.sense.backend.hb.entity.auth.ApplicationEntity;
 import com.sense.backend.hb.entity.auth.ChildEntity;
 import com.sense.backend.hb.entity.auth.ContactPersonEntity;
@@ -13,7 +14,6 @@ import com.sense.backend.hb.entity.auth.EducationEntity;
 import com.sense.backend.hb.entity.auth.SiblingEntity;
 import com.sense.backend.hb.entity.auth.TrainingEntity;
 import com.sense.backend.hb.entity.auth.qApplicationEntity;
-import com.sense.backend.hb.entity.auth.qDataAbillitiesEntityToJoin;
 import com.sense.backend.hb.entity.auth.qPositionNameEntityToJoin;
 import com.sense.backend.hb.entity.auth.qWorkExperienceEntityToJoin;
 import java.util.List;
@@ -62,7 +62,7 @@ public class ApplicationService {
     }
 
     @Transactional
-    public List<qDataAbillitiesEntityToJoin> findAbillitiesById(int id) {
+    public List<AbillitiesEntity> findAbillitiesById(int id) {
         return dao.findAbillitiesByid(id);
     }
 

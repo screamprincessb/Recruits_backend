@@ -5,6 +5,7 @@
 package com.sense.service.rest.controller.internal.app;
 
 import com.sense.backend.common.helper.HBHelper;
+import com.sense.backend.hb.entity.auth.AbillitiesEntity;
 import com.sense.backend.hb.entity.auth.ApplicationEntity;
 import com.sense.backend.hb.entity.auth.ChildEntity;
 import com.sense.backend.hb.entity.auth.ContactPersonEntity;
@@ -13,7 +14,6 @@ import com.sense.backend.hb.entity.auth.EducationEntity;
 import com.sense.backend.hb.entity.auth.SiblingEntity;
 import com.sense.backend.hb.entity.auth.TrainingEntity;
 import com.sense.backend.hb.entity.auth.qApplicationEntity;
-import com.sense.backend.hb.entity.auth.qDataAbillitiesEntityToJoin;
 import com.sense.backend.hb.entity.auth.qPositionNameEntityToJoin;
 import com.sense.backend.hb.entity.auth.qWorkExperienceEntityToJoin;
 import com.sense.backend.hb.service.ApplicationService;
@@ -217,14 +217,14 @@ public class ApplicationController extends BaseRestController {
 
     @Operation(summary = "Application")
     @RequestMapping(value = "findAbillitiesByIdToApplication", method = RequestMethod.GET)
-    public List<qDataAbillitiesEntityToJoin> findAbillitiesById(
+    public List<AbillitiesEntity> findAbillitiesById(
             @Parameter(hidden = true)
             @ModelAttribute(ApiFilterConst.ATTR_DATA_NAME) ApiAttrBean attrData,
             @RequestHeader(defaultValue = ApiFilterConst.DEFAULT_VALUE_TOKEN_KEY) String token,
             @RequestParam("applicationId") Integer applicationId) {
         ApplicationService service = HBHelper.instance().service(ApplicationService.class);
         try {
-            List<qDataAbillitiesEntityToJoin> result = service.findAbillitiesById(applicationId);
+            List<AbillitiesEntity> result = service.findAbillitiesById(applicationId);
             return result;
         } catch (Exception e) {
             System.out.print(e);

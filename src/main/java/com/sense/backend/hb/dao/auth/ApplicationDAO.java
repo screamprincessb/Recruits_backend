@@ -5,6 +5,7 @@
 package com.sense.backend.hb.dao.auth;
 
 import com.sense.backend.hb.dao.BaseDAO;
+import com.sense.backend.hb.entity.auth.AbillitiesEntity;
 import com.sense.backend.hb.entity.auth.ApplicationEntity;
 import com.sense.backend.hb.entity.auth.ChildEntity;
 import com.sense.backend.hb.entity.auth.ContactPersonEntity;
@@ -13,7 +14,6 @@ import com.sense.backend.hb.entity.auth.EducationEntity;
 import com.sense.backend.hb.entity.auth.SiblingEntity;
 import com.sense.backend.hb.entity.auth.TrainingEntity;
 import com.sense.backend.hb.entity.auth.qApplicationEntity;
-import com.sense.backend.hb.entity.auth.qDataAbillitiesEntityToJoin;
 import com.sense.backend.hb.entity.auth.qPositionNameEntityToJoin;
 import com.sense.backend.hb.entity.auth.qWorkExperienceEntityToJoin;
 import jakarta.persistence.Query;
@@ -49,15 +49,12 @@ public class ApplicationDAO extends BaseDAO<ApplicationEntity, Integer> {
         return result;
     }
 
-    public List<qDataAbillitiesEntityToJoin> findAbillitiesByid(Integer id) {
-        List<qDataAbillitiesEntityToJoin> result = new ArrayList<>();
+    public List<AbillitiesEntity> findAbillitiesByid(Integer id) {
+        List<AbillitiesEntity> result = new ArrayList<>();
         StringBuilder sql = new StringBuilder();
-        sql.append("select abillities.*, vehicle.vehicle_drive ,vehicle.vehicle_own ,vehicle.vehicle_no ,vehicle.vehicle_type ,languages.languages_name ,languages.languages_speaking,languages.languages_reading ,languages.languages_writing ,languages.languages_typewriter  ");
-        sql.append("from abillities  ");
-        sql.append("inner join vehicle on abillities.abillities_id = vehicle.abillities_id ");
-        sql.append("inner join languages on abillities.abillities_id  = languages.abillities_id ");
+        sql.append("select * from abillities ");
         sql.append("where application_id  = :id");
-        Query query = sessionFactory.getCurrentSession().createNativeQuery(sql.toString(), qDataAbillitiesEntityToJoin.class);
+        Query query = sessionFactory.getCurrentSession().createNativeQuery(sql.toString(), AbillitiesEntity.class);
         query.setParameter("id", id);
         result = query.getResultList();
         return result;

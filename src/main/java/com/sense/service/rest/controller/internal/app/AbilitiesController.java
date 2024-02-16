@@ -6,7 +6,8 @@ package com.sense.service.rest.controller.internal.app;
 
 import com.sense.backend.common.helper.HBHelper;
 import com.sense.backend.hb.entity.auth.AbillitiesEntity;
-import com.sense.backend.hb.service.AbilitiesService;
+import com.sense.backend.hb.entity.auth.qLanguagesEntityToJoin;
+import com.sense.backend.hb.entity.auth.qVehicleEntityToJoin;
 import com.sense.backend.hb.service.AbilitiesService;
 import com.sense.service.base.BaseRestController;
 import com.sense.service.conts.ApiFilterConst;
@@ -16,7 +17,6 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.annotation.PostConstruct;
-import java.util.Date;
 import java.util.List;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -108,5 +108,39 @@ public class AbilitiesController extends BaseRestController {
         result.setAbillitiesId(id);
         service.delete(result);
 
+    }
+
+    @Operation(summary = "Abillities")
+    @RequestMapping(value = "findVehicleByIdToAbillities", method = RequestMethod.GET)
+    public List<qVehicleEntityToJoin> findVehicleById(
+            @Parameter(hidden = true)
+            @ModelAttribute(ApiFilterConst.ATTR_DATA_NAME) ApiAttrBean attrData,
+            @RequestHeader(defaultValue = ApiFilterConst.DEFAULT_VALUE_TOKEN_KEY) String token,
+            @RequestParam("applicationId") Integer applicationId) {
+        AbilitiesService service = HBHelper.instance().service(AbilitiesService.class);
+        try {
+            List<qVehicleEntityToJoin> result = service.findVehicleById(applicationId);
+            return result;
+        } catch (Exception e) {
+            System.out.print(e);
+        }
+        return null;
+    }
+
+    @Operation(summary = "Abillities")
+    @RequestMapping(value = "findLanguagesByIdToAbillities", method = RequestMethod.GET)
+    public List<qLanguagesEntityToJoin> findLanguagesById(
+            @Parameter(hidden = true)
+            @ModelAttribute(ApiFilterConst.ATTR_DATA_NAME) ApiAttrBean attrData,
+            @RequestHeader(defaultValue = ApiFilterConst.DEFAULT_VALUE_TOKEN_KEY) String token,
+            @RequestParam("applicationId") Integer applicationId) {
+        AbilitiesService service = HBHelper.instance().service(AbilitiesService.class);
+        try {
+            List<qLanguagesEntityToJoin> result = service.findLanguagesById(applicationId);
+            return result;
+        } catch (Exception e) {
+            System.out.print(e);
+        }
+        return null;
     }
 }
