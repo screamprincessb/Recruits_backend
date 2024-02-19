@@ -22,7 +22,7 @@ public class DataOtherEntity implements Serializable {
 
     @Id
     @Column(name = "DO_ID")
-    private Integer doId;
+    private String doId;
 
     @Column(name = "DO_QUESTION")
     private String doQuestion;
@@ -34,6 +34,6 @@ public class DataOtherEntity implements Serializable {
     private String doOtherANS;
 
     @Column(name = "APPLICATION_ID")
-    private Integer applicationId;
+    private String applicationId;
 
 }

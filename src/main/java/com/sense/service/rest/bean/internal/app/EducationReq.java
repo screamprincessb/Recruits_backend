@@ -23,7 +23,7 @@ public class EducationReq implements Serializable {
     @Data
     public class EducationData {
 
-        private Integer educationId;
+        private String educationId;
         private String educationLevel;
         private String educationName;
         private String educationQualification;

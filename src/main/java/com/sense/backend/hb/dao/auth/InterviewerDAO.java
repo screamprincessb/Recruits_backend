@@ -13,7 +13,7 @@ import org.springframework.stereotype.Repository;
  * @author SenseInfoTech
  */
 @Repository
-public class InterviewerDAO extends BaseDAO<InterviewerEntity, Integer>{
+public class InterviewerDAO extends BaseDAO<InterviewerEntity, String>{
     
     public InterviewerDAO(){
         super(InterviewerEntity.class);

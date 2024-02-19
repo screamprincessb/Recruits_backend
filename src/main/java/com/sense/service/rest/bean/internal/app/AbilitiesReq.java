@@ -21,7 +21,7 @@ public class AbilitiesReq implements Serializable {
     @Data
     public class AbilitiesData {
 
-        private Integer abillitiesId;
+        private String abillitiesId;
         private Integer abillitiesToeicScore;
         private Integer abillitiesTofelScore;
         private String abillitiesComputerSkill;

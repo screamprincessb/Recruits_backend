@@ -25,7 +25,7 @@ public class HREntity implements Serializable{
     
     @Id
     @Column(name = "HR_ID")
-    private Integer hrId;
+    private String hrId;
     
     @Column(name = "HR_TITLE_NAME")
     private String hrTitleName;

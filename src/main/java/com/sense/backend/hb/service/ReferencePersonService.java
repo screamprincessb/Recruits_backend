@@ -31,7 +31,7 @@ public class ReferencePersonService {
     }
 
     @Transactional
-    public ReferencePersonEntity findById(int id) {
+    public ReferencePersonEntity findById(String id) {
         return dao.findById(id);
     }
 

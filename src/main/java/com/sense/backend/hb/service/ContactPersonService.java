@@ -33,7 +33,7 @@ public class ContactPersonService {
     }
 
     @Transactional
-    public ContactPersonEntity findById(int id) {
+    public ContactPersonEntity findById(String id) {
         return dao.findById(id);
     }
 

@@ -34,7 +34,7 @@ public class InterviewAppointmentService {
     }
 
     @Transactional
-    public InterviewAppointmentEntity findById(int id) {
+    public InterviewAppointmentEntity findById(String id) {
         return dao.findById(id);
     }
 

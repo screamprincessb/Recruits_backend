@@ -31,7 +31,7 @@ public class PositionLinkFormService {
     }
 
     @Transactional
-    public PositionLinkFormEntity findById(int id) {
+    public PositionLinkFormEntity findById(String id) {
         return dao.findById(id);
     }
     

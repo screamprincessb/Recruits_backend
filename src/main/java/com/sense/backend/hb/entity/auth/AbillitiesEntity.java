@@ -22,7 +22,7 @@ public class AbillitiesEntity implements Serializable {
 
     @Id
     @Column(name = "ABILLITIES_ID")
-    private Integer abillitiesId;
+    private String abillitiesId;
 
     @Column(name = "ABILLITIES_TOEIC_SCORE")
     private Integer abillitiesToeicScore;
@@ -40,6 +40,6 @@ public class AbillitiesEntity implements Serializable {
     private String abillitiesHobby;
 
     @Column(name = "APPLICATION_ID")
-    private Integer applicationId;
+    private String applicationId;
 
 }

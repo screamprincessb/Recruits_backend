@@ -14,7 +14,7 @@ import org.springframework.stereotype.Repository;
  */
 
 @Repository
-public class ChildDAO extends BaseDAO<ChildEntity, Integer > {
+public class ChildDAO extends BaseDAO<ChildEntity, String > {
         
         public ChildDAO() {
             super(ChildEntity.class);

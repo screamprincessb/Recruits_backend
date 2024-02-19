@@ -21,7 +21,7 @@ public class TrainingReq implements Serializable {
     @Data
     public class TrainingData {
 
-        private Integer trainingId;
+        private String trainingId;
 //    private Date trainingDate;
         private String trainingCourse;
         private String trainingInstitution;

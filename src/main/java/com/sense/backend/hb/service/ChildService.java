@@ -32,7 +32,7 @@ public class ChildService {
     }
 
     @Transactional
-    public ChildEntity findById(int id) {
+    public ChildEntity findById(String id) {
         return dao.findById(id);
     }
     

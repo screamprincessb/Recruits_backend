@@ -28,7 +28,7 @@ import org.springframework.stereotype.Repository;
  * @author SenseInfoTech
  */
 @Repository
-public class ApplicationDAO extends BaseDAO<ApplicationEntity, Integer> {
+public class ApplicationDAO extends BaseDAO<ApplicationEntity, String> {
 
     @Autowired
     private SessionFactory sessionFactory;
@@ -49,7 +49,7 @@ public class ApplicationDAO extends BaseDAO<ApplicationEntity, Integer> {
         return result;
     }
 
-    public List<AbillitiesEntity> findAbillitiesByid(Integer id) {
+    public List<AbillitiesEntity> findAbillitiesByid(String id) {
         List<AbillitiesEntity> result = new ArrayList<>();
         StringBuilder sql = new StringBuilder();
         sql.append("select * from abillities ");
@@ -60,7 +60,7 @@ public class ApplicationDAO extends BaseDAO<ApplicationEntity, Integer> {
         return result;
     }
 
-    public List<qWorkExperienceEntityToJoin> findWorkExperienceByid(Integer id) {
+    public List<qWorkExperienceEntityToJoin> findWorkExperienceByid(String id) {
         List<qWorkExperienceEntityToJoin> result = new ArrayList<>();
         StringBuilder sql = new StringBuilder();
         sql.append("select work_experience.*, reference_person.ref_first_name, reference_person.ref_last_name, reference_person.ref_job_position ,reference_person.ref_work_location ,reference_person.ref_phone ");
@@ -73,7 +73,7 @@ public class ApplicationDAO extends BaseDAO<ApplicationEntity, Integer> {
         return result;
     }
 
-    public List<ChildEntity> findChildById(Integer id) {
+    public List<ChildEntity> findChildById(String id) {
         List<ChildEntity> result = new ArrayList<>();
         StringBuilder sql = new StringBuilder();
         sql.append("SELECT * FROM child  ");
@@ -84,7 +84,7 @@ public class ApplicationDAO extends BaseDAO<ApplicationEntity, Integer> {
         return result;
     }
 
-    public List<ContactPersonEntity> findContactPersonById(Integer id) {
+    public List<ContactPersonEntity> findContactPersonById(String id) {
         List<ContactPersonEntity> result = new ArrayList<>();
         StringBuilder sql = new StringBuilder();
         sql.append("select * from contact_person ");
@@ -95,7 +95,7 @@ public class ApplicationDAO extends BaseDAO<ApplicationEntity, Integer> {
         return result;
     }
 
-    public List<DataOtherEntity> findDataOtherById(Integer id) {
+    public List<DataOtherEntity> findDataOtherById(String id) {
         List<DataOtherEntity> result = new ArrayList<>();
         StringBuilder sql = new StringBuilder();
         sql.append("select * from data_other ");
@@ -106,7 +106,7 @@ public class ApplicationDAO extends BaseDAO<ApplicationEntity, Integer> {
         return result;
     }
 
-    public List<EducationEntity> findEducationById(Integer id) {
+    public List<EducationEntity> findEducationById(String id) {
         List<EducationEntity> result = new ArrayList<>();
         StringBuilder sql = new StringBuilder();
         sql.append("select * from education ");
@@ -117,7 +117,7 @@ public class ApplicationDAO extends BaseDAO<ApplicationEntity, Integer> {
         return result;
     }
 
-    public List<qPositionNameEntityToJoin> findPositionNameById(Integer id) {
+    public List<qPositionNameEntityToJoin> findPositionNameById(String id) {
         List<qPositionNameEntityToJoin> result = new ArrayList<>();
         StringBuilder sql = new StringBuilder();
         sql.append("select application.application_id , position_link_form.position_name ");
@@ -130,7 +130,7 @@ public class ApplicationDAO extends BaseDAO<ApplicationEntity, Integer> {
         return result;
     }
 
-    public List<SiblingEntity> findSiblingById(Integer id) {
+    public List<SiblingEntity> findSiblingById(String id) {
         List<SiblingEntity> result = new ArrayList<>();
         StringBuilder sql = new StringBuilder();
         sql.append("select * from sibling ");
@@ -141,7 +141,7 @@ public class ApplicationDAO extends BaseDAO<ApplicationEntity, Integer> {
         return result;
     }
 
-    public List<TrainingEntity> findTrainingById(Integer id) {
+    public List<TrainingEntity> findTrainingById(String id) {
         List<TrainingEntity> result = new ArrayList<>();
         StringBuilder sql = new StringBuilder();
         sql.append("select * from training ");

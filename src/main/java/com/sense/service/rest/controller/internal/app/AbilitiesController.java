@@ -61,7 +61,7 @@ public class AbilitiesController extends BaseRestController {
     public AbillitiesEntity findById(
             @ModelAttribute(ApiFilterConst.ATTR_DATA_NAME) ApiAttrBean attrData,
             @RequestHeader(defaultValue = ApiFilterConst.DEFAULT_VALUE_TOKEN_KEY) String token,
-            @RequestParam("abillitiesId") Integer abillitiesId) {
+            @RequestParam("abillitiesId") String abillitiesId) {
 
         AbilitiesService service = HBHelper.instance().service(AbilitiesService.class);
         AbillitiesEntity en = service.findById(abillitiesId);
@@ -101,7 +101,7 @@ public class AbilitiesController extends BaseRestController {
     public void delete(
             @ModelAttribute(ApiFilterConst.ATTR_DATA_NAME) ApiAttrBean attrData,
             @RequestHeader(defaultValue = ApiFilterConst.DEFAULT_VALUE_TOKEN_KEY) String token,
-            Integer id) {
+            String id) {
 
         AbilitiesService service = HBHelper.instance().service(AbilitiesService.class);
         AbillitiesEntity result = new AbillitiesEntity();
@@ -116,7 +116,7 @@ public class AbilitiesController extends BaseRestController {
             @Parameter(hidden = true)
             @ModelAttribute(ApiFilterConst.ATTR_DATA_NAME) ApiAttrBean attrData,
             @RequestHeader(defaultValue = ApiFilterConst.DEFAULT_VALUE_TOKEN_KEY) String token,
-            @RequestParam("applicationId") Integer applicationId) {
+            @RequestParam("applicationId") String applicationId) {
         AbilitiesService service = HBHelper.instance().service(AbilitiesService.class);
         try {
             List<VehicleEntity> result = service.findVehicleById(applicationId);
@@ -133,7 +133,7 @@ public class AbilitiesController extends BaseRestController {
             @Parameter(hidden = true)
             @ModelAttribute(ApiFilterConst.ATTR_DATA_NAME) ApiAttrBean attrData,
             @RequestHeader(defaultValue = ApiFilterConst.DEFAULT_VALUE_TOKEN_KEY) String token,
-            @RequestParam("applicationId") Integer applicationId) {
+            @RequestParam("applicationId") String applicationId) {
         AbilitiesService service = HBHelper.instance().service(AbilitiesService.class);
         try {
             List<LanguagesEntity> result = service.findLanguagesById(applicationId);

@@ -21,7 +21,7 @@ public class ContactPersonReq implements Serializable {
     @Data
     public class ContactPersonData {
 
-        private Integer contactPersonId;
+        private String contactPersonId;
         private String cpFirstName;
         private String cpLastName;
         private String cpRelation;

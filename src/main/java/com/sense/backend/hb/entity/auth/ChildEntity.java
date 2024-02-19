@@ -22,7 +22,7 @@ public class ChildEntity implements Serializable {
 
     @Id
     @Column(name = "CHILD_ID")
-    private Integer childId;
+    private String childId;
 
     @Column(name = "CHILD_NUMBER")
     private Integer childNumber;
@@ -43,5 +43,5 @@ public class ChildEntity implements Serializable {
     private String childEducationLevel;
 
     @Column(name = "APPLICATION_ID")
-    private Integer applicationId   ;
+    private String applicationId   ;
 }

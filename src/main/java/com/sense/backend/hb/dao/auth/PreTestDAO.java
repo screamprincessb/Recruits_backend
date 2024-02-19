@@ -13,7 +13,7 @@ import org.springframework.stereotype.Repository;
  * @author SenseInfoTech
  */
 @Repository
-public class PreTestDAO extends BaseDAO<PreTestEntity, Integer>{
+public class PreTestDAO extends BaseDAO<PreTestEntity, String>{
     
     public PreTestDAO(){
         super(PreTestEntity.class);

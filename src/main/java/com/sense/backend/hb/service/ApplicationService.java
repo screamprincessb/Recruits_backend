@@ -42,7 +42,7 @@ public class ApplicationService {
     }
 
     @Transactional
-    public ApplicationEntity findById(int id) {
+    public ApplicationEntity findById(String id) {
         return dao.findById(id);
     }
 
@@ -62,47 +62,47 @@ public class ApplicationService {
     }
 
     @Transactional
-    public List<AbillitiesEntity> findAbillitiesById(int id) {
+    public List<AbillitiesEntity> findAbillitiesById(String id) {
         return dao.findAbillitiesByid(id);
     }
 
     @Transactional
-    public List<qWorkExperienceEntityToJoin> findWorkExperienceByid(int id) {
+    public List<qWorkExperienceEntityToJoin> findWorkExperienceByid(String id) {
         return dao.findWorkExperienceByid(id);
     }
 
     @Transactional
-    public List<ChildEntity> findChildByid(int id) {
+    public List<ChildEntity> findChildByid(String id) {
         return dao.findChildById(id);
     }
 
     @Transactional
-    public List<ContactPersonEntity> findContactPersonByid(int id) {
+    public List<ContactPersonEntity> findContactPersonByid(String id) {
         return dao.findContactPersonById(id);
     }
 
     @Transactional
-    public List<DataOtherEntity> findDataOtherByid(int id) {
+    public List<DataOtherEntity> findDataOtherByid(String id) {
         return dao.findDataOtherById(id);
     }
 
     @Transactional
-    public List<EducationEntity> findEducationById(int id) {
+    public List<EducationEntity> findEducationById(String id) {
         return dao.findEducationById(id);
     }
 
     @Transactional
-    public List<qPositionNameEntityToJoin> findPositionNameById(int id) {
+    public List<qPositionNameEntityToJoin> findPositionNameById(String id) {
         return dao.findPositionNameById(id);
     }
 
     @Transactional
-    public List<SiblingEntity> findSiblingById(int id) {
+    public List<SiblingEntity> findSiblingById(String id) {
         return dao.findSiblingById(id);
     }
 
     @Transactional
-    public List<TrainingEntity> findTrainingById(int id) {
+    public List<TrainingEntity> findTrainingById(String id) {
         return dao.findTrainingById(id);
     }
 }

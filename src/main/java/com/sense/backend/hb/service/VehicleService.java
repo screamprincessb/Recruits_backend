@@ -34,7 +34,7 @@ public class VehicleService {
     }
 
     @Transactional
-    public VehicleEntity findById(int id) {
+    public VehicleEntity findById(String id) {
         return dao.findById(id);
     }
 

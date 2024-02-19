@@ -21,7 +21,7 @@ public class ReferencePersonReq implements Serializable {
     @Data
     public class ReferencePersonData {
 
-        private Integer refPersonId;
+        private String refPersonId;
         private String refFirstName;
         private String refLastName;
         private String refJobPosition;

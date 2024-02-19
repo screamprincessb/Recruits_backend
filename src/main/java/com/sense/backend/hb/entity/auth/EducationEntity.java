@@ -25,7 +25,7 @@ public class EducationEntity implements Serializable {
 
     @Id
     @Column(name = "EDUCATION_ID")
-    private Integer educationId;
+    private String educationId;
 
     @Column(name = "EDUCATION_LEVEL")
     private String educationLevel;
@@ -51,5 +51,5 @@ public class EducationEntity implements Serializable {
     private float educationGPA;
 
     @Column(name = "APPLICATION_ID")
-    private Integer applicationId;
+    private String applicationId;
 }

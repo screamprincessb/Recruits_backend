@@ -23,10 +23,10 @@ import lombok.Data;
 public class qApplicationEntity {
     @Id
     @Column(name = "APPLICATION_ID")
-    private Integer applicationId;
+    private String applicationId;
     
     @Column(name = "POSITION_ID")
-    private Integer positionId;
+    private String positionId;
     
     @Temporal(TemporalType.DATE)
     @Column(name = "APPLICATION_SUBMIT_DATE")

@@ -18,7 +18,7 @@ import lombok.Data;
 public class qPositionNameEntityToJoin {
     @Id
     @Column(name = "APPLICATION_ID")
-    private Integer applicationId;
+    private String applicationId;
     
     @Column(name = "POSITION_NAME")
     private String positionName;

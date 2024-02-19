@@ -22,7 +22,7 @@ public class SiblingEntity implements Serializable {
 
     @Id
     @Column(name = "SIBLING_ID")
-    private Integer siblingId;
+    private String siblingId;
 
     @Column(name = "SIBLING_NUMBER")
     private Integer siblingNumber;
@@ -43,6 +43,6 @@ public class SiblingEntity implements Serializable {
     private String siblingWorkLocation;
     
     @Column(name = "APPLICATION_ID")
-    private Integer applicationId;
+    private String applicationId;
 
 }

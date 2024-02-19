@@ -20,7 +20,7 @@ import org.springframework.stereotype.Repository;
  * @author SenseInfoTech
  */
 @Repository
-public class AbilitiesDAO extends BaseDAO <AbillitiesEntity, Integer> {
+public class AbilitiesDAO extends BaseDAO <AbillitiesEntity, String> {
     @Autowired
     private SessionFactory sessionFactory;
     
@@ -28,7 +28,7 @@ public class AbilitiesDAO extends BaseDAO <AbillitiesEntity, Integer> {
             super(AbillitiesEntity.class);
         }  
     
-    public List<VehicleEntity> findVehicleById(Integer id){
+    public List<VehicleEntity> findVehicleById(String id){
         List<VehicleEntity> result = new ArrayList<>();
         StringBuilder sql = new StringBuilder();
         sql.append("select  vehicle.*");
@@ -42,7 +42,7 @@ public class AbilitiesDAO extends BaseDAO <AbillitiesEntity, Integer> {
         return result;
     }
     
-        public List<LanguagesEntity> findLanguagesById(Integer id){
+        public List<LanguagesEntity> findLanguagesById(String id){
         List<LanguagesEntity> result = new ArrayList<>();
         StringBuilder sql = new StringBuilder();
         sql.append("select languages.* ");

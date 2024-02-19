@@ -13,7 +13,7 @@ import org.springframework.stereotype.Repository;
  * @author SenseInfoTech
  */
 @Repository
-public class VehicleDAO extends BaseDAO <VehicleEntity, Integer> {
+public class VehicleDAO extends BaseDAO <VehicleEntity, String> {
     
     public VehicleDAO() {
         super(VehicleEntity.class);

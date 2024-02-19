@@ -61,7 +61,7 @@ public class PositionLinkFormController extends BaseRestController {
     public PositionLinkFormEntity findById(
             @ModelAttribute(ApiFilterConst.ATTR_DATA_NAME) ApiAttrBean attrData,
             @RequestHeader(defaultValue = ApiFilterConst.DEFAULT_VALUE_TOKEN_KEY) String token,
-            @RequestParam("positionId") Integer positionId) {
+            @RequestParam("positionId") String positionId) {
 
         PositionLinkFormService service = HBHelper.instance().service(PositionLinkFormService.class);
         PositionLinkFormEntity en = service.findById(positionId);
@@ -97,7 +97,7 @@ public class PositionLinkFormController extends BaseRestController {
     public void delete(
             @ModelAttribute(ApiFilterConst.ATTR_DATA_NAME) ApiAttrBean attrData,
             @RequestHeader(defaultValue = ApiFilterConst.DEFAULT_VALUE_TOKEN_KEY) String token,
-            Integer id) {
+            String id) {
 
         PositionLinkFormService service = HBHelper.instance().service(PositionLinkFormService.class);
         PositionLinkFormEntity result = new PositionLinkFormEntity();

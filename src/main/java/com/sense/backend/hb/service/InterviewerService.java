@@ -35,7 +35,7 @@ public class InterviewerService {
     }
 
     @Transactional
-    public InterviewerEntity findById(int id) {
+    public InterviewerEntity findById(String id) {
         return dao.findById(id);
     }
 

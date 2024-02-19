@@ -21,7 +21,7 @@ public class VehicleReq implements Serializable {
     @Data
     public class VehicleData {
 
-        private Integer vehicleId;
+        private String vehicleId;
         private String vehicleType;
         private String vehicleDrive;
         private String vehicleOwn;

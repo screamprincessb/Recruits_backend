@@ -40,6 +40,6 @@ public class LanguagesEntity implements Serializable {
     private String languagesTypewriter;
     
     @Column(name = "ABILLITIES_ID")
-    private Integer abillitiesId;
+    private String abillitiesId;
     
 }

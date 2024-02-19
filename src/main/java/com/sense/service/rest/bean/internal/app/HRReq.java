@@ -20,7 +20,7 @@ public class HRReq implements Serializable {
     
     @Data
     public class HRData {
-        private Integer hrId;
+        private String hrId;
         private String hrTitleName;
         private String hrFirstName;
         private String hrLastName;

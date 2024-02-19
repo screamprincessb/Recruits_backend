@@ -19,7 +19,7 @@ public class qInterviewAppointmentReq implements Serializable {
     
     @Data
     public class qInterviewAppointmentData{
-    private Integer interAppId;
+    private String interAppId;
     private String canFirstNameTH;
     private String canLastNameTH;
     private String positionName;

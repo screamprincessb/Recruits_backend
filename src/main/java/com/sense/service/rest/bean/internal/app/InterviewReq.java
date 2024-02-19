@@ -20,7 +20,7 @@ public class InterviewReq implements Serializable {
     
     @Data
     public class InterviewData {
-        private Integer interviewId;
+        private String interviewId;
 //        private Date interviewDT;
 //        private Date interviewTime;
         private String interviewResult;

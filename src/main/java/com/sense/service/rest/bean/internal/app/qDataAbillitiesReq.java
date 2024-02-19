@@ -21,7 +21,7 @@ public class qDataAbillitiesReq implements Serializable {
     @Data
     public class qDataAbillitiesData {
 
-        private Integer abillitiesId;
+        private String abillitiesId;
         private Integer abillitiesToeicScore;
         private Integer abillitiesTofelScore;
         private String abillitiesComputerSkill;

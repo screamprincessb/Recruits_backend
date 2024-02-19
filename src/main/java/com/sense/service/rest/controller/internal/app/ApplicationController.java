@@ -71,7 +71,7 @@ public class ApplicationController extends BaseRestController {
     public ApplicationEntity findById(
             @ModelAttribute(ApiFilterConst.ATTR_DATA_NAME) ApiAttrBean attrData,
             @RequestHeader(defaultValue = ApiFilterConst.DEFAULT_VALUE_TOKEN_KEY) String token,
-            @RequestParam("applicationId") Integer applicationId) {
+            @RequestParam("applicationId") String applicationId) {
 
         ApplicationService service = HBHelper.instance().service(ApplicationService.class);
         ApplicationEntity en = service.findById(applicationId);
@@ -187,7 +187,7 @@ public class ApplicationController extends BaseRestController {
     public void delete(
             @ModelAttribute(ApiFilterConst.ATTR_DATA_NAME) ApiAttrBean attrData,
             @RequestHeader(defaultValue = ApiFilterConst.DEFAULT_VALUE_TOKEN_KEY) String token,
-            Integer id) {
+            String id) {
 
         ApplicationService service = HBHelper.instance().service(ApplicationService.class);
         ApplicationEntity result = new ApplicationEntity();
@@ -221,7 +221,7 @@ public class ApplicationController extends BaseRestController {
             @Parameter(hidden = true)
             @ModelAttribute(ApiFilterConst.ATTR_DATA_NAME) ApiAttrBean attrData,
             @RequestHeader(defaultValue = ApiFilterConst.DEFAULT_VALUE_TOKEN_KEY) String token,
-            @RequestParam("applicationId") Integer applicationId) {
+            @RequestParam("applicationId") String applicationId) {
         ApplicationService service = HBHelper.instance().service(ApplicationService.class);
         try {
             List<AbillitiesEntity> result = service.findAbillitiesById(applicationId);
@@ -238,7 +238,7 @@ public class ApplicationController extends BaseRestController {
             @Parameter(hidden = true)
             @ModelAttribute(ApiFilterConst.ATTR_DATA_NAME) ApiAttrBean attrData,
             @RequestHeader(defaultValue = ApiFilterConst.DEFAULT_VALUE_TOKEN_KEY) String token,
-            @RequestParam("applicationId") Integer applicationId) {
+            @RequestParam("applicationId") String applicationId) {
         ApplicationService service = HBHelper.instance().service(ApplicationService.class);
         try {
             List<qWorkExperienceEntityToJoin> result = service.findWorkExperienceByid(applicationId);
@@ -255,7 +255,7 @@ public class ApplicationController extends BaseRestController {
             @Parameter(hidden = true)
             @ModelAttribute(ApiFilterConst.ATTR_DATA_NAME) ApiAttrBean attrData,
             @RequestHeader(defaultValue = ApiFilterConst.DEFAULT_VALUE_TOKEN_KEY) String token,
-            @RequestParam("applicationId") Integer applicationId) {
+            @RequestParam("applicationId") String applicationId) {
         ApplicationService service = HBHelper.instance().service(ApplicationService.class);
         try {
             List<ChildEntity> result = service.findChildByid(applicationId);
@@ -272,7 +272,7 @@ public class ApplicationController extends BaseRestController {
             @Parameter(hidden = true)
             @ModelAttribute(ApiFilterConst.ATTR_DATA_NAME) ApiAttrBean attrData,
             @RequestHeader(defaultValue = ApiFilterConst.DEFAULT_VALUE_TOKEN_KEY) String token,
-            @RequestParam("applicationId") Integer applicationId) {
+            @RequestParam("applicationId") String applicationId) {
         ApplicationService service = HBHelper.instance().service(ApplicationService.class);
         try {
             List<ContactPersonEntity> result = service.findContactPersonByid(applicationId);
@@ -289,7 +289,7 @@ public class ApplicationController extends BaseRestController {
             @Parameter(hidden = true)
             @ModelAttribute(ApiFilterConst.ATTR_DATA_NAME) ApiAttrBean attrData,
             @RequestHeader(defaultValue = ApiFilterConst.DEFAULT_VALUE_TOKEN_KEY) String token,
-            @RequestParam("applicationId") Integer applicationId) {
+            @RequestParam("applicationId") String applicationId) {
         ApplicationService service = HBHelper.instance().service(ApplicationService.class);
         try {
             List<DataOtherEntity> result = service.findDataOtherByid(applicationId);
@@ -306,7 +306,7 @@ public class ApplicationController extends BaseRestController {
             @Parameter(hidden = true)
             @ModelAttribute(ApiFilterConst.ATTR_DATA_NAME) ApiAttrBean attrData,
             @RequestHeader(defaultValue = ApiFilterConst.DEFAULT_VALUE_TOKEN_KEY) String token,
-            @RequestParam("applicationId") Integer applicationId) {
+            @RequestParam("applicationId") String applicationId) {
         ApplicationService service = HBHelper.instance().service(ApplicationService.class);
         try {
             List<EducationEntity> result = service.findEducationById(applicationId);
@@ -323,7 +323,7 @@ public class ApplicationController extends BaseRestController {
             @Parameter(hidden = true)
             @ModelAttribute(ApiFilterConst.ATTR_DATA_NAME) ApiAttrBean attrData,
             @RequestHeader(defaultValue = ApiFilterConst.DEFAULT_VALUE_TOKEN_KEY) String token,
-            @RequestParam("applicationId") Integer applicationId) {
+            @RequestParam("applicationId") String applicationId) {
         ApplicationService service = HBHelper.instance().service(ApplicationService.class);
         try {
             List<qPositionNameEntityToJoin> result = service.findPositionNameById(applicationId);
@@ -340,7 +340,7 @@ public class ApplicationController extends BaseRestController {
             @Parameter(hidden = true)
             @ModelAttribute(ApiFilterConst.ATTR_DATA_NAME) ApiAttrBean attrData,
             @RequestHeader(defaultValue = ApiFilterConst.DEFAULT_VALUE_TOKEN_KEY) String token,
-            @RequestParam("applicationId") Integer applicationId) {
+            @RequestParam("applicationId") String applicationId) {
         ApplicationService service = HBHelper.instance().service(ApplicationService.class);
         try {
             List<SiblingEntity> result = service.findSiblingById(applicationId);
@@ -357,7 +357,7 @@ public class ApplicationController extends BaseRestController {
             @Parameter(hidden = true)
             @ModelAttribute(ApiFilterConst.ATTR_DATA_NAME) ApiAttrBean attrData,
             @RequestHeader(defaultValue = ApiFilterConst.DEFAULT_VALUE_TOKEN_KEY) String token,
-            @RequestParam("applicationId") Integer applicationId) {
+            @RequestParam("applicationId") String applicationId) {
         ApplicationService service = HBHelper.instance().service(ApplicationService.class);
         try {
             List<TrainingEntity> result = service.findTrainingById(applicationId);

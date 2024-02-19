@@ -14,7 +14,7 @@ import org.springframework.stereotype.Repository;
  * @author SenseInfoTech
  */
 @Repository
-public class PositionLinkFormDAO extends BaseDAO<PositionLinkFormEntity, Integer> {
+public class PositionLinkFormDAO extends BaseDAO<PositionLinkFormEntity, String> {
     
         public PositionLinkFormDAO(){
         super(PositionLinkFormEntity.class);

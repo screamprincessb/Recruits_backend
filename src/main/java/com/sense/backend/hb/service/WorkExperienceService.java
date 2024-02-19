@@ -32,7 +32,7 @@ public class WorkExperienceService {
     }
 
     @Transactional
-    public WorkExperienceEntity findById(int id) {
+    public WorkExperienceEntity findById(String id) {
         return dao.findById(id);
     }
 
@@ -47,7 +47,7 @@ public class WorkExperienceService {
     }
     
         @Transactional
-    public List<ReferencePersonEntity> findRefById(int id) {
+    public List<ReferencePersonEntity> findRefById(String id) {
         return dao.findRefById(id);
     }
 }

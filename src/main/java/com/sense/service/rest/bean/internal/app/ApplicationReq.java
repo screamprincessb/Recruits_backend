@@ -25,7 +25,7 @@ public class ApplicationReq implements Serializable {
     @Data
     public class ApplicationData {
 
-        private Integer applicationId;
+        private String applicationId;
         private String applicationLink;
         private String applicationResumeCV;
         private String applicationTranscript;
@@ -106,7 +106,7 @@ public class ApplicationReq implements Serializable {
         private String applicationUpdateBy;
         private String applicationDeleteFlag;
         
-        private Integer positionId;
+        private String positionId;
         private Integer siblingYouAre;
 
     }

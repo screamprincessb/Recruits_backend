@@ -34,7 +34,7 @@ public class AbilitiesService {
     }
 
     @Transactional
-    public AbillitiesEntity findById(int id) {
+    public AbillitiesEntity findById(String id) {
         return dao.findById(id);
     }
 
@@ -49,12 +49,12 @@ public class AbilitiesService {
     }
 
     @Transactional
-    public List<VehicleEntity> findVehicleById(int id) {
+    public List<VehicleEntity> findVehicleById(String id) {
         return dao.findVehicleById(id);
     }
 
     @Transactional
-    public List<LanguagesEntity> findLanguagesById(int id) {
+    public List<LanguagesEntity> findLanguagesById(String id) {
         return dao.findLanguagesById(id);
     }
 

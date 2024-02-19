@@ -19,7 +19,7 @@ import org.springframework.stereotype.Repository;
  * @author SenseInfoTech
  */
 @Repository
-public class InterviewAppointmentDAO extends BaseDAO<InterviewAppointmentEntity, Integer>{
+public class InterviewAppointmentDAO extends BaseDAO<InterviewAppointmentEntity, String>{
     
     @Autowired
     private SessionFactory sessionFactory;

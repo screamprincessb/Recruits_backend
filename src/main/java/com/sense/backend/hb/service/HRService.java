@@ -32,7 +32,7 @@ public class HRService {
     }
 
     @Transactional
-    public HREntity findById(int id) {
+    public HREntity findById(String id) {
         return dao.findById(id);
     }
     

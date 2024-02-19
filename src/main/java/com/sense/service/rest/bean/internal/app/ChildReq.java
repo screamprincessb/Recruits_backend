@@ -21,7 +21,7 @@ public class ChildReq implements Serializable {
     @Data
     public class ChildData {
 
-        private Integer childId;
+        private String childId;
         private Integer childNumber;
         private String childFirstName;
         private String childLastName;

@@ -13,7 +13,7 @@ import org.springframework.stereotype.Repository;
  * @author SenseInfoTech
  */
 @Repository
-public class TrainingDAO extends BaseDAO <TrainingEntity, Integer> {
+public class TrainingDAO extends BaseDAO <TrainingEntity, String> {
     
     public TrainingDAO() {
         super(TrainingEntity.class);

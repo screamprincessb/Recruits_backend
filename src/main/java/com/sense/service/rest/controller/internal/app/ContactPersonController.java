@@ -60,7 +60,7 @@ public class ContactPersonController extends BaseRestController {
     public ContactPersonEntity findById(
             @ModelAttribute(ApiFilterConst.ATTR_DATA_NAME) ApiAttrBean attrData,
             @RequestHeader(defaultValue = ApiFilterConst.DEFAULT_VALUE_TOKEN_KEY) String token,
-            @RequestParam("contactPersonId") Integer contactPersonId) {
+            @RequestParam("contactPersonId") String contactPersonId) {
 
         ContactPersonService service = HBHelper.instance().service(ContactPersonService.class);
         ContactPersonEntity en = service.findById(contactPersonId);
@@ -101,7 +101,7 @@ public class ContactPersonController extends BaseRestController {
     public void delete(
             @ModelAttribute(ApiFilterConst.ATTR_DATA_NAME) ApiAttrBean attrData,
             @RequestHeader(defaultValue = ApiFilterConst.DEFAULT_VALUE_TOKEN_KEY) String token,
-            Integer id) {
+            String id) {
 
         ContactPersonService service = HBHelper.instance().service(ContactPersonService.class);
         ContactPersonEntity result = new ContactPersonEntity();

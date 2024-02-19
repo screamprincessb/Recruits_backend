@@ -59,7 +59,7 @@ public class ReferencePersonController extends BaseRestController {
     public ReferencePersonEntity findById(
             @ModelAttribute(ApiFilterConst.ATTR_DATA_NAME) ApiAttrBean attrData,
             @RequestHeader(defaultValue = ApiFilterConst.DEFAULT_VALUE_TOKEN_KEY) String token,
-            @RequestParam("refPersonId") Integer refPersonId) {
+            @RequestParam("refPersonId") String refPersonId) {
 
         ReferencePersonService service = HBHelper.instance().service(ReferencePersonService.class);
         ReferencePersonEntity en = service.findById(refPersonId);
@@ -99,7 +99,7 @@ public class ReferencePersonController extends BaseRestController {
     public void delete(
             @ModelAttribute(ApiFilterConst.ATTR_DATA_NAME) ApiAttrBean attrData,
             @RequestHeader(defaultValue = ApiFilterConst.DEFAULT_VALUE_TOKEN_KEY) String token,
-            Integer id) {
+            String id) {
 
         ReferencePersonService service = HBHelper.instance().service(ReferencePersonService.class);
         ReferencePersonEntity result = new ReferencePersonEntity();

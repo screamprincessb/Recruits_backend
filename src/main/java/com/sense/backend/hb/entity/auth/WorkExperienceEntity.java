@@ -25,7 +25,7 @@ public class WorkExperienceEntity implements Serializable{
     
     @Id
     @Column(name = "WORK_EXPERIENCE_ID")
-    private Integer workExperienceId;
+    private String workExperienceId;
     
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "WE_START_DATE")
@@ -60,5 +60,5 @@ public class WorkExperienceEntity implements Serializable{
     private String weReasonLeaving;
     
     @Column(name = "APPLICATION_ID")
-    private Integer applicationId;
+    private String applicationId;
 }

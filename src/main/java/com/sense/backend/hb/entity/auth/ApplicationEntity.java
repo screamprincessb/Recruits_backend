@@ -25,7 +25,7 @@ public class ApplicationEntity implements Serializable {
 
     @Id
     @Column(name = "APPLICATION_ID")
-    private Integer applicationId;
+    private String applicationId;
 
     @Column(name = "APPLICATION_RESUME_CV")
     private String applicationResumeCV;
@@ -247,7 +247,7 @@ public class ApplicationEntity implements Serializable {
     private String applicationDeleteFlag;
 
     @Column(name = "POSITION_ID")
-    private Integer positionId;
+    private String positionId;
 
     @Column(name = "SIBLING_YOU_ARE")
     private Integer siblingYouAre;

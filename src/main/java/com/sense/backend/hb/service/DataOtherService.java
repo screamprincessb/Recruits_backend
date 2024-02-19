@@ -34,7 +34,7 @@ public class DataOtherService {
     }
 
     @Transactional
-    public DataOtherEntity findById(int id) {
+    public DataOtherEntity findById(String id) {
         return dao.findById(id);
     }
 

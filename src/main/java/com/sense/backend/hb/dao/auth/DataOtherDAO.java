@@ -14,7 +14,7 @@ import org.springframework.stereotype.Repository;
  * @author SenseInfoTech
  */
 @Repository
-public class DataOtherDAO extends BaseDAO<DataOtherEntity, Integer > {
+public class DataOtherDAO extends BaseDAO<DataOtherEntity, String > {
         
         public DataOtherDAO() {
             super(DataOtherEntity.class);

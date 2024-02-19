@@ -59,7 +59,7 @@ public class ChildController extends BaseRestController {
     public ChildEntity findById(
             @ModelAttribute(ApiFilterConst.ATTR_DATA_NAME) ApiAttrBean attrData,
             @RequestHeader(defaultValue = ApiFilterConst.DEFAULT_VALUE_TOKEN_KEY) String token,
-            @RequestParam("childId") Integer childId) {
+            @RequestParam("childId") String childId) {
 
         ChildService service = HBHelper.instance().service(ChildService.class);
         ChildEntity en = service.findById(childId);
@@ -100,7 +100,7 @@ public class ChildController extends BaseRestController {
     public void delete(
             @ModelAttribute(ApiFilterConst.ATTR_DATA_NAME) ApiAttrBean attrData,
             @RequestHeader(defaultValue = ApiFilterConst.DEFAULT_VALUE_TOKEN_KEY) String token,
-            Integer id) {
+            String id) {
 
         ChildService service = HBHelper.instance().service(ChildService.class);
         ChildEntity result = new ChildEntity();

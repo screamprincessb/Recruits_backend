@@ -24,13 +24,13 @@ public class InterviewerEntity implements Serializable {
 
     @Id
     @Column(name = "INTERVIEWER_ID")
-    private Integer interviewerId;
+    private String interviewerId;
 
     @Column(name = "INTERVIEWER_STATUS")
     private String interviewerStatus;
 
     @Column(name = "HR_ID")
-    private Integer hrId;
+    private String hrId;
 
 //    @ManyToOne
 //    @JoinColumn(name = "HR_ID", referencedColumnName = "HR_ID")

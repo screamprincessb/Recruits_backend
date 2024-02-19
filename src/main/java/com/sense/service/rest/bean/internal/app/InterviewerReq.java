@@ -19,7 +19,7 @@ public class InterviewerReq implements Serializable {
     
     @Data
     public class InterviewerData {
-        private Integer interviewerId;
+        private String interviewerId;
         private String interviewerStatus;
     }
 }

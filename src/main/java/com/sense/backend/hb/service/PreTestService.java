@@ -33,7 +33,7 @@ public class PreTestService {
     }
 
     @Transactional
-    public PreTestEntity findById(int id) {
+    public PreTestEntity findById(String id) {
         return dao.findById(id);
     }
 

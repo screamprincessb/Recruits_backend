@@ -22,7 +22,7 @@ public class PositionLinkFormReq implements Serializable {
     
     @Data
     public class PositionLinkFormData {
-        private Integer positionId;
+        private String positionId;
         private String positionName;
         private String positionLink;
     }

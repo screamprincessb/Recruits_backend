@@ -22,7 +22,7 @@ public class PositionLinkFormEntity implements Serializable {
     
     @Id
     @Column(name = "POSITION_ID")
-    private Integer positionId;
+    private String positionId;
 
     @Column(name = "POSITION_NAME")
     private String positionName;

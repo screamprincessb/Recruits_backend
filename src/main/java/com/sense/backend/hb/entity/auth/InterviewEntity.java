@@ -25,7 +25,7 @@ public class InterviewEntity implements Serializable {
 
     @Id
     @Column(name = "INTERVIEW_ID")
-    private Integer interviewId;
+    private String interviewId;
 
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "INTERVIEW_DATE")
@@ -45,9 +45,9 @@ public class InterviewEntity implements Serializable {
     private String interviewStatus;
 
     @Column(name = "APPLICATION_ID")
-    private Integer applicationId;
+    private String applicationId;
 
     @Column(name = "INTERVIEWER_ID")
-    private Integer interviewerId;
+    private String interviewerId;
 
 }

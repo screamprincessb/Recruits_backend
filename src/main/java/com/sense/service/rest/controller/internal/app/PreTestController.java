@@ -61,7 +61,7 @@ public class PreTestController extends BaseRestController {
     public PreTestEntity findById(
             @ModelAttribute(ApiFilterConst.ATTR_DATA_NAME) ApiAttrBean attrData,
             @RequestHeader(defaultValue = ApiFilterConst.DEFAULT_VALUE_TOKEN_KEY) String token,
-            @RequestParam("preTestId") Integer preTestId) {
+            @RequestParam("preTestId") String preTestId) {
 
         PreTestService service = HBHelper.instance().service(PreTestService.class);
         PreTestEntity en = service.findById(preTestId);
@@ -108,7 +108,7 @@ public class PreTestController extends BaseRestController {
     public void delete(
             @ModelAttribute(ApiFilterConst.ATTR_DATA_NAME) ApiAttrBean attrData,
             @RequestHeader(defaultValue = ApiFilterConst.DEFAULT_VALUE_TOKEN_KEY) String token,
-            Integer id) {
+            String id) {
 
         PreTestService service = HBHelper.instance().service(PreTestService.class);
         PreTestEntity result = new PreTestEntity();

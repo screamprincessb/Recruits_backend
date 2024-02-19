@@ -22,7 +22,7 @@ public class WorkExperienceReq implements Serializable {
     @Data
     public class WorkExperienceData {
 
-        private Integer workExperienceId;
+        private String workExperienceId;
 //        private Date weStartDT;
 //        private Date weEndDT;
         private String weBusinessType;

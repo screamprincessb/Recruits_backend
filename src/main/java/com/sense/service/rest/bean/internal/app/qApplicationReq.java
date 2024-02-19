@@ -25,7 +25,7 @@ public class qApplicationReq implements Serializable{
     
     @Data
     public class qApplicationData{
-    private Integer applicationId;
+    private String applicationId;
     private Integer positionId;
     private Date applicationSubmitDT;
     private String canFirstNameTH;

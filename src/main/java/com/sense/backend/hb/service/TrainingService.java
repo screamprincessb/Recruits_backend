@@ -34,7 +34,7 @@ public class TrainingService {
     }
 
     @Transactional
-    public TrainingEntity findById(int id) {
+    public TrainingEntity findById(String id) {
         return dao.findById(id);
     }
 

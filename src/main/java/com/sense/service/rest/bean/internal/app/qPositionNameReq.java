@@ -21,7 +21,7 @@ public class qPositionNameReq implements Serializable {
     @Data
     public class qPositionNameData {
 
-        private Integer applicationId;
+        private String applicationId;
         private String positionName;
     }
 

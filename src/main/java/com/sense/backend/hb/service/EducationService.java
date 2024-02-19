@@ -33,7 +33,7 @@ public class EducationService {
     }
 
     @Transactional
-    public EducationEntity findById(int id) {
+    public EducationEntity findById(String id) {
         return dao.findById(id);
     }
 

@@ -63,7 +63,7 @@ public class WorkExperienceController extends BaseRestController {
     public WorkExperienceEntity findById(
             @ModelAttribute(ApiFilterConst.ATTR_DATA_NAME) ApiAttrBean attrData,
             @RequestHeader(defaultValue = ApiFilterConst.DEFAULT_VALUE_TOKEN_KEY) String token,
-            @RequestParam("workExperienceId") Integer workExperienceId) {
+            @RequestParam("workExperienceId") String workExperienceId) {
 
         WorkExperienceService service = HBHelper.instance().service(WorkExperienceService.class);
         WorkExperienceEntity en = service.findById(workExperienceId);
@@ -108,7 +108,7 @@ public class WorkExperienceController extends BaseRestController {
     public void delete(
             @ModelAttribute(ApiFilterConst.ATTR_DATA_NAME) ApiAttrBean attrData,
             @RequestHeader(defaultValue = ApiFilterConst.DEFAULT_VALUE_TOKEN_KEY) String token,
-            Integer id) {
+            String id) {
 
         WorkExperienceService service = HBHelper.instance().service(WorkExperienceService.class);
         WorkExperienceEntity result = new WorkExperienceEntity();
@@ -123,7 +123,7 @@ public class WorkExperienceController extends BaseRestController {
             @Parameter(hidden = true)
             @ModelAttribute(ApiFilterConst.ATTR_DATA_NAME) ApiAttrBean attrData,
             @RequestHeader(defaultValue = ApiFilterConst.DEFAULT_VALUE_TOKEN_KEY) String token,
-            @RequestParam("applicationId") Integer applicationId) {
+            @RequestParam("applicationId") String applicationId) {
         WorkExperienceService service = HBHelper.instance().service(WorkExperienceService.class);
         try {
             List<ReferencePersonEntity> result = service.findRefById(applicationId);

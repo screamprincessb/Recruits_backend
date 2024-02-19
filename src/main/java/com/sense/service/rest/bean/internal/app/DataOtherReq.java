@@ -22,7 +22,7 @@ public class DataOtherReq implements Serializable {
     @Data
     public class DataOtherData {
 
-        private Integer doId;
+        private String doId;
         private String doQuestion;
         private String doANS;
         private String doOtherANS;

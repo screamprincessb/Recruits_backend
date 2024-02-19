@@ -21,7 +21,7 @@ public class SiblingReq implements Serializable {
     @Data
     public class SiblingData {
 
-        private Integer siblingId;
+        private String siblingId;
         private Integer siblingNumber;
         private String siblingFirstName;
         private String siblingLastName;

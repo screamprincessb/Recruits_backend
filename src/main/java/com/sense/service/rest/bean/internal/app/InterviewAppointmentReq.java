@@ -21,7 +21,7 @@ public class InterviewAppointmentReq {
     @Data
     public class InterviewAppointmentData {
 
-        private Integer interAppId;
+        private String interAppId;
 //        private Date inteAppDT;
 //        private Date inteAppTime;
 //        private Date inteAppTimeTo;

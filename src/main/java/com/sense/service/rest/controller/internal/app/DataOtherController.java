@@ -62,7 +62,7 @@ public class DataOtherController extends BaseRestController {
     public DataOtherEntity findById(
             @ModelAttribute(ApiFilterConst.ATTR_DATA_NAME) ApiAttrBean attrData,
             @RequestHeader(defaultValue = ApiFilterConst.DEFAULT_VALUE_TOKEN_KEY) String token,
-            @RequestParam("doId") Integer doId) {
+            @RequestParam("doId") String doId) {
 
         DataOtherService service = HBHelper.instance().service(DataOtherService.class);
         DataOtherEntity en = service.findById(doId);
@@ -100,7 +100,7 @@ public class DataOtherController extends BaseRestController {
     public void delete(
             @ModelAttribute(ApiFilterConst.ATTR_DATA_NAME) ApiAttrBean attrData,
             @RequestHeader(defaultValue = ApiFilterConst.DEFAULT_VALUE_TOKEN_KEY) String token,
-            Integer id) {
+            String id) {
 
         DataOtherService service = HBHelper.instance().service(DataOtherService.class);
         DataOtherEntity result = new DataOtherEntity();

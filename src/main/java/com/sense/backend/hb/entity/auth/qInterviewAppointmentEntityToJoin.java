@@ -23,7 +23,7 @@ import lombok.Data;
 public class qInterviewAppointmentEntityToJoin {
     @Id
     @Column(name = "INTER_APP_ID")
-    private Integer interAppId;
+    private String interAppId;
     
     @Column(name = "CAN_FIRST_NAME_TH")
     private String canFirstNameTH;

@@ -60,7 +60,7 @@ public class HRController extends BaseRestController {
     public HREntity findById(
             @ModelAttribute(ApiFilterConst.ATTR_DATA_NAME) ApiAttrBean attrData,
             @RequestHeader(defaultValue = ApiFilterConst.DEFAULT_VALUE_TOKEN_KEY) String token,
-            @RequestParam("hrId") Integer hrId) {
+            @RequestParam("hrId") String hrId) {
 
         HRService service = HBHelper.instance().service(HRService.class);
         HREntity en = service.findById(hrId);
@@ -107,7 +107,7 @@ public class HRController extends BaseRestController {
     public void delete(
             @ModelAttribute(ApiFilterConst.ATTR_DATA_NAME) ApiAttrBean attrData,
             @RequestHeader(defaultValue = ApiFilterConst.DEFAULT_VALUE_TOKEN_KEY) String token,
-            Integer id) {
+            String id) {
 
         HRService service = HBHelper.instance().service(HRService.class);
         HREntity result = new HREntity();

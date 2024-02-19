@@ -59,7 +59,7 @@ public class InterviewerController extends BaseRestController {
     public InterviewerEntity findById(
             @ModelAttribute(ApiFilterConst.ATTR_DATA_NAME) ApiAttrBean attrData,
             @RequestHeader(defaultValue = ApiFilterConst.DEFAULT_VALUE_TOKEN_KEY) String token,
-            @RequestParam("interviewerId") Integer interviewerId) {
+            @RequestParam("interviewerId") String interviewerId) {
 
         InterviewerService service = HBHelper.instance().service(InterviewerService.class);
         InterviewerEntity en = service.findById(interviewerId);
@@ -95,7 +95,7 @@ public class InterviewerController extends BaseRestController {
     public void delete(
             @ModelAttribute(ApiFilterConst.ATTR_DATA_NAME) ApiAttrBean attrData,
             @RequestHeader(defaultValue = ApiFilterConst.DEFAULT_VALUE_TOKEN_KEY) String token,
-            Integer id) {
+            String id) {
 
         InterviewerService service = HBHelper.instance().service(InterviewerService.class);
         InterviewerEntity result = new InterviewerEntity();

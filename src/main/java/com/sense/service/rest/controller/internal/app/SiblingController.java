@@ -61,7 +61,7 @@ public class SiblingController extends BaseRestController {
     public SiblingEntity findById(
             @ModelAttribute(ApiFilterConst.ATTR_DATA_NAME) ApiAttrBean attrData,
             @RequestHeader(defaultValue = ApiFilterConst.DEFAULT_VALUE_TOKEN_KEY) String token,
-            @RequestParam("siblingId") Integer siblingId) {
+            @RequestParam("siblingId") String siblingId) {
         
         SiblingService service = HBHelper.instance().service(SiblingService.class);
         SiblingEntity en = service.findById(siblingId);
@@ -102,7 +102,7 @@ public class SiblingController extends BaseRestController {
     public void delete(
             @ModelAttribute(ApiFilterConst.ATTR_DATA_NAME) ApiAttrBean attrData,
             @RequestHeader(defaultValue = ApiFilterConst.DEFAULT_VALUE_TOKEN_KEY) String token,
-            Integer id) {
+            String id) {
         
         SiblingService service = HBHelper.instance().service(SiblingService.class);
         SiblingEntity result = new SiblingEntity();

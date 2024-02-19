@@ -19,7 +19,7 @@ import org.springframework.stereotype.Repository;
  * @author SenseInfoTech
  */
 @Repository
-public class WorkExperienceDAO extends BaseDAO<WorkExperienceEntity, Integer> {
+public class WorkExperienceDAO extends BaseDAO<WorkExperienceEntity, String> {
     
     @Autowired
     private SessionFactory sessionFactory;
@@ -28,7 +28,7 @@ public class WorkExperienceDAO extends BaseDAO<WorkExperienceEntity, Integer> {
         super(WorkExperienceEntity.class);
     }
 
-    public List<ReferencePersonEntity> findRefById(Integer id) {
+    public List<ReferencePersonEntity> findRefById(String id) {
         List<ReferencePersonEntity> result = new ArrayList<>();
         StringBuilder sql = new StringBuilder();
         sql.append("select reference_person.*");

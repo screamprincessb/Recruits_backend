@@ -61,7 +61,7 @@ public class EducationController extends BaseRestController {
     public EducationEntity findById(
             @ModelAttribute(ApiFilterConst.ATTR_DATA_NAME) ApiAttrBean attrData,
             @RequestHeader(defaultValue = ApiFilterConst.DEFAULT_VALUE_TOKEN_KEY) String token,
-            @RequestParam("educationId") Integer educationId) {
+            @RequestParam("educationId") String educationId) {
 
         EducationService service = HBHelper.instance().service(EducationService.class);
         EducationEntity en = service.findById(educationId);
@@ -103,7 +103,7 @@ public class EducationController extends BaseRestController {
     public void delete(
             @ModelAttribute(ApiFilterConst.ATTR_DATA_NAME) ApiAttrBean attrData,
             @RequestHeader(defaultValue = ApiFilterConst.DEFAULT_VALUE_TOKEN_KEY) String token,
-            Integer id) {
+            String id) {
 
         EducationService service = HBHelper.instance().service(EducationService.class);
         EducationEntity result = new EducationEntity();

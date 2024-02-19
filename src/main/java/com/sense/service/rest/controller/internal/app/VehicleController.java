@@ -60,7 +60,7 @@ public class VehicleController extends BaseRestController {
     public VehicleEntity findById(
             @ModelAttribute(ApiFilterConst.ATTR_DATA_NAME) ApiAttrBean attrData,
             @RequestHeader(defaultValue = ApiFilterConst.DEFAULT_VALUE_TOKEN_KEY) String token,
-            @RequestParam("vehicleId") Integer vehicleId) {
+            @RequestParam("vehicleId") String vehicleId) {
 
         VehicleService service = HBHelper.instance().service(VehicleService.class);
         VehicleEntity en = service.findById(vehicleId);
@@ -99,7 +99,7 @@ public class VehicleController extends BaseRestController {
     public void delete(
             @ModelAttribute(ApiFilterConst.ATTR_DATA_NAME) ApiAttrBean attrData,
             @RequestHeader(defaultValue = ApiFilterConst.DEFAULT_VALUE_TOKEN_KEY) String token,
-            Integer id) {
+            String id) {
 
         VehicleService service = HBHelper.instance().service(VehicleService.class);
         VehicleEntity result = new VehicleEntity();

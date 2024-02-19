@@ -22,7 +22,7 @@ public class qWorkExperienceEntityToJoin {
 
     @Id
     @Column(name = "WORK_EXPERIENCE_ID")
-    private Integer workExperienceId;
+    private String workExperienceId;
 
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "WE_START_DATE")

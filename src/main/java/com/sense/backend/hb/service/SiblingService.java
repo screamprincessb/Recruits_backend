@@ -31,7 +31,7 @@ public class SiblingService {
     }
 
     @Transactional
-    public SiblingEntity findById(int id) {
+    public SiblingEntity findById(String id) {
         return dao.findById(id);
     }
     

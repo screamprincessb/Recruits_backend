@@ -13,7 +13,7 @@ import org.springframework.stereotype.Repository;
  * @author SenseInfoTech
  */
 @Repository
-public class HRDAO extends BaseDAO<HREntity, Integer>{
+public class HRDAO extends BaseDAO<HREntity, String>{
     
     public HRDAO(){
         super(HREntity.class);

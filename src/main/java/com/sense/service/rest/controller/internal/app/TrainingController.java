@@ -60,7 +60,7 @@ public class TrainingController extends BaseRestController {
     public TrainingEntity findById(
             @ModelAttribute(ApiFilterConst.ATTR_DATA_NAME) ApiAttrBean attrData,
             @RequestHeader(defaultValue = ApiFilterConst.DEFAULT_VALUE_TOKEN_KEY) String token,
-            @RequestParam("trainingId") Integer trainingId) {
+            @RequestParam("trainingId") String trainingId) {
 
         TrainingService service = HBHelper.instance().service(TrainingService.class);
         TrainingEntity en = service.findById(trainingId);
@@ -100,7 +100,7 @@ public class TrainingController extends BaseRestController {
     public void delete(
             @ModelAttribute(ApiFilterConst.ATTR_DATA_NAME) ApiAttrBean attrData,
             @RequestHeader(defaultValue = ApiFilterConst.DEFAULT_VALUE_TOKEN_KEY) String token,
-            Integer id) {
+            String id) {
 
         TrainingService service = HBHelper.instance().service(TrainingService.class);
         TrainingEntity result = new TrainingEntity();
