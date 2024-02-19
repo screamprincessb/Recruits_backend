@@ -6,8 +6,8 @@ package com.sense.backend.hb.service;
 
 import com.sense.backend.hb.dao.auth.AbilitiesDAO;
 import com.sense.backend.hb.entity.auth.AbillitiesEntity;
-import com.sense.backend.hb.entity.auth.qLanguagesEntityToJoin;
-import com.sense.backend.hb.entity.auth.qVehicleEntityToJoin;
+import com.sense.backend.hb.entity.auth.LanguagesEntity;
+import com.sense.backend.hb.entity.auth.VehicleEntity;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -49,12 +49,12 @@ public class AbilitiesService {
     }
 
     @Transactional
-    public List<qVehicleEntityToJoin> findVehicleById(int id) {
+    public List<VehicleEntity> findVehicleById(int id) {
         return dao.findVehicleById(id);
     }
 
     @Transactional
-    public List<qLanguagesEntityToJoin> findLanguagesById(int id) {
+    public List<LanguagesEntity> findLanguagesById(int id) {
         return dao.findLanguagesById(id);
     }
 
