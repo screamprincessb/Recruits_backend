@@ -31,7 +31,7 @@ public class qWrokExperienceReq implements Serializable{
     private String weAddressPhone;
     private String weDescription;
     private String weReasonLeaving;
-    private Integer applicationId;
+    private String applicationId;
     private String refFirstName;
     private String refLastName;
     private String refJobPosition;
