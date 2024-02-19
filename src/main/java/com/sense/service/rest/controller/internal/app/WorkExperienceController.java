@@ -5,7 +5,10 @@
 package com.sense.service.rest.controller.internal.app;
 
 import com.sense.backend.common.helper.HBHelper;
+import com.sense.backend.hb.entity.auth.LanguagesEntity;
+import com.sense.backend.hb.entity.auth.ReferencePersonEntity;
 import com.sense.backend.hb.entity.auth.WorkExperienceEntity;
+import com.sense.backend.hb.service.AbilitiesService;
 import com.sense.backend.hb.service.WorkExperienceService;
 import com.sense.service.base.BaseRestController;
 import com.sense.service.conts.ApiFilterConst;
@@ -112,5 +115,22 @@ public class WorkExperienceController extends BaseRestController {
         result.setWorkExperienceId(id);
         service.delete(result);
 
+    }
+    
+    @Operation(summary = "Work Experience")
+    @RequestMapping(value = "findRefByIdToWorkExperience", method = RequestMethod.GET)
+    public List<ReferencePersonEntity> findRefById(
+            @Parameter(hidden = true)
+            @ModelAttribute(ApiFilterConst.ATTR_DATA_NAME) ApiAttrBean attrData,
+            @RequestHeader(defaultValue = ApiFilterConst.DEFAULT_VALUE_TOKEN_KEY) String token,
+            @RequestParam("applicationId") Integer applicationId) {
+        WorkExperienceService service = HBHelper.instance().service(WorkExperienceService.class);
+        try {
+            List<ReferencePersonEntity> result = service.findRefById(applicationId);
+            return result;
+        } catch (Exception e) {
+            System.out.print(e);
+        }
+        return null;
     }
 }

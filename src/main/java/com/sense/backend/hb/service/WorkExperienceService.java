@@ -5,6 +5,7 @@
 package com.sense.backend.hb.service;
 
 import com.sense.backend.hb.dao.auth.WorkExperienceDAO;
+import com.sense.backend.hb.entity.auth.ReferencePersonEntity;
 import com.sense.backend.hb.entity.auth.WorkExperienceEntity;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,5 +44,10 @@ public class WorkExperienceService {
     @Transactional
     public void delete(WorkExperienceEntity entity) {
         dao.delete(entity);
+    }
+    
+        @Transactional
+    public List<ReferencePersonEntity> findRefById(int id) {
+        return dao.findRefById(id);
     }
 }
