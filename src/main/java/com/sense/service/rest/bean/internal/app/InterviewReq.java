@@ -16,18 +16,26 @@ import lombok.ToString;
 @ToString
 @Data
 public class InterviewReq implements Serializable {
-     private InterviewData data;
-    
+
+    private InterviewData data;
+
     @Data
     public class InterviewData {
+
         private String interviewId;
 //        private Date interviewDT;
 //        private Date interviewTime;
         private String interviewResult;
         private String interviewNote;
         private String interviewStatus;
+        private String interviewLocation;
+//        private Date interviewCreateDT;
+        private String interviewCreateby;
+//        private Date interviewUpdateDT;
+        private String interviewUpdateby;
+        private String interviewDelete;
         private String applicationId;
         private String interviewerId;
     }
-    
+
 }

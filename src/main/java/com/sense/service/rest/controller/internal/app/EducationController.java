@@ -91,7 +91,7 @@ public class EducationController extends BaseRestController {
             val.setEducationGPA(req.getData().getEducationGPA());
             val.setApplicationId(req.getData().getApplicationId());
             service.saveOrUpdate(val);
-
+            status = "";
         } catch (Exception e) {
             status = e.getMessage();
         }

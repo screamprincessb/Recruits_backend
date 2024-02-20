@@ -88,6 +88,12 @@ public class InterviewController extends BaseRestController {
             val.setInterviewStatus(req.getData().getInterviewStatus());
             val.setInterviewDT(new Date());
             val.setInterviewTime(new Date());
+            val.setInterviewLocation(req.getData().getInterviewLocation());
+            val.setInterviewCreateDT(new Date());
+            val.setInterviewCreateby(req.getData().getInterviewCreateby());
+            val.setInterviewUpdateDT(new Date());
+            val.setInterviewUpdateby(req.getData().getInterviewUpdateby());
+            val.setInterviewDelete(req.getData().getInterviewDelete());
             val.setApplicationId(req.getData().getApplicationId());
             val.setInterviewerId(req.getData().getInterviewerId());
             service.saveOrUpdate(val);

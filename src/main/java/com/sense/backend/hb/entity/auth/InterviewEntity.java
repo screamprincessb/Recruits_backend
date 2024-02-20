@@ -43,6 +43,26 @@ public class InterviewEntity implements Serializable {
 
     @Column(name = "INTERVIEW_STATUS")
     private String interviewStatus;
+    
+    @Column(name = "INTERVIEW_LOCATION")
+    private String interviewLocation;
+    
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "INTERVIEW_CREATE_DATE")
+    private Date interviewCreateDT;
+    
+    @Column(name = "INTERVIEW_CREATE_BY")
+    private String interviewCreateby;
+    
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "INTERVIEW_UPDATE_DATE")
+    private Date interviewUpdateDT;
+    
+    @Column(name = "INTERVIEW_UPDATE_BY")
+    private String interviewUpdateby;
+    
+    @Column(name = "INTERVIEW_DELETE")
+    private String interviewDelete;
 
     @Column(name = "APPLICATION_ID")
     private String applicationId;
