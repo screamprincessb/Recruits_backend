@@ -6,6 +6,12 @@ package com.sense.backend.hb.dao.auth;
 
 import com.sense.backend.hb.dao.BaseDAO;
 import com.sense.backend.hb.entity.auth.InterviewEntity;
+import com.sense.backend.hb.entity.auth.qInterviewAppointmentEntity;
+import jakarta.persistence.Query;
+import java.util.ArrayList;
+import java.util.List;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -15,8 +21,26 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class InterviewDAO extends BaseDAO<InterviewEntity, String>{
     
+    @Autowired
+    private SessionFactory sessionFactory;
+    
     public InterviewDAO(){
         super(InterviewEntity.class);
+    }
+    
+    public List<qInterviewAppointmentEntity> findAllInterApp(){
+        List<qInterviewAppointmentEntity> result = new ArrayList<>();
+        StringBuilder sql = new StringBuilder();
+        sql.append("select interview.*, application.can_first_name_th ,application.can_last_name_th ,hr.hr_id ,hr.hr_first_name  ,hr.hr_last_name ,position_link_form.position_id , position_link_form.position_name ");
+        sql.append("from interview ");
+        sql.append("inner join application on application.application_id = interview.application_id ");
+        sql.append("inner join interviewer on interviewer.interviewer_id = interview.interviewer_id ");
+        sql.append("inner join position_link_form on position_link_form.position_id  = application.position_id ");
+        sql.append("inner join hr on hr.hr_id = interviewer.hr_id ");
+        
+        Query query = sessionFactory.getCurrentSession().createNativeQuery(sql.toString(), qInterviewAppointmentEntity.class);
+        result = query.getResultList();
+        return result;
     }
     
 }

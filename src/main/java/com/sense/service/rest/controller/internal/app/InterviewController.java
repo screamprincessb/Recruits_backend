@@ -6,6 +6,7 @@ package com.sense.service.rest.controller.internal.app;
 
 import com.sense.backend.common.helper.HBHelper;
 import com.sense.backend.hb.entity.auth.InterviewEntity;
+import com.sense.backend.hb.entity.auth.qInterviewAppointmentEntity;
 import com.sense.backend.hb.service.InterviewService;
 import com.sense.service.base.BaseRestController;
 import com.sense.service.conts.ApiFilterConst;
@@ -17,7 +18,6 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.annotation.PostConstruct;
 import java.util.Date;
 import java.util.List;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -41,8 +41,7 @@ public class InterviewController extends BaseRestController {
     public void init() {
 
     }
-    
-    
+
     @Operation(summary = "Interview")
     @RequestMapping(value = "findAll", method = RequestMethod.GET)
 
@@ -56,7 +55,7 @@ public class InterviewController extends BaseRestController {
 
         return result;
     }
-        
+
     @Operation(summary = "Interview")
     @RequestMapping(value = "findById", method = RequestMethod.GET)
     public InterviewEntity findById(
@@ -68,7 +67,7 @@ public class InterviewController extends BaseRestController {
         InterviewEntity en = service.findById(interviewId);
         return en;
     }
-    
+
     @Operation(summary = "Interview")
     @RequestMapping(value = "saveOrUpdate", method = RequestMethod.PUT)
 
@@ -104,7 +103,7 @@ public class InterviewController extends BaseRestController {
         return status;
 
     }
-    
+
     @Operation(summary = "Interview")
     @RequestMapping(value = "delete", method = RequestMethod.DELETE)
     public void delete(
@@ -118,5 +117,24 @@ public class InterviewController extends BaseRestController {
         service.delete(result);
 
     }
-    
+
+    @Operation(summary = "Interview")
+    @RequestMapping(value = "findAllInterviewApp", method = RequestMethod.GET)
+
+    public List<qInterviewAppointmentEntity> findAllInterviewApp(
+            @Parameter(hidden = true)
+            @ModelAttribute(ApiFilterConst.ATTR_DATA_NAME) ApiAttrBean attrData,
+            @RequestHeader(defaultValue = ApiFilterConst.DEFAULT_VALUE_TOKEN_KEY) String token) {
+
+        InterviewService interviewservice = HBHelper.instance().service(InterviewService.class);
+        try {
+            List<qInterviewAppointmentEntity> result = interviewservice.findAllInterApp();
+            return result;
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+
+        return null;
+    }
+
 }

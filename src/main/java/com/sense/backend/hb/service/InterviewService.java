@@ -6,6 +6,7 @@ package com.sense.backend.hb.service;
 
 import com.sense.backend.hb.dao.auth.InterviewDAO;
 import com.sense.backend.hb.entity.auth.InterviewEntity;
+import com.sense.backend.hb.entity.auth.qInterviewAppointmentEntity;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -45,6 +46,11 @@ public class InterviewService {
     @Transactional
     public void delete(InterviewEntity entity) {
         dao.delete(entity);
+    }
+    
+    @Transactional
+    public List<qInterviewAppointmentEntity> findAllInterApp() {
+        return dao.findAllInterApp();
     }
     
 }
