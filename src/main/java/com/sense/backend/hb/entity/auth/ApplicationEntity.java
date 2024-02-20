@@ -36,7 +36,7 @@ public class ApplicationEntity implements Serializable {
     @Column(name = "APPLICATION_SALARY_RANGE")
     private String applicationSalaryRange;
 
-    @Temporal(TemporalType.TIMESTAMP)
+    @Temporal(TemporalType.DATE)
     @Column(name = "APPLICATION_START_DATE")
     private Date applicationStartDT;
 
@@ -83,7 +83,7 @@ public class ApplicationEntity implements Serializable {
     @Column(name = "CAN_HEIGHT")
     private float canHeight;
 
-    @Temporal(TemporalType.TIMESTAMP)
+    @Temporal(TemporalType.DATE)
     @Column(name = "CAN_DATE_OF_BIRTH")
     private Date canDtOfBirth;
 
@@ -102,7 +102,7 @@ public class ApplicationEntity implements Serializable {
     @Column(name = "CAN_PLACE_OF_ISSUE")
     private String canPlaceOfIssue;
 
-    @Temporal(TemporalType.TIMESTAMP)
+    @Temporal(TemporalType.DATE)
     @Column(name = "CAN_DATE_OF_ISSUE")
     private Date canDTOfIssue;
 
@@ -211,7 +211,7 @@ public class ApplicationEntity implements Serializable {
     @Column(name = "TEST_NAME")
     private String testName;
 
-    @Temporal(TemporalType.TIMESTAMP)
+    @Temporal(TemporalType.DATE)
     @Column(name = "TEST_DATE")
     private Date testDT;
 
