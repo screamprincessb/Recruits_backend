@@ -85,6 +85,7 @@ public class VehicleController extends BaseRestController {
             val.setVehicleDrive(req.getData().getVehicleDrive());
             val.setVehicleOwn(req.getData().getVehicleOwn());
             val.setVehicleNo(req.getData().getVehicleNo());
+            val.setAbillitiesId(req.getData().getAbillitiesId());
             service.saveOrUpdate(val);
 
         } catch (Exception e) {

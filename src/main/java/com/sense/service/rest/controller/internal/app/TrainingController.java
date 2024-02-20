@@ -86,6 +86,7 @@ public class TrainingController extends BaseRestController {
             val.setTrainingInstitution(req.getData().getTrainingInstitution());
             val.setTrainingQualification(req.getData().getTrainingQualification());
             val.setTrainingTime(req.getData().getTrainingTime());
+            val.setApplicationId(req.getData().getApplicationId());
             service.saveOrUpdate(val);
 
         } catch (Exception e) {

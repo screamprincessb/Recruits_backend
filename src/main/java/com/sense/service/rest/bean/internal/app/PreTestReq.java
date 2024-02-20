@@ -35,5 +35,6 @@ public class PreTestReq implements Serializable {
 //    private Date preTestUpdateDT;
         private String preTestupdateBy;
         private String preTestDelete;
+        private String applicationId;
     }
 }

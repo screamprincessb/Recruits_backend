@@ -31,6 +31,7 @@ public class EducationReq implements Serializable {
         private String educationStartDT;
         private String educationEndDT;
         private float educationGPA;
+        private String applicationId;
     }
 
 }

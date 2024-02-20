@@ -94,6 +94,7 @@ public class WorkExperienceController extends BaseRestController {
             val.setWeAddressPhone(req.getData().getWeAddressPhone());
             val.setWeDescription(req.getData().getWeDescription());
             val.setWeReasonLeaving(req.getData().getWeReasonLeaving());
+            val.setApplicationId(req.getData().getApplicationId());
             service.saveOrUpdate(val);
 
         } catch (Exception e) {

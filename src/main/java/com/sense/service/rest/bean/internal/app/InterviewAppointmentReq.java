@@ -32,5 +32,6 @@ public class InterviewAppointmentReq {
 //        private Date interAppUpdateDT;
         private String interAppUpdateby;
         private String interAppDelete;
+        private String interviewId;
     }
 }

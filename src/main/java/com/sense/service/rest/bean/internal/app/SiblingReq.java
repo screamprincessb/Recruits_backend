@@ -28,6 +28,8 @@ public class SiblingReq implements Serializable {
         private Integer siblingAge;
         private String siblingOccupation;
         private String siblingWorkLocation;
+        private String applicationId;
+        
     }
     
 }

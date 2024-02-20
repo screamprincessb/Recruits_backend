@@ -27,5 +27,6 @@ public class TrainingReq implements Serializable {
         private String trainingInstitution;
         private String trainingQualification;
         private String trainingTime;
+        private String applicationId;
     }
 }

@@ -21,5 +21,6 @@ public class InterviewerReq implements Serializable {
     public class InterviewerData {
         private String interviewerId;
         private String interviewerStatus;
+        private String hrId;
     }
 }

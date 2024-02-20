@@ -27,6 +27,7 @@ public class LanguagesReq implements Serializable {
         private String languagesReading;
         private String languagesWriting;
         private String languagesTypewriter;
+        private String abillitiesId;
 
     }
 }

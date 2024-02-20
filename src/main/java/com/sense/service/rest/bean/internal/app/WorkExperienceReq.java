@@ -33,5 +33,6 @@ public class WorkExperienceReq implements Serializable {
         private String weAddressPhone;
         private String weDescription;
         private String weReasonLeaving;
+        private String applicationId;
     }
 }

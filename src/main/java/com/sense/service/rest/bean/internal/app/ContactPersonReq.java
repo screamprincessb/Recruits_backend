@@ -27,5 +27,6 @@ public class ContactPersonReq implements Serializable {
         private String cpRelation;
         private String cpPhone;
         private String cpAddress;
+        private String applicationId;
     }
 }

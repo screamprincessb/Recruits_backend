@@ -28,6 +28,7 @@ public class ChildReq implements Serializable {
         private Integer childAge;
         private String childGender;
         private String childEducationLevel;
+        private String applicationId;
 
     }
 }

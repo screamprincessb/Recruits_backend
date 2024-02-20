@@ -86,6 +86,7 @@ public class ChildController extends BaseRestController {
             val.setChildAge(req.getData().getChildAge());
             val.setChildGender(req.getData().getChildGender());
             val.setChildEducationLevel(req.getData().getChildEducationLevel());
+            val.setApplicationId(req.getData().getApplicationId());
             service.saveOrUpdate(val);
 
         } catch (Exception e) {

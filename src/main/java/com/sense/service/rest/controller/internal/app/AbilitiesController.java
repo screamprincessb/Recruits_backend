@@ -87,6 +87,7 @@ public class AbilitiesController extends BaseRestController {
             val.setAbillitiesComputerSkill(req.getData().getAbillitiesComputerSkill());
             val.setAbillitiesOther(req.getData().getAbillitiesOther());
             val.setAbillitiesHobby(req.getData().getAbillitiesHobby());
+            val.setApplicationId(req.getData().getApplicationId());
             service.saveOrUpdate(val);
 
         } catch (Exception e) {

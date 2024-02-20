@@ -26,5 +26,6 @@ public class DataOtherReq implements Serializable {
         private String doQuestion;
         private String doANS;
         private String doOtherANS;
+        private String applicationId;
     }
 }

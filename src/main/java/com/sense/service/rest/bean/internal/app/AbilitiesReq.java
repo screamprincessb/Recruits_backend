@@ -27,6 +27,7 @@ public class AbilitiesReq implements Serializable {
         private String abillitiesComputerSkill;
         private String abillitiesOther;
         private String abillitiesHobby;
+        private String applicationId;
 
     }
 }

@@ -90,6 +90,7 @@ public class InterviewAppointmentController extends BaseRestController {
             val.setInterAppCreateby(req.getData().getInterAppCreateby());
             val.setInterAppUpdateby(req.getData().getInterAppUpdateby());
             val.setInterAppDelete(req.getData().getInterAppDelete());
+            val.setInterviewId(req.getData().getInterviewId());
             service.saveOrUpdate(val);
 
         } catch (Exception e) {

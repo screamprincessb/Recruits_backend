@@ -169,10 +169,9 @@ public class ApplicationController extends BaseRestController {
             val.setApplicationUpdateDT(new Date());
             val.setApplicationUpdateBy(req.getData().getApplicationUpdateBy());
             val.setApplicationDeleteFlag(req.getData().getApplicationDeleteFlag());
-
-            val.setPositionId(req.getData().getPositionId());
+            
             val.setSiblingYouAre(req.getData().getSiblingYouAre());
-
+            val.setPositionId(req.getData().getPositionId());
             service.saveOrUpdate(val);
 
         } catch (Exception e) {

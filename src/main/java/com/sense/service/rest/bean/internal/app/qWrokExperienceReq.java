@@ -20,7 +20,7 @@ public class qWrokExperienceReq implements Serializable{
     
     @Data
     public class qWorkExperienceData{
-        private String workExperienceId;
+    private String workExperienceId;
 //    private Date weStartDT;
 //    private Date weEndDT;
     private String weBusinessType;

@@ -86,6 +86,7 @@ public class ContactPersonController extends BaseRestController {
             val.setCpRelation(req.getData().getCpRelation());
             val.setCpPhone(req.getData().getCpPhone());
             val.setCpAddress(req.getData().getCpAddress());
+            val.setApplicationId(req.getData().getApplicationId());
 
             service.saveOrUpdate(val);
 

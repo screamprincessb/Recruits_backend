@@ -81,6 +81,7 @@ public class InterviewerController extends BaseRestController {
             InterviewerEntity val = new InterviewerEntity();
             val.setInterviewerId(req.getData().getInterviewerId());
             val.setInterviewerStatus(req.getData().getInterviewerStatus());
+            val.setHrId(req.getData().getHrId());
             service.saveOrUpdate(val);
 
         } catch (Exception e) {

@@ -85,6 +85,7 @@ public class LanguagesController extends BaseRestController {
             val.setLanguagesReading(req.getData().getLanguagesReading());
             val.setLanguagesWriting(req.getData().getLanguagesWriting());
             val.setLanguagesTypewriter(req.getData().getLanguagesTypewriter());
+            val.setAbillitiesId(req.getData().getAbillitiesId());
             service.saveOrUpdate(val);
 
         } catch (Exception e) {

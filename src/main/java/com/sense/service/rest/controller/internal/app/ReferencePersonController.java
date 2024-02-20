@@ -85,6 +85,7 @@ public class ReferencePersonController extends BaseRestController {
             val.setRefJobPosition(req.getData().getRefJobPosition());
             val.setRefWorkLocation(req.getData().getRefWorkLocation());
             val.setRefPhone(req.getData().getRefPhone());
+            val.setWorkExperienceId(req.getData().getWorkExperienceId());
             service.saveOrUpdate(val);
 
         } catch (Exception e) {

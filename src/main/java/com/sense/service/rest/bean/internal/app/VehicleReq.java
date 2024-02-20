@@ -26,5 +26,6 @@ public class VehicleReq implements Serializable {
         private String vehicleDrive;
         private String vehicleOwn;
         private String vehicleNo;
+        private String abillitiesId;
     }
 }

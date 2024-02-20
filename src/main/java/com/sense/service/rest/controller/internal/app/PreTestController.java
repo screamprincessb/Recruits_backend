@@ -94,6 +94,7 @@ public class PreTestController extends BaseRestController {
             val.setPreTestUpdateDT(new Date());
             val.setPreTestupdateBy(req.getData().getPreTestupdateBy());
             val.setPreTestDelete(req.getData().getPreTestDelete());
+            val.setApplicationId(req.getData().getApplicationId());
             service.saveOrUpdate(val);
 
         } catch (Exception e) {
