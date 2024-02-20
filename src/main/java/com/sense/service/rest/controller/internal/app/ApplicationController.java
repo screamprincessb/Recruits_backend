@@ -139,7 +139,7 @@ public class ApplicationController extends BaseRestController {
             val.setFamSpouseOccupation(req.getData().getFamSpouseOccupation());
             val.setFamSpouseWorkLocation(req.getData().getFamSpouseWorkLocation());
             val.setFamChildAmount(req.getData().getFamChildAmount());
-            val.setContactHouseNubmer(req.getData().getContactHouseNubmer());
+            val.setContactHouseNumber(req.getData().getContactHouseNumber());
             val.setContactVillage(req.getData().getContactVillage());
             val.setContactAlley(req.getData().getContactAlley());
             val.setContactRoad(req.getData().getContactRoad());

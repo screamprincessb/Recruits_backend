@@ -161,7 +161,7 @@ public class ApplicationEntity implements Serializable {
     private Integer famChildAmount;
 
     @Column(name = "CONTACT_HOUSE_NUMBER")
-    private String contactHouseNubmer;
+    private String contactHouseNumber;
 
     @Column(name = "CONTACT_VILLAGE")
     private String contactVillage;
@@ -247,7 +247,7 @@ public class ApplicationEntity implements Serializable {
     private String applicationDeleteFlag;
     
     @Column(name = "SIBLING_YOU_ARE")
-    private Integer siblingYouAre;
+    private String siblingYouAre;
     
     @Column(name = "POSITION_ID")
     private String positionId;

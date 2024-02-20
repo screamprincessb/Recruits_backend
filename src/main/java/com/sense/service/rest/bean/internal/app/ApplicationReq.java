@@ -75,7 +75,7 @@ public class ApplicationReq implements Serializable {
         private String famSpouseOccupation;
         private String famSpouseWorkLocation;
         private Integer famChildAmount;
-        private String contactHouseNubmer;
+        private String contactHouseNumber;
         private String contactVillage;
         private String contactAlley;
         private String contactRoad;
@@ -105,7 +105,7 @@ public class ApplicationReq implements Serializable {
         
         private String applicationUpdateBy;
         private String applicationDeleteFlag;
-        private Integer siblingYouAre;
+        private String siblingYouAre;
         
         private String positionId;
     }
