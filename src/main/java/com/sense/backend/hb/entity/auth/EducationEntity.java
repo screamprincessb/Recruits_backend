@@ -39,11 +39,11 @@ public class EducationEntity implements Serializable {
     @Column(name = "EDUCATION_MAJOR")
     private String educationMajor;
 
-    @Temporal(TemporalType.TIMESTAMP)
+    @Temporal(TemporalType.DATE)
     @Column(name = "EDUCATION_START_DATE")
     private String educationStartDT;
 
-    @Temporal(TemporalType.TIMESTAMP)
+    @Temporal(TemporalType.DATE)
     @Column(name = "EDUCATION_END_DATE")
     private String educationEndDT;
 

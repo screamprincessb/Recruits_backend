@@ -57,7 +57,7 @@ public class ApplicationEntity implements Serializable {
     private String canLastNameTH;
 
     @Column(name = "CAN_NICKNAME_TH")
-    private String canNickameTH;
+    private String canNicknameTH;
 
     @Column(name = "CAN_TITLE_NAME_ENG")
     private String canTitleNameENG;
@@ -69,7 +69,7 @@ public class ApplicationEntity implements Serializable {
     private String canLastNameENG;
 
     @Column(name = "CAN_NICKNAME_ENG")
-    private String canNickameENG;
+    private String canNicknameENG;
 
     @Column(name = "CAN_PHOTO")
     private String canPhoto;
