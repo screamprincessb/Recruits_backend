@@ -55,7 +55,7 @@ public class ApplicationReq implements Serializable {
         private String canCardId;
         private String canPlaceOfIssue;
 //        private Date canDTOfIssue;
-        private String canMarrieageStatus;
+        private String canMarriageStatus;
         private String famFatherFirstName;
         
         private String famFatherLastName;

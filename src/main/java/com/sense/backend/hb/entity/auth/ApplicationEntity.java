@@ -107,7 +107,7 @@ public class ApplicationEntity implements Serializable {
     private Date canDTOfIssue;
 
     @Column(name = "CAN_MARRIEAGE_STATUS")
-    private String canMarrieageStatus;
+    private String canMarriageStatus;
 
     @Column(name = "FAM_FATHER_FIRST_NAME")
     private String famFatherFirstName;
@@ -133,7 +133,7 @@ public class ApplicationEntity implements Serializable {
     @Column(name = "FAM_MOTHER_AGE")
     private Integer famMotherAge;
 
-    @Column(name = "FAM_MoTHER_OCCUPATION")
+    @Column(name = "FAM_MOTHER_OCCUPATION")
     private String famMotherOccupation;
 
     @Column(name = "FAM_MOTHER_WORK_LOCATION")

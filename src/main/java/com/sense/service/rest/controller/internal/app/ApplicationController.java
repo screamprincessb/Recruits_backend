@@ -120,7 +120,7 @@ public class ApplicationController extends BaseRestController {
             val.setCanCardId(req.getData().getCanCardId());
             val.setCanPlaceOfIssue(req.getData().getCanPlaceOfIssue());
             val.setCanDTOfIssue(new Date());
-            val.setCanMarrieageStatus(req.getData().getCanMarrieageStatus());
+            val.setCanMarriageStatus(req.getData().getCanMarriageStatus());
             val.setFamFatherFirstName(req.getData().getFamFatherFirstName());
 
             val.setFamFatherLastName(req.getData().getFamFatherLastName());
