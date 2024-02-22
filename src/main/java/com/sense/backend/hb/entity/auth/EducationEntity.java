@@ -41,11 +41,11 @@ public class EducationEntity implements Serializable {
 
     @Temporal(TemporalType.DATE)
     @Column(name = "EDUCATION_START_DATE")
-    private String educationStartDT;
+    private Date educationStartDT;
 
     @Temporal(TemporalType.DATE)
     @Column(name = "EDUCATION_END_DATE")
-    private String educationEndDT;
+    private Date educationEndDT;
 
     @Column(name = "EDUCATION_GPA")
     private float educationGPA;
