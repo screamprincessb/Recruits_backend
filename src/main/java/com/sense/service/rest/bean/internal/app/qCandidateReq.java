@@ -25,5 +25,7 @@ public class qCandidateReq {
         private String canFirstNameTH;
         private String canLastNameTH;
         private String applicationStatus;
+        private String positionId;
+        private String positionName;
     }
 }

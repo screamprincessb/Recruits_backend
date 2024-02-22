@@ -156,8 +156,9 @@ public class ApplicationDAO extends BaseDAO<ApplicationEntity, String> {
         public List<qCandidateEntityToUse> finCandidateByStatus(String status) {
         List<qCandidateEntityToUse> result = new ArrayList<>();
         StringBuilder sql = new StringBuilder();
-        sql.append("select application.application_id ,application.can_first_name_th , application.can_last_name_th ,application.application_status ");
+        sql.append("select application.application_id ,application.can_first_name_th , application.can_last_name_th ,application.application_status,position_link_form.position_id, position_link_form.position_name  ");
         sql.append("from application ");
+        sql.append("inner join position_link_form on position_link_form.position_id = application.position_id ");
         sql.append("where application_status = :status");
         Query query = sessionFactory.getCurrentSession().createNativeQuery(sql.toString(), qCandidateEntityToUse.class);
         query.setParameter("status", status);

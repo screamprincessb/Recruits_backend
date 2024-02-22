@@ -29,4 +29,10 @@ public class qCandidateEntityToUse {
     
     @Column(name = "APPLICATION_STATUS")
     private String applicationStatus;
+    
+    @Column(name = "POSITION_ID")
+    private String positionId;
+
+    @Column(name = "POSITION_NAME")
+    private String positionName;
 }
