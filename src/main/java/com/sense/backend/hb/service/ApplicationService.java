@@ -111,4 +111,9 @@ public class ApplicationService {
     public List<qCandidateEntityToUse> finCandidateByStatus(String status) {
         return dao.finCandidateByStatus(status);
     }
+    
+            @Transactional
+    public List<qCandidateEntityToUse> finCandidateById(String id) {
+        return dao.finCandidateById(id);
+    }
 }

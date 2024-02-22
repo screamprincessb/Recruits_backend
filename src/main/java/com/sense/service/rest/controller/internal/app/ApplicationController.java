@@ -384,4 +384,21 @@ public class ApplicationController extends BaseRestController {
         }
         return null;
     }
+    
+            @Operation(summary = "Application")
+    @RequestMapping(value = "findCandidateByIdToApplication", method = RequestMethod.GET)
+    public List<qCandidateEntityToUse> finCandidateById(
+            @Parameter(hidden = true)
+            @ModelAttribute(ApiFilterConst.ATTR_DATA_NAME) ApiAttrBean attrData,
+            @RequestHeader(defaultValue = ApiFilterConst.DEFAULT_VALUE_TOKEN_KEY) String token,
+            @RequestParam("applicationId") String applicationId) {
+        ApplicationService service = HBHelper.instance().service(ApplicationService.class);
+        try {
+            List<qCandidateEntityToUse> result = service.finCandidateById(applicationId);
+            return result;
+        } catch (Exception e) {
+            System.out.print(e);
+        }
+        return null;
+    }
 }
