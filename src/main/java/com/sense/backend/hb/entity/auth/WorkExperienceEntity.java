@@ -27,11 +27,11 @@ public class WorkExperienceEntity implements Serializable{
     @Column(name = "WORK_EXPERIENCE_ID")
     private String workExperienceId;
     
-    @Temporal(TemporalType.TIMESTAMP)
+    @Temporal(TemporalType.DATE)
     @Column(name = "WE_START_DATE")
     private Date weStartDT;
     
-    @Temporal(TemporalType.TIMESTAMP)
+    @Temporal(TemporalType.DATE)
     @Column(name = "WE_END_DATE")
     private Date weEndDT;
     
