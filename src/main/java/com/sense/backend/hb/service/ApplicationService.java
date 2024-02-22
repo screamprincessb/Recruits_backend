@@ -7,6 +7,7 @@ package com.sense.backend.hb.service;
 import com.sense.backend.hb.dao.auth.ApplicationDAO;
 import com.sense.backend.hb.entity.auth.AbillitiesEntity;
 import com.sense.backend.hb.entity.auth.ApplicationEntity;
+import com.sense.backend.hb.entity.auth.qCandidateEntityToUse;
 import com.sense.backend.hb.entity.auth.ChildEntity;
 import com.sense.backend.hb.entity.auth.ContactPersonEntity;
 import com.sense.backend.hb.entity.auth.DataOtherEntity;
@@ -104,5 +105,10 @@ public class ApplicationService {
     @Transactional
     public List<TrainingEntity> findTrainingById(String id) {
         return dao.findTrainingById(id);
+    }
+    
+        @Transactional
+    public List<qCandidateEntityToUse> finCandidateByStatus(String status) {
+        return dao.finCandidateByStatus(status);
     }
 }

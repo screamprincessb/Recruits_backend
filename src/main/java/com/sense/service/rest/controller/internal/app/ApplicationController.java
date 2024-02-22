@@ -14,6 +14,7 @@ import com.sense.backend.hb.entity.auth.EducationEntity;
 import com.sense.backend.hb.entity.auth.SiblingEntity;
 import com.sense.backend.hb.entity.auth.TrainingEntity;
 import com.sense.backend.hb.entity.auth.qApplicationEntity;
+import com.sense.backend.hb.entity.auth.qCandidateEntityToUse;
 import com.sense.backend.hb.entity.auth.qPositionNameEntityToJoin;
 import com.sense.backend.hb.entity.auth.qWorkExperienceEntityToJoin;
 import com.sense.backend.hb.service.ApplicationService;
@@ -360,6 +361,23 @@ public class ApplicationController extends BaseRestController {
         ApplicationService service = HBHelper.instance().service(ApplicationService.class);
         try {
             List<TrainingEntity> result = service.findTrainingById(applicationId);
+            return result;
+        } catch (Exception e) {
+            System.out.print(e);
+        }
+        return null;
+    }
+    
+        @Operation(summary = "Application")
+    @RequestMapping(value = "findCandidateByStatusToApplication", method = RequestMethod.GET)
+    public List<qCandidateEntityToUse> finCandidateByStatus(
+            @Parameter(hidden = true)
+            @ModelAttribute(ApiFilterConst.ATTR_DATA_NAME) ApiAttrBean attrData,
+            @RequestHeader(defaultValue = ApiFilterConst.DEFAULT_VALUE_TOKEN_KEY) String token,
+            @RequestParam("applicationStatus") String applicationStatus) {
+        ApplicationService service = HBHelper.instance().service(ApplicationService.class);
+        try {
+            List<qCandidateEntityToUse> result = service.finCandidateByStatus(applicationStatus);
             return result;
         } catch (Exception e) {
             System.out.print(e);

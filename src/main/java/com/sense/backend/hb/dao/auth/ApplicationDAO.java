@@ -7,6 +7,7 @@ package com.sense.backend.hb.dao.auth;
 import com.sense.backend.hb.dao.BaseDAO;
 import com.sense.backend.hb.entity.auth.AbillitiesEntity;
 import com.sense.backend.hb.entity.auth.ApplicationEntity;
+import com.sense.backend.hb.entity.auth.qCandidateEntityToUse;
 import com.sense.backend.hb.entity.auth.ChildEntity;
 import com.sense.backend.hb.entity.auth.ContactPersonEntity;
 import com.sense.backend.hb.entity.auth.DataOtherEntity;
@@ -148,6 +149,18 @@ public class ApplicationDAO extends BaseDAO<ApplicationEntity, String> {
         sql.append("where application_id  = :id");
         Query query = sessionFactory.getCurrentSession().createNativeQuery(sql.toString(), TrainingEntity.class);
         query.setParameter("id", id);
+        result = query.getResultList();
+        return result;
+    }
+    
+        public List<qCandidateEntityToUse> finCandidateByStatus(String status) {
+        List<qCandidateEntityToUse> result = new ArrayList<>();
+        StringBuilder sql = new StringBuilder();
+        sql.append("select application.application_id ,application.can_first_name_th , application.can_last_name_th ,application.application_status ");
+        sql.append("from application ");
+        sql.append("where application_status = :status");
+        Query query = sessionFactory.getCurrentSession().createNativeQuery(sql.toString(), qCandidateEntityToUse.class);
+        query.setParameter("status", status);
         result = query.getResultList();
         return result;
     }
