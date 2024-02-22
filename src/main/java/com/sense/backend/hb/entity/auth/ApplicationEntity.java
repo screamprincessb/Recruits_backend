@@ -106,7 +106,7 @@ public class ApplicationEntity implements Serializable {
     @Column(name = "CAN_DATE_OF_ISSUE")
     private Date canDTOfIssue;
 
-    @Column(name = "CAN_MARRIEAGE_STATUS")
+    @Column(name = "CAN_MARRIAGE_STATUS")
     private String canMarriageStatus;
 
     @Column(name = "FAM_FATHER_FIRST_NAME")
