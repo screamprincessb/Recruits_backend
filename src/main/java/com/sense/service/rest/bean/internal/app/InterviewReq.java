@@ -4,6 +4,7 @@
  */
 package com.sense.service.rest.bean.internal.app;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import java.io.Serializable;
 import java.util.Date;
 import lombok.Data;
@@ -23,8 +24,10 @@ public class InterviewReq implements Serializable {
     public class InterviewData {
 
         private String interviewId;
+        
+        @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyyMMdd HH:mm:ss")
         private Date interviewDT;
-        private Date interviewTime;
+//        private Date interviewTime;
         private String interviewResult;
         private String interviewNote;
         private String interviewStatus;
