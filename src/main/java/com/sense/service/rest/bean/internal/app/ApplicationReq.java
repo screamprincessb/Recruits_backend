@@ -31,11 +31,11 @@ public class ApplicationReq implements Serializable {
         private String applicationTranscript;
         private String applicationPosition;
         private String applicationSalaryRange;
-//        private Date applicationStartDT;
+        private String applicationStartDT;
 //        private Date applicationSubmitDT;
         private String applicationStatus;
         private String canTitleNameTH;
-        
+
         private String canFirstNameTH;
         private String canLastNameTH;
         private String canNicknameTH;
@@ -46,18 +46,18 @@ public class ApplicationReq implements Serializable {
         private String canPhoto;
         private String canSight;
         private float canWeight;
-        
+
         private float canHeight;
-//        private Date canDtOfBirth;
+        private String canDtOfBirth;
         private Integer canAge;
         private String canNational;
         private String canEthincity;
         private String canCardId;
         private String canPlaceOfIssue;
-//        private Date canDTOfIssue;
+        private String canDTOfIssue;
         private String canMarriageStatus;
         private String famFatherFirstName;
-        
+
         private String famFatherLastName;
         private Integer famFatherAge;
         private String famFatherOccupation;
@@ -68,7 +68,7 @@ public class ApplicationReq implements Serializable {
         private String famMotherOccupation;
         private String famMotherWorkLocation;
         private Integer famSiblingAmount;
-        
+
         private String famSpouseFirstName;
         private String famSpouseLastName;
         private Integer famSpouseAge;
@@ -79,7 +79,7 @@ public class ApplicationReq implements Serializable {
         private String contactVillage;
         private String contactAlley;
         private String contactRoad;
-        
+
         private String contactSubdistrict;
         private String contactDistrict;
         private String contactProvince;
@@ -91,7 +91,7 @@ public class ApplicationReq implements Serializable {
         private String currentEDUName;
         private String currentEDUMajor;
         private String currentEDUSemester;
-        
+
         private String currentExpected;
         private String testName;
 //        private Date testDT;
@@ -102,11 +102,11 @@ public class ApplicationReq implements Serializable {
 //        private Date applicationCreateDT;
         private String applicationCreateBy;
 //        private Date applicationUpdateDT;
-        
+
         private String applicationUpdateBy;
         private String applicationDeleteFlag;
         private String siblingYouAre;
-        
+
         private String positionId;
     }
 }

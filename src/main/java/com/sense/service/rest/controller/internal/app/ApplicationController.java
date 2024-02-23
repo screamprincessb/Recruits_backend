@@ -22,6 +22,7 @@ import com.sense.service.base.BaseRestController;
 import com.sense.service.conts.ApiFilterConst;
 import com.sense.service.custom.filter.ApiAttrBean;
 import com.sense.service.rest.bean.internal.app.ApplicationReq;
+import com.sense.service.util.DateTimeUtil;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -96,7 +97,7 @@ public class ApplicationController extends BaseRestController {
             val.setApplicationResumeCV(req.getData().getApplicationResumeCV());
             val.setApplicationTranscript(req.getData().getApplicationTranscript());
             val.setApplicationSalaryRange(req.getData().getApplicationSalaryRange());
-            val.setApplicationStartDT(new Date());
+            val.setApplicationStartDT(DateTimeUtil.stringToDate2(req.getData().getApplicationStartDT()));
             val.setApplicationSubmitDT(new Date());
             val.setApplicationStatus(req.getData().getApplicationStatus());
             val.setCanTitleNameTH(req.getData().getCanTitleNameTH());
@@ -113,13 +114,13 @@ public class ApplicationController extends BaseRestController {
             val.setCanWeight(req.getData().getCanWeight());
 
             val.setCanHeight(req.getData().getCanHeight());
-            val.setCanDtOfBirth(new Date());
+            val.setCanDtOfBirth(DateTimeUtil.stringToDate2(req.getData().getCanDtOfBirth()));
             val.setCanAge(req.getData().getCanAge());
             val.setCanNational(req.getData().getCanNational());
             val.setCanEthincity(req.getData().getCanEthincity());
             val.setCanCardId(req.getData().getCanCardId());
             val.setCanPlaceOfIssue(req.getData().getCanPlaceOfIssue());
-            val.setCanDTOfIssue(new Date());
+            val.setCanDTOfIssue(DateTimeUtil.stringToDate2(req.getData().getCanDTOfIssue()));
             val.setCanMarriageStatus(req.getData().getCanMarriageStatus());
             val.setFamFatherFirstName(req.getData().getFamFatherFirstName());
 
