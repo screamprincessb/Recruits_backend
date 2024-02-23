@@ -64,9 +64,6 @@ public class qInterviewAppointmentEntity {
     @Column(name = "APPLICATION_ID")
     private String applicationId;
 
-    @Column(name = "INTERVIEWER_ID")
-    private String interviewerId;
-
     @Column(name = "CAN_FIRST_NAME_TH")
     private String canFirstNameTH;
 

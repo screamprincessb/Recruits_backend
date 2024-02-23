@@ -31,12 +31,11 @@ public class InterviewDAO extends BaseDAO<InterviewEntity, String>{
     public List<qInterviewAppointmentEntity> findAllInterApp(){
         List<qInterviewAppointmentEntity> result = new ArrayList<>();
         StringBuilder sql = new StringBuilder();
-        sql.append("select interview.*, application.can_first_name_th ,application.can_last_name_th ,hr.hr_id ,hr.hr_first_name  ,hr.hr_last_name ,position_link_form.position_id , position_link_form.position_name ");
+        sql.append("select interview.*, application.can_first_name_th ,application.can_last_name_th ,hr.hr_first_name  ,hr.hr_last_name ,position_link_form.position_id , position_link_form.position_name ");
         sql.append("from interview ");
         sql.append("inner join application on application.application_id = interview.application_id ");
-        sql.append("inner join interviewer on interviewer.interviewer_id = interview.interviewer_id ");
         sql.append("inner join position_link_form on position_link_form.position_id  = application.position_id ");
-        sql.append("inner join hr on hr.hr_id = interviewer.hr_id ");
+        sql.append("inner join hr on hr.hr_id = interview.hr_id ");
         
         Query query = sessionFactory.getCurrentSession().createNativeQuery(sql.toString(), qInterviewAppointmentEntity.class);
         result = query.getResultList();

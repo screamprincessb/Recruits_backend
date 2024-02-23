@@ -35,7 +35,7 @@ public class InterviewReq implements Serializable {
         private String interviewUpdateby;
         private String interviewDelete;
         private String applicationId;
-        private String interviewerId;
+        private String hrId;
     }
 
 }

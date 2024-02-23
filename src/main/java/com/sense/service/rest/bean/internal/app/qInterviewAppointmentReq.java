@@ -34,7 +34,6 @@ public class qInterviewAppointmentReq implements Serializable {
         private String interviewUpdateby;
         private String interviewDelete;
         private String applicationId;
-        private String interviewerId;
         private String canFirstNameTH;
         private String canLastNameTH;
         private String hrId;
