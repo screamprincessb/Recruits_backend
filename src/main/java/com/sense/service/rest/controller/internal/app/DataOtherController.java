@@ -85,7 +85,6 @@ public class DataOtherController extends BaseRestController {
             val.setDoId(req.getData().getDoId());
             val.setDoQuestion(req.getData().getDoQuestion());
             val.setDoANS(req.getData().getDoANS());
-            val.setDoOtherANS(req.getData().getDoOtherANS());
             val.setApplicationId(req.getData().getApplicationId());
             service.saveOrUpdate(val);
 

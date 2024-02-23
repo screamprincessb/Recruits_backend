@@ -30,9 +30,6 @@ public class DataOtherEntity implements Serializable {
     @Column(name = "DO_ANS")
     private String doANS;
 
-    @Column(name = "DO_OTHER_ANS")
-    private String doOtherANS;
-
     @Column(name = "APPLICATION_ID")
     private String applicationId;
 
