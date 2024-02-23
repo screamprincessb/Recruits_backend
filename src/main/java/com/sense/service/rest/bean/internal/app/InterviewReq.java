@@ -23,8 +23,8 @@ public class InterviewReq implements Serializable {
     public class InterviewData {
 
         private String interviewId;
-//        private Date interviewDT;
-//        private Date interviewTime;
+        private Date interviewDT;
+        private Date interviewTime;
         private String interviewResult;
         private String interviewNote;
         private String interviewStatus;

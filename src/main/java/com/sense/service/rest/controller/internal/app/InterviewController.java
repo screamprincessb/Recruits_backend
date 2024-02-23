@@ -12,6 +12,7 @@ import com.sense.service.base.BaseRestController;
 import com.sense.service.conts.ApiFilterConst;
 import com.sense.service.custom.filter.ApiAttrBean;
 import com.sense.service.rest.bean.internal.app.InterviewReq;
+import com.sense.service.util.DateTimeUtil;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -85,7 +86,7 @@ public class InterviewController extends BaseRestController {
             val.setInterviewResult(req.getData().getInterviewResult());
             val.setInterviewNote(req.getData().getInterviewNote());
             val.setInterviewStatus(req.getData().getInterviewStatus());
-            val.setInterviewDT(new Date());
+            val.setInterviewDT(req.getData().getInterviewDT());
             val.setInterviewTime(new Date());
             val.setInterviewLocation(req.getData().getInterviewLocation());
             val.setInterviewCreateDT(new Date());
