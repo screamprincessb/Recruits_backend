@@ -137,5 +137,21 @@ public class InterviewController extends BaseRestController {
 
         return null;
     }
+    @Operation(summary = "Interview")
+    @RequestMapping(value = "findInterAppByIdInterview", method = RequestMethod.GET)
+    public List<qInterviewAppointmentEntity> findInterAppById(
+            @Parameter(hidden = true)
+            @ModelAttribute(ApiFilterConst.ATTR_DATA_NAME) ApiAttrBean attrData,
+            @RequestHeader(defaultValue = ApiFilterConst.DEFAULT_VALUE_TOKEN_KEY) String token,
+            @RequestParam("interviewId") String interviewId) {
+        InterviewService service = HBHelper.instance().service(InterviewService.class);
+        try {
+            List<qInterviewAppointmentEntity> result = service.findInterAppById(interviewId);
+            return result;
+        } catch (Exception e) {
+            System.out.print(e);
+        }
+        return null;
+    }
 
 }

@@ -42,4 +42,20 @@ public class InterviewDAO extends BaseDAO<InterviewEntity, String>{
         return result;
     }
     
+        public List<qInterviewAppointmentEntity> findInterAppById(String id){
+        List<qInterviewAppointmentEntity> result = new ArrayList<>();
+        StringBuilder sql = new StringBuilder();
+        sql.append("select interview.*, application.can_first_name_th ,application.can_last_name_th ,hr.hr_first_name  ,hr.hr_last_name ,position_link_form.position_id , position_link_form.position_name ");
+        sql.append("from interview ");
+        sql.append("inner join application on application.application_id = interview.application_id ");
+        sql.append("inner join position_link_form on position_link_form.position_id  = application.position_id ");
+        sql.append("inner join hr on hr.hr_id = interview.hr_id ");
+        sql.append("where interview_id = :id");
+        
+        Query query = sessionFactory.getCurrentSession().createNativeQuery(sql.toString(), qInterviewAppointmentEntity.class);
+        query.setParameter("id", id);
+        result = query.getResultList();
+        return result;
+    }
+    
 }

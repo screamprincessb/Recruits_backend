@@ -53,4 +53,9 @@ public class InterviewService {
         return dao.findAllInterApp();
     }
     
+        @Transactional
+    public List<qInterviewAppointmentEntity> findInterAppById(String id) {
+        return dao.findInterAppById(id);
+    }
+    
 }
