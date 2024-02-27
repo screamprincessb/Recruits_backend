@@ -25,9 +25,10 @@ public class InterviewReq implements Serializable {
 
         private String interviewId;
         
-        @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyyMMdd HH:mm:ss")
+        @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyyMMdd HH:mm")
         private Date interviewDT;
-//        private Date interviewTime;
+        @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyyMMdd HH:mm")
+        private Date interviewTime;
         private String interviewResult;
         private String interviewNote;
         private String interviewStatus;
