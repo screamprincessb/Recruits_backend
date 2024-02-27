@@ -26,26 +26,12 @@ public class PreTestEntity implements Serializable {
     @Id
     @Column(name = "PRE_TEST_ID")
     private String preTestId;
-    
-    @Column(name = "PRE_TEST_NUMBER")
-    private Integer preTestNumber;
 
     @Column(name = "PRE_TEST_QUESTION")
     private String preTestQuestion;
 
-    @Column(name = "PRE_TEST_CHOICE1")
-    private String preTestChoice1;
-
-    @Column(name = "PRE_TEST_CHOICE2")
-    private String preTestChoice2;
-    @Column(name = "PRE_TEST_CHOICE3")
-    private String preTestChoice3;
-
-    @Column(name = "PRE_TEST_CHOICE4")
-    private String preTestChoice4;
-
-    @Column(name = "PRE_TEST_CORRECT")
-    private String preTestCorrect;
+    @Column(name = "PRE_TEST_ANS")
+    private String preTestAns;
 
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "PRE_TEST_CREATE_DATE")
