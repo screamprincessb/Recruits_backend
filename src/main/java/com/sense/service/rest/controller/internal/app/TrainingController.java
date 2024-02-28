@@ -11,6 +11,7 @@ import com.sense.service.base.BaseRestController;
 import com.sense.service.conts.ApiFilterConst;
 import com.sense.service.custom.filter.ApiAttrBean;
 import com.sense.service.rest.bean.internal.app.TrainingReq;
+import com.sense.service.util.DateTimeUtil;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -81,7 +82,8 @@ public class TrainingController extends BaseRestController {
             TrainingService service = HBHelper.instance().service(TrainingService.class);
             TrainingEntity val = new TrainingEntity();
             val.setTrainingId(req.getData().getTrainingId());
-            val.setTrainingDate(new Date());
+//            val.setTrainingDate(new Date());
+            val.setTrainingDate(DateTimeUtil.stringToDate2(req.getData().getTrainingDate()));
             val.setTrainingCourse(req.getData().getTrainingCourse());
             val.setTrainingInstitution(req.getData().getTrainingInstitution());
             val.setTrainingQualification(req.getData().getTrainingQualification());

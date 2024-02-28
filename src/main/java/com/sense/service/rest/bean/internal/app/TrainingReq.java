@@ -22,7 +22,7 @@ public class TrainingReq implements Serializable {
     public class TrainingData {
 
         private String trainingId;
-//    private Date trainingDate;
+        private String trainingDate;
         private String trainingCourse;
         private String trainingInstitution;
         private String trainingQualification;
