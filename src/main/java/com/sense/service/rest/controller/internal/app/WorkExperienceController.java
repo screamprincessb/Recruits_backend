@@ -14,6 +14,7 @@ import com.sense.service.base.BaseRestController;
 import com.sense.service.conts.ApiFilterConst;
 import com.sense.service.custom.filter.ApiAttrBean;
 import com.sense.service.rest.bean.internal.app.WorkExperienceReq;
+import com.sense.service.util.DateTimeUtil;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -84,8 +85,8 @@ public class WorkExperienceController extends BaseRestController {
             WorkExperienceService service = HBHelper.instance().service(WorkExperienceService.class);
             WorkExperienceEntity val = new WorkExperienceEntity();
             val.setWorkExperienceId(req.getData().getWorkExperienceId());
-            val.setWeStartDT(new Date());
-            val.setWeEndDT(new Date());
+            val.setWeStartDT(DateTimeUtil.stringToDate2(req.getData().getWeStartDT()));
+            val.setWeEndDT(DateTimeUtil.stringToDate2(req.getData().getWeEndDT()));
             val.setWeBusinessType(req.getData().getWeBusinessType());
             val.setWeName(req.getData().getWeName());
             val.setWePosition(req.getData().getWePosition());

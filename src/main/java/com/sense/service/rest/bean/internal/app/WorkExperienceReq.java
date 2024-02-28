@@ -23,8 +23,8 @@ public class WorkExperienceReq implements Serializable {
     public class WorkExperienceData {
 
         private String workExperienceId;
-//        private Date weStartDT;
-//        private Date weEndDT;
+        private String weStartDT;
+        private String weEndDT;
         private String weBusinessType;
         private String weName;
         private String wePosition;
