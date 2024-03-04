@@ -12,6 +12,7 @@ import com.sense.backend.hb.entity.auth.ChildEntity;
 import com.sense.backend.hb.entity.auth.ContactPersonEntity;
 import com.sense.backend.hb.entity.auth.DataOtherEntity;
 import com.sense.backend.hb.entity.auth.EducationEntity;
+import com.sense.backend.hb.entity.auth.QueryPDF;
 import com.sense.backend.hb.entity.auth.SiblingEntity;
 import com.sense.backend.hb.entity.auth.TrainingEntity;
 import com.sense.backend.hb.entity.auth.qApplicationEntity;
@@ -106,14 +107,19 @@ public class ApplicationService {
     public List<TrainingEntity> findTrainingById(String id) {
         return dao.findTrainingById(id);
     }
-    
-        @Transactional
+
+    @Transactional
     public List<qCandidateEntityToUse> finCandidateByStatus(String status) {
         return dao.finCandidateByStatus(status);
     }
-    
-            @Transactional
+
+    @Transactional
     public List<qCandidateEntityToUse> finCandidateById(String id) {
         return dao.finCandidateById(id);
+    }
+
+    @Transactional
+    public QueryPDF findPDF(String id) {
+        return dao.findPDF(id);
     }
 }
