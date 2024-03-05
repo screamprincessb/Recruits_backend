@@ -53,7 +53,7 @@ public class ApiFilter implements Filter {
         HttpServletRequest req = (HttpServletRequest) request;
         HttpServletResponse res = (HttpServletResponse) response;
         res.setHeader("Access-Control-Allow-Origin", "*");
-        res.setHeader("Access-Control-Allow-Methods", "POST, GET, PUT, DELETE");
+        res.setHeader("Access-Control-Allow-Methods", "POST, GET, PUT, DELETE, PATCH");
         res.setHeader("Access-Control-Allow-Headers", "*");
 
         boolean isPass = true;
