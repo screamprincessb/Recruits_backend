@@ -423,7 +423,7 @@ public class ApplicationController extends BaseRestController {
     }
     
         @Operation(summary = "Application")
-    @RequestMapping(value = "UpdateApplicationStatus", method = RequestMethod.PATCH)
+    @RequestMapping(value = "UpdateApplicationStatus", method = RequestMethod.PUT)
     public void updateApplicationStatus(
             @ModelAttribute(ApiFilterConst.ATTR_DATA_NAME) ApiAttrBean attrData,
             @RequestHeader(defaultValue = ApiFilterConst.DEFAULT_VALUE_TOKEN_KEY) String token,

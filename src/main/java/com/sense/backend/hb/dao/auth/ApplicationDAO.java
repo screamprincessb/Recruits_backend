@@ -209,6 +209,7 @@ public class ApplicationDAO extends BaseDAO<ApplicationEntity, String> {
         sql.append("application.current_edu_level ,application.current_edu_name ,application.current_edu_major ,application.current_edu_semester ,application.current_edu_expected , ");
 
         sql.append("position_link_form.position_id ,position_link_form.position_name, ");
+        sql.append("sibling.sibling_id ,sibling.sibling_number ,sibling.sibling_first_name ,sibling.sibling_last_name ,sibling.sibling_age ,sibling.sibling_occupation ,sibling.sibling_work_location , ");
         sql.append("child.child_id ,child.child_number ,child.child_first_name ,child.child_last_name ,child.child_age ,child.child_gender ,child.child_education_level , ");
         sql.append("contact_person.contact_person_id ,contact_person.cp_first_name ,contact_person.cp_last_name ,contact_person.cp_relation ,contact_person.cp_phone ,contact_person.cp_address , ");
         sql.append("education.education_id ,education.education_level ,education.education_name ,education.education_qualification ,education.education_major ,education.education_start_date ,education.education_end_date ,education.education_gpa , ");
@@ -222,6 +223,7 @@ public class ApplicationDAO extends BaseDAO<ApplicationEntity, String> {
         sql.append("INNER JOIN contact_person ON application.application_id  = contact_person.application_id ");
         sql.append("INNER JOIN education ON application.application_id  = education.application_id ");
         sql.append("INNER JOIN training ON application.application_id  = training.application_id ");
+        sql.append("INNER JOIN sibling ON application.application_id  = sibling.application_id ");
         sql.append("INNER JOIN work_experience ON application.application_id  = work_experience.application_id ");
         sql.append("where application.application_id = :id ");
         

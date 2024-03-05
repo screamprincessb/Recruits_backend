@@ -207,7 +207,7 @@ public class QueryPDF {
 
     @Column(name = "CHILD_NUMBER")
     private Integer childNumber;
-
+    
     @Column(name = "CHILD_FIRST_NAME")
     private String childFirstName;
 
@@ -266,6 +266,27 @@ public class QueryPDF {
 
     @Column(name = "EDUCATION_GPA")
     private float educationGPA;
+
+    @Column(name = "SIBLING_ID")
+    private String siblingId;
+
+    @Column(name = "SIBLING_NUMBER")
+    private Integer siblingNumber;
+
+    @Column(name = "SIBLING_FIRST_NAME")
+    private String siblingFirstName;
+
+    @Column(name = "SIBLING_LAST_NAME")
+    private String siblingLastName;
+
+    @Column(name = "SIBLING_AGE")
+    private Integer siblingAge;
+
+    @Column(name = "SIBLING_OCCUPATION")
+    private String siblingOccupation;
+
+    @Column(name = "SIBLING_WORK_LOCATION")
+    private String siblingWorkLocation;
 
     @Column(name = "TRAINING_ID")
     private String trainingId;
