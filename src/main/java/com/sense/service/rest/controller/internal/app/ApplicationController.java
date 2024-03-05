@@ -421,4 +421,17 @@ public class ApplicationController extends BaseRestController {
         }
         return null;
     }
+    
+        @Operation(summary = "Application")
+    @RequestMapping(value = "UpdateApplicationStatus", method = RequestMethod.PATCH)
+    public void updateApplicationStatus(
+            @ModelAttribute(ApiFilterConst.ATTR_DATA_NAME) ApiAttrBean attrData,
+            @RequestHeader(defaultValue = ApiFilterConst.DEFAULT_VALUE_TOKEN_KEY) String token,
+            String id,
+            String status) {
+
+        ApplicationService service = HBHelper.instance().service(ApplicationService.class);
+        service.updateApplicationStatus(id, status);
+
+    } 
 }

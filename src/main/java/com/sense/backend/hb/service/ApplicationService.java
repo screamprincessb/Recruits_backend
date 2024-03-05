@@ -122,4 +122,9 @@ public class ApplicationService {
     public QueryPDF findPDF(String id) {
         return dao.findPDF(id);
     }
+    
+        @Transactional
+    public void updateApplicationStatus(String id, String status) {
+        dao.UpdateApplicationStatus(id, status);
+    }
 }

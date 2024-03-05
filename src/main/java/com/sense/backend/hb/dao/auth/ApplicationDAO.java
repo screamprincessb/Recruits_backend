@@ -231,4 +231,16 @@ public class ApplicationDAO extends BaseDAO<ApplicationEntity, String> {
         result = (QueryPDF)query.getSingleResult();
         return result;
     }
+    
+            public void UpdateApplicationStatus(String id, String status) {
+        
+        StringBuilder sql = new StringBuilder();
+        sql.append("update application ");
+        sql.append("set application_status = :status ");
+        sql.append("where application_id = :id");
+        Query query = sessionFactory.getCurrentSession().createNativeQuery(sql.toString());
+        query.setParameter("id", id);
+        query.setParameter("status", status);
+        query.executeUpdate();
+        }
 }
