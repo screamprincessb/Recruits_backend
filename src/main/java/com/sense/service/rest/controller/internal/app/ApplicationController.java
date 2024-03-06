@@ -14,6 +14,7 @@ import com.sense.backend.hb.entity.auth.EducationEntity;
 import com.sense.backend.hb.entity.auth.QueryPDF;
 import com.sense.backend.hb.entity.auth.SiblingEntity;
 import com.sense.backend.hb.entity.auth.TrainingEntity;
+import com.sense.backend.hb.entity.auth.WorkExperienceEntity;
 import com.sense.backend.hb.entity.auth.qApplicationEntity;
 import com.sense.backend.hb.entity.auth.qCandidateEntityToUse;
 import com.sense.backend.hb.entity.auth.qPositionNameEntityToJoin;
@@ -236,14 +237,14 @@ public class ApplicationController extends BaseRestController {
 
     @Operation(summary = "Application")
     @RequestMapping(value = "findWorkExperienceByIdToApplication", method = RequestMethod.GET)
-    public List<qWorkExperienceEntityToJoin> findWorkExperienceByid(
+    public List<WorkExperienceEntity> findWorkExperienceById(
             @Parameter(hidden = true)
             @ModelAttribute(ApiFilterConst.ATTR_DATA_NAME) ApiAttrBean attrData,
             @RequestHeader(defaultValue = ApiFilterConst.DEFAULT_VALUE_TOKEN_KEY) String token,
             @RequestParam("applicationId") String applicationId) {
         ApplicationService service = HBHelper.instance().service(ApplicationService.class);
         try {
-            List<qWorkExperienceEntityToJoin> result = service.findWorkExperienceByid(applicationId);
+            List<WorkExperienceEntity> result = service.findWorkExperienceById(applicationId);
             return result;
         } catch (Exception e) {
             System.out.print(e);

@@ -15,6 +15,7 @@ import com.sense.backend.hb.entity.auth.EducationEntity;
 import com.sense.backend.hb.entity.auth.QueryPDF;
 import com.sense.backend.hb.entity.auth.SiblingEntity;
 import com.sense.backend.hb.entity.auth.TrainingEntity;
+import com.sense.backend.hb.entity.auth.WorkExperienceEntity;
 import com.sense.backend.hb.entity.auth.qApplicationEntity;
 import com.sense.backend.hb.entity.auth.qPositionNameEntityToJoin;
 import com.sense.backend.hb.entity.auth.qWorkExperienceEntityToJoin;
@@ -68,9 +69,13 @@ public class ApplicationService {
         return dao.findAbillitiesByid(id);
     }
 
+//    @Transactional
+//    public List<qWorkExperienceEntityToJoin> findWorkExperienceById(String id) {
+//        return dao.findWorkExperienceById(id);
+//    }
     @Transactional
-    public List<qWorkExperienceEntityToJoin> findWorkExperienceByid(String id) {
-        return dao.findWorkExperienceByid(id);
+    public List<WorkExperienceEntity> findWorkExperienceById(String id) {
+        return dao.findWorkExperienceById(id);
     }
 
     @Transactional
@@ -122,8 +127,8 @@ public class ApplicationService {
     public QueryPDF findPDF(String id) {
         return dao.findPDF(id);
     }
-    
-        @Transactional
+
+    @Transactional
     public void updateApplicationStatus(String id, String status) {
         dao.UpdateApplicationStatus(id, status);
     }

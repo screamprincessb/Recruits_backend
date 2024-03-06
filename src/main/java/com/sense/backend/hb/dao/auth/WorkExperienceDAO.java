@@ -34,7 +34,7 @@ public class WorkExperienceDAO extends BaseDAO<WorkExperienceEntity, String> {
         sql.append("select reference_person.*");
         sql.append("from work_experience ");
         sql.append("inner join reference_person on work_experience.work_experience_id = reference_person.work_experience_id ");
-        sql.append("where application_id = :id");
+        sql.append("where application_id = :id ");
         Query query = sessionFactory.getCurrentSession().createNativeQuery(sql.toString(), ReferencePersonEntity.class);
         query.setParameter("id", id);
         result = query.getResultList();

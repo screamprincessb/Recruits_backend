@@ -15,6 +15,7 @@ import com.sense.backend.hb.entity.auth.EducationEntity;
 import com.sense.backend.hb.entity.auth.QueryPDF;
 import com.sense.backend.hb.entity.auth.SiblingEntity;
 import com.sense.backend.hb.entity.auth.TrainingEntity;
+import com.sense.backend.hb.entity.auth.WorkExperienceEntity;
 import com.sense.backend.hb.entity.auth.qApplicationEntity;
 import com.sense.backend.hb.entity.auth.qPositionNameEntityToJoin;
 import com.sense.backend.hb.entity.auth.qWorkExperienceEntityToJoin;
@@ -62,14 +63,24 @@ public class ApplicationDAO extends BaseDAO<ApplicationEntity, String> {
         return result;
     }
 
-    public List<qWorkExperienceEntityToJoin> findWorkExperienceByid(String id) {
-        List<qWorkExperienceEntityToJoin> result = new ArrayList<>();
+//    public List<qWorkExperienceEntityToJoin> findWorkExperienceByid(String id) {
+//        List<qWorkExperienceEntityToJoin> result = new ArrayList<>();
+//        StringBuilder sql = new StringBuilder();
+//        sql.append("select work_experience.*, reference_person.ref_first_name, reference_person.ref_last_name, reference_person.ref_job_position ,reference_person.ref_work_location ,reference_person.ref_phone ");
+//        sql.append("from work_experience ");
+//        sql.append("inner join reference_person on work_experience.work_experience_id = reference_person.work_experience_id ");
+//        sql.append("where application_id  = :id");
+//        Query query = sessionFactory.getCurrentSession().createNativeQuery(sql.toString(), qWorkExperienceEntityToJoin.class);
+//        query.setParameter("id", id);
+//        result = query.getResultList();
+//        return result;
+//    }
+    public List<WorkExperienceEntity> findWorkExperienceById(String id) {
+        List<WorkExperienceEntity> result = new ArrayList<>();
         StringBuilder sql = new StringBuilder();
-        sql.append("select work_experience.*, reference_person.ref_first_name, reference_person.ref_last_name, reference_person.ref_job_position ,reference_person.ref_work_location ,reference_person.ref_phone ");
-        sql.append("from work_experience ");
-        sql.append("inner join reference_person on work_experience.work_experience_id = reference_person.work_experience_id ");
-        sql.append("where application_id  = :id");
-        Query query = sessionFactory.getCurrentSession().createNativeQuery(sql.toString(), qWorkExperienceEntityToJoin.class);
+        sql.append("SELECT * FROM work_experience ");
+        sql.append("where application_id  = :id ");
+        Query query = sessionFactory.getCurrentSession().createNativeQuery(sql.toString(), WorkExperienceEntity.class);
         query.setParameter("id", id);
         result = query.getResultList();
         return result;
@@ -226,16 +237,15 @@ public class ApplicationDAO extends BaseDAO<ApplicationEntity, String> {
         sql.append("INNER JOIN sibling ON application.application_id  = sibling.application_id ");
         sql.append("INNER JOIN work_experience ON application.application_id  = work_experience.application_id ");
         sql.append("where application.application_id = :id ");
-        
 
         Query query = sessionFactory.getCurrentSession().createNativeQuery(sql.toString(), QueryPDF.class);
         query.setParameter("id", id);
-        result = (QueryPDF)query.getSingleResult();
+        result = (QueryPDF) query.getSingleResult();
         return result;
     }
-    
-            public void UpdateApplicationStatus(String id, String status) {
-        
+
+    public void UpdateApplicationStatus(String id, String status) {
+
         StringBuilder sql = new StringBuilder();
         sql.append("update application ");
         sql.append("set application_status = :status ");
@@ -244,5 +254,5 @@ public class ApplicationDAO extends BaseDAO<ApplicationEntity, String> {
         query.setParameter("id", id);
         query.setParameter("status", status);
         query.executeUpdate();
-        }
+    }
 }

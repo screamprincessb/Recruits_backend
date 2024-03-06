@@ -207,7 +207,7 @@ public class QueryPDF {
 
     @Column(name = "CHILD_NUMBER")
     private Integer childNumber;
-    
+
     @Column(name = "CHILD_FIRST_NAME")
     private String childFirstName;
 
