@@ -6,6 +6,7 @@ package com.sense.service.rest.controller.internal.app;
 
 import com.sense.backend.common.helper.HBHelper;
 import com.sense.backend.hb.entity.auth.InterviewEntity;
+import com.sense.backend.hb.entity.auth.qEmailCandidateInfoEntity;
 import com.sense.backend.hb.entity.auth.qInterviewAppointmentEntity;
 import com.sense.backend.hb.service.InterviewService;
 import com.sense.service.base.BaseRestController;
@@ -153,5 +154,22 @@ public class InterviewController extends BaseRestController {
         }
         return null;
     }
-
+    
+    
+    @Operation(summary = "Interview")
+    @RequestMapping(value = "findQEmailCandidateByApplicationId", method = RequestMethod.GET)
+    public List<qEmailCandidateInfoEntity> findQEmailCandidateByApplicationId(
+            @Parameter(hidden = true)
+            @ModelAttribute(ApiFilterConst.ATTR_DATA_NAME) ApiAttrBean attrData,
+            @RequestHeader(defaultValue = ApiFilterConst.DEFAULT_VALUE_TOKEN_KEY) String token,
+            @RequestParam("applicationId") String applicationId) {
+        InterviewService service = HBHelper.instance().service(InterviewService.class);
+        try {
+            List<qEmailCandidateInfoEntity> result = service.findQEmailCandidateByApplicationId(applicationId);
+            return result;
+        } catch (Exception e) {
+            System.out.print(e);
+        }
+        return null;
+    }
 }

@@ -6,6 +6,7 @@ package com.sense.backend.hb.service;
 
 import com.sense.backend.hb.dao.auth.InterviewDAO;
 import com.sense.backend.hb.entity.auth.InterviewEntity;
+import com.sense.backend.hb.entity.auth.qEmailCandidateInfoEntity;
 import com.sense.backend.hb.entity.auth.qInterviewAppointmentEntity;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +19,7 @@ import org.springframework.transaction.annotation.Transactional;
  */
 @Service
 public class InterviewService {
-    
+
     @Autowired
     private InterviewDAO dao;
 
@@ -47,15 +48,20 @@ public class InterviewService {
     public void delete(InterviewEntity entity) {
         dao.delete(entity);
     }
-    
+
     @Transactional
     public List<qInterviewAppointmentEntity> findAllInterApp() {
         return dao.findAllInterApp();
     }
-    
-        @Transactional
+
+    @Transactional
     public List<qInterviewAppointmentEntity> findInterAppById(String id) {
         return dao.findInterAppById(id);
     }
-    
+
+    @Transactional
+    public List<qEmailCandidateInfoEntity> findQEmailCandidateByApplicationId(String id) {
+        return dao.findQEmailCandidateByApplicationId(id);
+    }
+
 }
