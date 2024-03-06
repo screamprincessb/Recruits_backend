@@ -11,7 +11,9 @@ import com.sense.backend.hb.entity.auth.ChildEntity;
 import com.sense.backend.hb.entity.auth.ContactPersonEntity;
 import com.sense.backend.hb.entity.auth.DataOtherEntity;
 import com.sense.backend.hb.entity.auth.EducationEntity;
+import com.sense.backend.hb.entity.auth.PreTestEntity;
 import com.sense.backend.hb.entity.auth.QueryPDF;
+import com.sense.backend.hb.entity.auth.ReferencePersonEntity;
 import com.sense.backend.hb.entity.auth.SiblingEntity;
 import com.sense.backend.hb.entity.auth.TrainingEntity;
 import com.sense.backend.hb.entity.auth.WorkExperienceEntity;
@@ -253,6 +255,40 @@ public class ApplicationController extends BaseRestController {
     }
 
     @Operation(summary = "Application")
+    @RequestMapping(value = "findReferenceByIdToApplication", method = RequestMethod.GET)
+    public List<ReferencePersonEntity> findReferencePersonById(
+            @Parameter(hidden = true)
+            @ModelAttribute(ApiFilterConst.ATTR_DATA_NAME) ApiAttrBean attrData,
+            @RequestHeader(defaultValue = ApiFilterConst.DEFAULT_VALUE_TOKEN_KEY) String token,
+            @RequestParam("applicationId") String applicationId) {
+        ApplicationService service = HBHelper.instance().service(ApplicationService.class);
+        try {
+            List<ReferencePersonEntity> result = service.findReferencePersonById(applicationId);
+            return result;
+        } catch (Exception e) {
+            System.out.print(e);
+        }
+        return null;
+    }
+
+    @Operation(summary = "Application")
+    @RequestMapping(value = "findTestById", method = RequestMethod.GET)
+    public List<PreTestEntity> findPreTestById(
+            @Parameter(hidden = true)
+            @ModelAttribute(ApiFilterConst.ATTR_DATA_NAME) ApiAttrBean attrData,
+            @RequestHeader(defaultValue = ApiFilterConst.DEFAULT_VALUE_TOKEN_KEY) String token,
+            @RequestParam("applicationId") String applicationId) {
+        ApplicationService service = HBHelper.instance().service(ApplicationService.class);
+        try {
+            List<PreTestEntity> result = service.findPreTestById(applicationId);
+            return result;
+        } catch (Exception e) {
+            System.out.print(e);
+        }
+        return null;
+    }
+
+    @Operation(summary = "Application")
     @RequestMapping(value = "findChildByIdToApplication", method = RequestMethod.GET)
     public List<ChildEntity> findChildByid(
             @Parameter(hidden = true)
@@ -422,8 +458,8 @@ public class ApplicationController extends BaseRestController {
         }
         return null;
     }
-    
-        @Operation(summary = "Application")
+
+    @Operation(summary = "Application")
     @RequestMapping(value = "UpdateApplicationStatus", method = RequestMethod.PATCH)
     public void updateApplicationStatus(
             @ModelAttribute(ApiFilterConst.ATTR_DATA_NAME) ApiAttrBean attrData,
@@ -434,5 +470,5 @@ public class ApplicationController extends BaseRestController {
         ApplicationService service = HBHelper.instance().service(ApplicationService.class);
         service.updateApplicationStatus(id, status);
 
-    } 
+    }
 }

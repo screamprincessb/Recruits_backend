@@ -12,7 +12,9 @@ import com.sense.backend.hb.entity.auth.ChildEntity;
 import com.sense.backend.hb.entity.auth.ContactPersonEntity;
 import com.sense.backend.hb.entity.auth.DataOtherEntity;
 import com.sense.backend.hb.entity.auth.EducationEntity;
+import com.sense.backend.hb.entity.auth.PreTestEntity;
 import com.sense.backend.hb.entity.auth.QueryPDF;
+import com.sense.backend.hb.entity.auth.ReferencePersonEntity;
 import com.sense.backend.hb.entity.auth.SiblingEntity;
 import com.sense.backend.hb.entity.auth.TrainingEntity;
 import com.sense.backend.hb.entity.auth.WorkExperienceEntity;
@@ -84,6 +86,11 @@ public class ApplicationService {
     }
 
     @Transactional
+    public List<ReferencePersonEntity> findReferencePersonById(String id) {
+        return dao.findReferencePersonById(id);
+    }
+
+    @Transactional
     public List<ContactPersonEntity> findContactPersonByid(String id) {
         return dao.findContactPersonById(id);
     }
@@ -131,5 +138,10 @@ public class ApplicationService {
     @Transactional
     public void updateApplicationStatus(String id, String status) {
         dao.UpdateApplicationStatus(id, status);
+    }
+
+    @Transactional
+    public List<PreTestEntity> findPreTestById(String id) {
+        return dao.findPreTestById(id);
     }
 }

@@ -27,6 +27,6 @@ public class ReferencePersonReq implements Serializable {
         private String refJobPosition;
         private String refWorkLocation;
         private String refPhone;
-        private String workExperienceId;
+        private String applicationId;
     }
 }

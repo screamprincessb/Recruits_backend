@@ -12,7 +12,9 @@ import com.sense.backend.hb.entity.auth.ChildEntity;
 import com.sense.backend.hb.entity.auth.ContactPersonEntity;
 import com.sense.backend.hb.entity.auth.DataOtherEntity;
 import com.sense.backend.hb.entity.auth.EducationEntity;
+import com.sense.backend.hb.entity.auth.PreTestEntity;
 import com.sense.backend.hb.entity.auth.QueryPDF;
+import com.sense.backend.hb.entity.auth.ReferencePersonEntity;
 import com.sense.backend.hb.entity.auth.SiblingEntity;
 import com.sense.backend.hb.entity.auth.TrainingEntity;
 import com.sense.backend.hb.entity.auth.WorkExperienceEntity;
@@ -81,6 +83,28 @@ public class ApplicationDAO extends BaseDAO<ApplicationEntity, String> {
         sql.append("SELECT * FROM work_experience ");
         sql.append("where application_id  = :id ");
         Query query = sessionFactory.getCurrentSession().createNativeQuery(sql.toString(), WorkExperienceEntity.class);
+        query.setParameter("id", id);
+        result = query.getResultList();
+        return result;
+    }
+
+    public List<ReferencePersonEntity> findReferencePersonById(String id) {
+        List<ReferencePersonEntity> result = new ArrayList<>();
+        StringBuilder sql = new StringBuilder();
+        sql.append("SELECT * FROM reference_person ");
+        sql.append("where application_id  = :id ");
+        Query query = sessionFactory.getCurrentSession().createNativeQuery(sql.toString(), ReferencePersonEntity.class);
+        query.setParameter("id", id);
+        result = query.getResultList();
+        return result;
+    }
+
+    public List<PreTestEntity> findPreTestById(String id) {
+        List<PreTestEntity> result = new ArrayList<>();
+        StringBuilder sql = new StringBuilder();
+        sql.append("SELECT * FROM pre_test ");
+        sql.append("where application_id  = :id  ");
+        Query query = sessionFactory.getCurrentSession().createNativeQuery(sql.toString(), PreTestEntity.class);
         query.setParameter("id", id);
         result = query.getResultList();
         return result;
@@ -194,19 +218,6 @@ public class ApplicationDAO extends BaseDAO<ApplicationEntity, String> {
     public QueryPDF findPDF(String id) {
         QueryPDF result = new QueryPDF();
         StringBuilder sql = new StringBuilder();
-//        sql.append("select * ");
-//        sql.append("from application ");
-//        sql.append("inner join child on application.application_id = child.application_id ");
-//        sql.append("inner join contact_person on application.application_id = contact_person.application_id ");
-//        sql.append("inner join education on application.application_id = education.application_id ");
-//        sql.append("inner join sibling on application.application_id = sibling.application_id ");
-//        sql.append("inner join training on application.application_id = training.application_id ");
-//        sql.append("inner join work_experience on application.application_id = work_experience.application_id ");
-//        sql.append("inner join position_link_form on application.position_id = position_link_form.position_id ");
-//        sql.append("where application.application_id = :id ");
-//        sql.append("\'");
-//        sql.append(id);
-//        sql.append("\'");
         sql.append("SELECT application.application_id, application.can_first_name_th, application.can_title_name_th, application.can_last_name_th, application.can_nickname_th,application.can_title_name_eng, ");
         sql.append("application.can_first_name_eng ,application.can_last_name_eng , application.can_nickname_eng , application.application_salary_range ,application.application_start_date , ");
         sql.append("application.can_sight , application.can_weight ,application.can_height , application.can_date_of_birth ,application.can_age ,application.can_national ,application.can_ethincity , ");
